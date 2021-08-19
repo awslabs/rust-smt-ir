@@ -2,7 +2,7 @@
 name = "amzn-smt-string-transformer"
 version = "0.1.0"
 edition = "2018"
-authors = ["Byron Cook <byron@amazon.com>", "Ellen Arteca <artecaea@amazon.com>"]
+authors = ["Byron Cook <byron@amazon.com>", "Ellen Arteca <ellen.arteca@gmail.com>"]
 
 # Setting publish to false prevents the accidental publishing
 # of your code to (the public) crates.io, as described here:
