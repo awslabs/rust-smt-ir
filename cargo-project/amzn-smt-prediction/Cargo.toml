@@ -1,7 +1,7 @@
 [package]
 name = "amzn-smt-prediction"
 version = "0.1.0"
-authors = ["Mike Giancola <mggianco@amazon.com>"]
+authors = ["Mike Giancola <mike.j.giancola@gmail.com>"]
 edition = "2018"
 
 # Setting publish to false prevents the accidental publishing
