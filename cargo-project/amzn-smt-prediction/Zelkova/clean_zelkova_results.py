@@ -1,8 +1,8 @@
-# This script takes the results of running a SMT solver on the intern-friendly
-# Zelkova examples as input and outputs a list of benchmarks and a
-# corresponding list of binary values, where 1 indicates that
-# the transformed version of a problem was solved faster, and 0
-# if the original version was solved faster.
+# This script takes the results of running a SMT solver on a set
+# of sanitized Zelkova examples as input and outputs a list of
+# benchmarks and a corresponding list of binary values, where 1
+# indicates that the transformed version of a problem was solved
+# faster, and 0 if the original version was solved faster.
 #
 # The script was used to create datasets for the following two "transformations":
 # (1) using the "--strings-fmf" cmd line option
