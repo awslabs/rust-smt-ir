@@ -1,5 +1,5 @@
 # This script takes a list of benchmarks as input and calls a transpiler
-# (https://code.amazon.com/packages/Rust-ArgAtsSmtUtils/trees/mainline/--/cargo-project/amzn-smt-string-fct-updater)
+# (https://github.com/awslabs/rust-smt-ir/tree/main/cargo-project/amzn-smt-string-fct-updater)
 # on them which converts them to the modern SMT format.
 #
 # NOTE: Script assumes benchmark list includes list of names with the following format:
@@ -19,7 +19,7 @@ if __name__=='__main__':
 
     if not isfile(path_to_exec):
         print("ERROR: In order to use this script, you must compile a binary for 'amzn-smt-string-fct-updater' (and have it in the right place).")
-        print("From the 'Rust-ArgAtsSmtUtils/cargo-project/amzn-smt-string-fct-updater' directory, run:")
+        print("From the 'rust-smt-ir/cargo-project/amzn-smt-string-fct-updater' directory, run:")
         print("cargo build --release --target-dir .")
         exit(1)
 

@@ -4,7 +4,7 @@ This repository handles all data processing / feature creation for my work on SM
 It also (will) include a script for generating predictions about a single SMT problem file,
 handling the data processing and calling of AWS SageMaker endpoints.
 
-The main Rust project uses an [internal SMT parser](https://code.amazon.com/packages/Rust-ArgAtsSmtUtils/trees/mainline/--/cargo-project/amzn-smt-ir)
+The Rust project herein uses a [SMT parser](https://github.com/awslabs/rust-smt-ir/tree/main/cargo-project/amzn-smt-ir)
 to count the number of occurances of String predicates in SMT problem files. These are referred to
 as ``offline features`` in the predictive models.
 
