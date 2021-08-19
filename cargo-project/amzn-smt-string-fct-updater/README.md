@@ -33,7 +33,7 @@ There is also a more involved transformation for the `re.loop` function: in this
 
 ### Preconditions:
 Make sure you have rust set up and installed.
-[Here is a link](https://w.amazon.com/bin/view/RustLang) to the Amazon rust usage resources.
+[Here is a link](https://www.rust-lang.org/) to Rust information including installation instructions.
 
 ### Setup
 Clone and setup the repo as follows.
