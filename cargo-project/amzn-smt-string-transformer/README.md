@@ -7,7 +7,7 @@ This is a tool for performing homomorphic transformations on smtlib queries.
 ### Preconditions:
 
 - Make sure you have rust set up and installed.
-  [Here is a link](https://w.amazon.com/bin/view/RustLang) to the Amazon rust usage resources.
+  [Here is a link](https://www.rust-lang.org/) to rust resources.
 - Install a solver. This tool has been tested with
   [z3](https://github.com/Z3Prover/z3#building-z3-using-make-and-gccclang),
   [cvc4 1.7 and 1.8](http://cvc4.cs.stanford.edu/downloads/builds/x86_64-linux-opt/), and
