@@ -1,4 +1,4 @@
-## My Project
+## rust-smt-ir
 
 This project provides an intermediate representation (IR) in Rust for SMT-LIB (http://smtlib.cs.uiowa.edu/about.shtml) queries along with tools for performing computations over queries and transforming queries in various ways. To demonstrate the benefit to the automated reasoning community, the project includes two sample applications:
 
