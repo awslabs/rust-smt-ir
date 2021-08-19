@@ -1,0 +1,5 @@
+(declare-const a Bool)
+(declare-const b String)
+(assert (= a (= "s3:getobject" b)))
+(check-sat)
+

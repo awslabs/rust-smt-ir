@@ -1,0 +1,105 @@
+(declare-const action String)
+(declare-const resource String)
+(declare-const resource_account String)
+(declare-const resource_partition String)
+(declare-const resource_prefix String)
+(declare-const resource_region String)
+(declare-const resource_resource String)
+(declare-const resource_service String)
+
+; Action: p0.0
+(declare-const p0.0.action Bool)
+(assert (= p0.0.action (= "s3:getobject" action)))
+
+; Resource: p0.0
+(declare-const p0.0.resource Bool)
+(assert (= p0.0.resource (str.prefixof "arn:aws:s3:::foo" resource)))
+
+; Statement: p0.0
+(declare-const p0.0.statement.allow Bool)
+(assert (= p0.0.statement.allow (and p0.0.action p0.0.resource)))
+
+; Action: p0.1
+(declare-const p0.1.action Bool)
+(assert (= p0.1.action (= "s3:getbucket" action)))
+
+; Policy: 0
+(declare-const p0.denies Bool)
+(assert (not p0.denies))
+(declare-const p0.allows Bool)
+(assert (= p0.allows (or p0.0.statement.allow p0.1.action)))
+(declare-const p0.neutral Bool)
+(assert (= p0.neutral (not p0.allows)))
+
+; Action: p1.0
+(declare-const p1.0.action Bool)
+(assert (= p1.0.action (= "s3:getobject" action)))
+
+; Resource: p1.0
+(declare-const p1.0.resource Bool)
+(assert (= p1.0.resource (str.prefixof "arn:aws:s3:::foobar" resource)))
+
+; Statement: p1.0
+(declare-const p1.0.statement.allow Bool)
+(assert (= p1.0.statement.allow (and p1.0.action p1.0.resource)))
+
+; Action: p1.1
+(declare-const p1.1.action Bool)
+(assert (= p1.1.action (= "s3:getbucket" action)))
+
+; Policy: 1
+(declare-const p1.denies Bool)
+(assert (not p1.denies))
+(declare-const p1.allows Bool)
+(assert (= p1.allows (or p1.0.statement.allow p1.1.action)))
+(declare-const p1.neutral Bool)
+(assert (= p1.neutral (not p1.allows)))
+
+; The valid resources for sts actions are sts, iam
+(assert (=> (str.prefixof "sts:" action) (or (str.in.re resource (re.++ (str.to.re "arn:aws:sts:") (re.* re.allchar))) (str.in.re resource (re.++ (str.to.re "arn:aws:iam:") (re.* re.allchar))))))
+
+; The valid resources for iam actions are sts, iam
+(assert (=> (str.prefixof "iam:" action) (or (str.in.re resource (re.++ (str.to.re "arn:aws:sts:") (re.* re.allchar))) (str.in.re resource (re.++ (str.to.re "arn:aws:iam:") (re.* re.allchar))))))
+
+; The only valid action namespaces for sns resources is sns and vice versa
+(assert (= (str.in.re resource (re.++ (str.to.re "arn:aws:sns:") (re.* re.allchar))) (str.prefixof "sns:" action)))
+
+; The only valid action namespaces for s3 resources is s3 and vice versa
+(assert (= (str.in.re resource (re.++ (str.to.re "arn:aws:s3:") (re.* re.allchar))) (str.prefixof "s3:" action)))
+
+; The only valid action namespaces for lambda resources is lambda and vice versa
+(assert (= (str.in.re resource (re.++ (str.to.re "arn:aws:lambda:") (re.* re.allchar))) (str.prefixof "lambda:" action)))
+
+; The valid action namespaces for sts resources are iam, sts
+(assert (=> (str.in.re resource (re.++ (str.to.re "arn:aws:sts:") (re.* re.allchar))) (or (str.prefixof "iam:" action) (str.prefixof "sts:" action))))
+
+; The only valid action namespaces for sqs resources is sqs and vice versa
+(assert (= (str.in.re resource (re.++ (str.to.re "arn:aws:sqs:") (re.* re.allchar))) (str.prefixof "sqs:" action)))
+
+; The valid action namespaces for iam resources are iam, sts
+(assert (=> (str.in.re resource (re.++ (str.to.re "arn:aws:iam:") (re.* re.allchar))) (or (str.prefixof "iam:" action) (str.prefixof "sts:" action))))
+
+; The only valid action namespaces for glacier resources is glacier and vice versa
+(assert (= (str.in.re resource (re.++ (str.to.re "arn:aws:glacier:") (re.* re.allchar))) (str.prefixof "glacier:" action)))
+
+; The only valid action namespaces for kms resources is kms and vice versa
+(assert (= (str.in.re resource (re.++ (str.to.re "arn:aws:kms:") (re.* re.allchar))) (str.prefixof "kms:" action)))
+
+; The only valid action namespaces for es resources is es and vice versa
+(assert (= (str.in.re resource (re.++ (str.to.re "arn:aws:es:") (re.* re.allchar))) (str.prefixof "es:" action)))
+
+; Action representation invariant
+(assert (str.contains action ":"))
+
+; resource dual representation invariant
+(assert (= resource (str.++ resource_prefix ":" resource_partition ":" resource_service ":" resource_region ":" resource_account ":" resource_resource)))
+
+; resource arn invariant
+(assert (str.in.re resource (re.++ (str.to.re "arn:aws:") (re.* (re.union (re.range "a" "z") (re.range "0" "9") (str.to.re "-"))) (str.to.re ":") (re.union (str.to.re "ap-east-1") (str.to.re "") (str.to.re "ap-northeast-1") (str.to.re "ap-northeast-2") (str.to.re "ap-northeast-3") (str.to.re "ap-south-1") (str.to.re "ap-southeast-1") (str.to.re "ap-southeast-2") (str.to.re "ca-central-1") (str.to.re "eu-central-1") (str.to.re "eu-north-1") (str.to.re "eu-west-1") (str.to.re "eu-west-2") (str.to.re "eu-west-3") (str.to.re "me-south-1") (str.to.re "sa-east-1") (str.to.re "us-east-1") (str.to.re "us-east-2") (str.to.re "us-west-1") (str.to.re "us-west-2")) (str.to.re ":") (re.union (str.to.re "") (re.loop (re.range "0" "9") 12 12) (str.to.re "aws") (str.to.re "cloudfront")) (str.to.re ":") (re.* re.allchar))))
+
+; Goals
+(assert p0.allows)
+(assert (not p1.allows))
+
+(check-sat)
+(get-model)

@@ -1,0 +1,122 @@
+(set-logic ALL)
+(declare-const actionName String)
+(declare-const actionNamespace String)
+(declare-const |aws:referer| String)
+(declare-const |aws:referer_exists| Bool)
+(declare-const resource_account String)
+(declare-const resource_partition String)
+(declare-const resource_prefix String)
+(declare-const resource_region String)
+(declare-const resource_resource String)
+(declare-const resource_service String)
+
+; Action: p0-s0.0
+(declare-const p0-s0.0.action Bool)
+(assert (= p0-s0.0.action (and (= "s3" actionNamespace) (= "getobject" actionName))))
+
+; Condition: p0-s0.0
+(declare-const p0-s0.0.condition Bool)
+(assert (= p0-s0.0.condition (and |aws:referer_exists| (str.prefixof "http://www.example1.com/" |aws:referer|) (str.suffixof "baz" |aws:referer|))))
+
+; Resource: p0-s0.0
+(declare-const p0-s0.0.resource Bool)
+(assert (= p0-s0.0.resource (and (= "arn" resource_prefix) (= "aws" resource_partition) (= "s3" resource_service) (= "" resource_region) (= "" resource_account) (str.prefixof "examplebucket/" resource_resource))))
+
+; Statement: p0-s0.0
+(declare-const p0-s0.0.statement.allow Bool)
+(assert (= p0-s0.0.statement.allow (and p0-s0.0.action p0-s0.0.condition p0-s0.0.resource)))
+
+; Scenario: 0, Policy: 0
+(declare-const p0-s0.denies Bool)
+(assert (not p0-s0.denies))
+(declare-const p0-s0.allows Bool)
+(assert (= p0-s0.allows p0-s0.0.statement.allow))
+(declare-const p0-s0.neutral Bool)
+(assert (= p0-s0.neutral (not p0-s0.0.statement.allow)))
+(declare-const s0.final.deny Bool)
+(assert (not s0.final.deny))
+(declare-const s0.final.allow Bool)
+(assert (= s0.final.allow p0-s0.0.statement.allow))
+(declare-const s0.final.neutral Bool)
+(assert (= s0.final.neutral (not p0-s0.0.statement.allow)))
+
+; Action: p0-s1.0
+(declare-const p0-s1.0.action Bool)
+(assert (= p0-s1.0.action (and (= "s3" actionNamespace) (= "getobject" actionName))))
+
+; Condition: p0-s1.0
+(declare-const p0-s1.0.condition Bool)
+(assert (= p0-s1.0.condition (and |aws:referer_exists| (str.prefixof "http://www.example1.com/" |aws:referer|) (str.contains |aws:referer| "foobar") (str.suffixof "baz" |aws:referer|))))
+
+; Resource: p0-s1.0
+(declare-const p0-s1.0.resource Bool)
+(assert (= p0-s1.0.resource (and (= "arn" resource_prefix) (= "aws" resource_partition) (= "s3" resource_service) (= "" resource_region) (= "" resource_account) (str.prefixof "examplebucket/" resource_resource))))
+
+; Statement: p0-s1.0
+(declare-const p0-s1.0.statement.allow Bool)
+(assert (= p0-s1.0.statement.allow (and p0-s1.0.action p0-s1.0.condition p0-s1.0.resource)))
+
+; Scenario: 1, Policy: 0
+(declare-const p0-s1.denies Bool)
+(assert (not p0-s1.denies))
+(declare-const p0-s1.allows Bool)
+(assert (= p0-s1.allows p0-s1.0.statement.allow))
+(declare-const p0-s1.neutral Bool)
+(assert (= p0-s1.neutral (not p0-s1.0.statement.allow)))
+(declare-const s1.final.deny Bool)
+(assert (not s1.final.deny))
+(declare-const s1.final.allow Bool)
+(assert (= s1.final.allow p0-s1.0.statement.allow))
+(declare-const s1.final.neutral Bool)
+(assert (= s1.final.neutral (not p0-s1.0.statement.allow)))
+
+; The valid resources for sts actions are sts, iam
+(assert (=> (= actionNamespace "sts") (or (= resource_service "sts") (= resource_service "iam"))))
+
+; The valid resources for iam actions are sts, iam
+(assert (=> (= actionNamespace "iam") (or (= resource_service "sts") (= resource_service "iam"))))
+
+; The only valid action namespaces for sns resources is sns and vice versa
+(assert (= (= resource_service "sns") (= actionNamespace "sns")))
+
+; The only valid action namespaces for s3 resources is s3 and vice versa
+(assert (= (= resource_service "s3") (= actionNamespace "s3")))
+
+; The only valid action namespaces for lambda resources is lambda and vice versa
+(assert (= (= resource_service "lambda") (= actionNamespace "lambda")))
+
+; The valid action namespaces for sts resources are iam, sts
+(assert (=> (= resource_service "sts") (or (= actionNamespace "iam") (= actionNamespace "sts"))))
+
+; The only valid action namespaces for sqs resources is sqs and vice versa
+(assert (= (= resource_service "sqs") (= actionNamespace "sqs")))
+
+; The valid action namespaces for iam resources are iam, sts
+(assert (=> (= resource_service "iam") (or (= actionNamespace "iam") (= actionNamespace "sts"))))
+
+; The only valid action namespaces for glacier resources is glacier and vice versa
+(assert (= (= resource_service "glacier") (= actionNamespace "glacier")))
+
+; The only valid action namespaces for kms resources is kms and vice versa
+(assert (= (= resource_service "kms") (= actionNamespace "kms")))
+
+; The only valid action namespaces for es resources is es and vice versa
+(assert (= (= resource_service "es") (= actionNamespace "es")))
+
+; resource prefix invariant
+(assert (= "arn" resource_prefix))
+
+; resource partition and region invariant
+(assert (or (and (= "aws" resource_partition) (= "af-south-1" resource_region)) (and (= "aws" resource_partition) (= "" resource_region)) (and (= "aws" resource_partition) (= "ap-east-1" resource_region)) (and (= "aws" resource_partition) (= "ap-northeast-1" resource_region)) (and (= "aws" resource_partition) (= "ap-northeast-2" resource_region)) (and (= "aws" resource_partition) (= "ap-northeast-3" resource_region)) (and (= "aws" resource_partition) (= "ap-south-1" resource_region)) (and (= "aws" resource_partition) (= "ap-southeast-1" resource_region)) (and (= "aws" resource_partition) (= "ap-southeast-2" resource_region)) (and (= "aws" resource_partition) (= "ca-central-1" resource_region)) (and (= "aws" resource_partition) (= "eu-central-1" resource_region)) (and (= "aws" resource_partition) (= "eu-north-1" resource_region)) (and (= "aws" resource_partition) (= "eu-south-1" resource_region)) (and (= "aws" resource_partition) (= "eu-west-1" resource_region)) (and (= "aws" resource_partition) (= "eu-west-2" resource_region)) (and (= "aws" resource_partition) (= "eu-west-3" resource_region)) (and (= "aws" resource_partition) (= "me-south-1" resource_region)) (and (= "aws" resource_partition) (= "sa-east-1" resource_region)) (and (= "aws" resource_partition) (= "us-east-1" resource_region)) (and (= "aws" resource_partition) (= "us-east-2" resource_region)) (and (= "aws" resource_partition) (= "us-west-1" resource_region)) (and (= "aws" resource_partition) (= "us-west-2" resource_region))))
+
+; resource service invariant
+(assert (str.in.re resource_service (re.* (re.union (re.range "a" "z") (re.range "0" "9") (str.to.re "-")))))
+
+; resource account invariant
+(assert (str.in.re resource_account (re.union (str.to.re "") (re.loop (re.range "0" "9") 12 12))))
+
+; Goals
+(assert s0.final.allow)
+(assert (not s1.final.allow))
+(check-sat)
+(get-model)

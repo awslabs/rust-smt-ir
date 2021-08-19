@@ -1,0 +1,12 @@
+# This directory will contain incremental build artifacts that you don't want to track.
+/.cargo
+
+# Committing Cargo.lock would be a best practice, but SHA hashes change uncontrollably for Brazil packages.
+# See: https://issues.amazon.com/issues/P38084791
+Cargo.lock
+
+# This is the directory where your brazil-build artifacts go.
+/build
+
+# In case you accidentally run cargo without brazil-build.
+/target/

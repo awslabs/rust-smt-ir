@@ -1,0 +1,19 @@
+[workspace]
+members = [
+    "amzn-smt-ir",
+    "amzn-smt-ir-derive",
+    "amzn-smt-eager-arithmetic",
+    "amzn-smt-string-transformer",
+    "amzn-smt-string-fct-updater",
+    "amzn-smt-prediction",
+]
+
+# ThinLTO seems to be necessary for Fold impls to inline properly and avoid stack overflows
+[profile.dev]
+lto = 'thin'
+[profile.release]
+lto = 'thin'
+[profile.test]
+lto = 'thin'
+[profile.bench]
+lto = 'thin'

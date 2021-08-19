@@ -1,0 +1,3 @@
+(declare-const x String)
+(assert (=> (str.prefixof "s3:foobaz" x) (str.prefixof "s3:" x)))
+(check-sat)

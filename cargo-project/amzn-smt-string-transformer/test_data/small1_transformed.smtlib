@@ -1,0 +1,7 @@
+(declare-const x String)
+(declare-const new_var0 Bool)
+(declare-const new_var1 Bool)
+(assert (= new_var0 (str.prefixof "s3:foobaz" x)))
+(assert (= new_var1 (str.prefixof "s3:" x)))
+(assert (not (=> new_var0 new_var1)))
+(check-sat)

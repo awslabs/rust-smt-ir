@@ -1,0 +1,9 @@
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+
+; resource partition and region invariant
+(assert (not (=> (and (= x y) (= y z)) (= x z))))
+
+(check-sat)
+;(get-model)

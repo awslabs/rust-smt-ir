@@ -1,0 +1,52 @@
+(declare-const actionName String)
+(declare-const p0.allows Bool)
+
+(assert (= p0.allows p0.0.statement.allow))
+(declare-const p0.neutral Bool)
+(assert (= p0.neutral (not p0.0.statement.allow)))
+
+
+(declare-const p1.0.action Bool)
+(assert (= p1.0.action (and (= "s3" actionNamespace) (= "getobject" actionName))))
+
+
+(declare-const p1.0.condition Bool)
+(assert (= p1.0.condition (and |aws:referer_exists| (str.prefixof "http://www.example1.com/" |aws:referer|))))
+
+
+(declare-const p1.0.resource Bool)
+(assert (= p1.0.resource (and (= "arn" resource_prefix) (= "aws" resource_partition) (= "s3" resource_service) (= "" resource_region) (= "" resource_account) (str.prefixof "examplebucket/" resource_resource))))
+
+
+(declare-const p1.0.statement.allow Bool)
+(assert (= p1.0.statement.allow (and p1.0.action p1.0.condition p1.0.resource)))
+
+
+(declare-const p1.denies Bool)
+(assert (not p1.denies))
+(declare-const p1.allows Bool)
+(assert (= p1.allows p1.0.statement.allow))
+(declare-const p1.neutral Bool)
+(assert (= p1.neutral (not p1.0.statement.allow)))
+
+
+(assert (= "arn" resource_prefix))
+
+
+(assert (or (and (= "aws" resource_partition) (= "ap-east-1" resource_region)) (and (= "aws" resource_partition) (= "" resource_region)) (and (= "aws" resource_partition) (= "ap-northeast-1" resource_region)) (and (= "aws" resource_partition) (= "ap-northeast-2" resource_region)) (and (= "aws" resource_partition) (= "ap-northeast-3" resource_region)) (and (= "aws" resource_partition) (= "ap-south-1" resource_region)) (and (= "aws" resource_partition) (= "ap-southeast-1" resource_region)) (and (= "aws" resource_partition) (= "ap-southeast-2" resource_region)) (and (= "aws" resource_partition) (= "ca-central-1" resource_region)) (and (= "aws" resource_partition) (= "eu-central-1" resource_region)) (and (= "aws" resource_partition) (= "eu-north-1" resource_region)) (and (= "aws" resource_partition) (= "eu-west-1" resource_region)) (and (= "aws" resource_partition) (= "eu-west-2" resource_region)) (and (= "aws" resource_partition) (= "eu-west-3" resource_region)) (and (= "aws" resource_partition) (= "me-south-1" resource_region)) (and (= "aws" resource_partition) (= "sa-east-1" resource_region)) (and (= "aws" resource_partition) (= "us-east-1" resource_region)) (and (= "aws" resource_partition) (= "us-east-2" resource_region)) (and (= "aws" resource_partition) (= "us-west-1" resource_region)) (and (= "aws" resource_partition) (= "us-west-2" resource_region))))
+
+
+(assert (str.in.re resource_service (re.* (re.union (re.range "a" "z") (re.range "0" "9") (str.to.re "-")))))
+
+
+(assert (str.in.re resource_account (re.union (str.to.re "") (re.loop (re.range "0" "9") 12 12) (str.to.re "aws") (str.to.re "cloudfront"))))
+
+
+(assert (=> (str.in.re resource_account (re.union (str.to.re "aws") (str.to.re "cloudfront"))) (= resource_service "iam")))
+
+
+(assert p0.allows)
+(assert (not p1.allows))
+
+(check-sat)
+(get-model)

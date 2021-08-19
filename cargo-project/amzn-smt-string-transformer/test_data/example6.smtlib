@@ -1,0 +1,11 @@
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(declare-const a String)
+(declare-const b String)
+(declare-const c String)
+
+(assert (and (not (=> (and (= x y) (= y z)) (= x z))) (not (=> (and (= a b) (= b c)) (= a z)))))
+
+(check-sat)
+;(get-model)

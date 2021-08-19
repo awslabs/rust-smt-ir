@@ -1,0 +1,19 @@
+(declare-const |arnvar| String)
+(declare-const |arnvar_exists| Bool)
+(declare-const resource String)
+
+; If you take this bit out of the two assertions below, you get a nice segfault on automata
+;   (re.++ (str.to.re "us-") (re.* re.allchar))
+
+(declare-const p0.0.condition Bool)
+(assert (= p0.0.condition (and |arnvar_exists| (str.in.re |arnvar| (re.++ (str.to.re "arn:aws:") (re.inter (re.* (re.union (re.range "a" "z") (re.range "0" "9") (str.to.re "-"))) (str.to.re "lambda")) (str.to.re ":") (re.inter (re.union (str.to.re "") (str.to.re "us-west-2")) (re.++ (str.to.re "us-") (re.* re.allchar))) (str.to.re ":") (re.inter (re.union (str.to.re "") (re.loop (re.range "0" "9") 12 12) (str.to.re "aws") (str.to.re "cloudfront")) (str.to.re "012345678901")) (str.to.re ":") (re.++ (str.to.re "function") (re.* re.allchar)))))))
+
+(declare-const p1.0.principal Bool) ; This looks useless but the weird behavior stops if you take it out
+(declare-const p1.0.condition Bool)
+(assert (= p1.0.condition (and |arnvar_exists| (str.in.re |arnvar| (re.++ (str.to.re "arn:aws:") (re.inter (re.* (re.union (re.range "a" "z") (re.range "0" "9") (str.to.re "-"))) (str.to.re "lambda")) (str.to.re ":") (re.inter (re.union (str.to.re "") (str.to.re "us-west-2")) (re.++ (str.to.re "us-") (re.* re.allchar))) (str.to.re ":") (re.inter (re.union (str.to.re "") (re.loop (re.range "0" "9") 12 12) (str.to.re "aws") (str.to.re "cloudfront")) (str.to.re "012345678901")) (str.to.re ":function"))))))
+
+(assert p0.0.condition)
+(assert (not (and p1.0.condition p1.0.principal)))
+
+(check-sat)
+(get-model)
