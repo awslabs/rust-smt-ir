@@ -7,7 +7,7 @@ This is a tool for performing homomorphic transformations on smtlib queries.
 ### Preconditions:
 
 - Make sure you have rust set up and installed.
-  [Here is a link](https://www.rust-lang.org/) to rust resources.
+  [Here is a link](https://www.rust-lang.org/) to Rust information including installation instructions.
 - Install a solver. This tool has been tested with
   [z3](https://github.com/Z3Prover/z3#building-z3-using-make-and-gccclang),
   [cvc4 1.7 and 1.8](http://cvc4.cs.stanford.edu/downloads/builds/x86_64-linux-opt/), and
@@ -18,9 +18,9 @@ This is a tool for performing homomorphic transformations on smtlib queries.
 Clone and setup the repo as follows.
 
 ```
-git clone ssh://git.amazon.com/pkg/Rust-ArgAtsSmtUtils
+git clone https://github.com/awslabs/rust-smt-ir.git
 
-cd Rust-ArgAtsSmtUtils/cargo-project/amzn-smt-string-transformer
+cd rust-smt-ir/cargo-project/amzn-smt-string-transformer
 cargo build --release --target-dir release
 
 ```
@@ -30,7 +30,7 @@ cargo build --release --target-dir release
 ### Converting
 
 The main use case of this tool is to canonicalize an smtlib file. From the
-`cargo-project/amzn-smt-string-transformer` directory:
+`rust-smt-ir/cargo-project/amzn-smt-string-transformer` directory:
 
 ```
 # general case

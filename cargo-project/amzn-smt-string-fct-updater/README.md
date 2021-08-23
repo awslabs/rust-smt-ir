@@ -38,16 +38,16 @@ Make sure you have rust set up and installed.
 ### Setup
 Clone and setup the repo as follows.
 ```
-git clone ssh://git.amazon.com/pkg/Rust-ArgAtsSmtUtils
+git clone https://github.com/awslabs/rust-smt-ir
 
-cd Rust-ArgAtsSmtUtils/cargo-project/amzn-smt-string-fct-updater
+cd rust-smt-ir/cargo-project/amzn-smt-string-fct-updater
 cargo build --release --target-dir release
 ```
 
 ## Usage 
 
 The use case of this tool is to convert an smtlib file to use modern string functions.
-From the `Rust-ArgAtsSmtUtils/cargo-project/amzn-smt-string-fct-updater` directory:
+From the `rust-smt-ir/cargo-project/amzn-smt-string-fct-updater` directory:
 ```
 # general case
 ./release/release/amzn-smt-string-fct-updater <path to file to convert, without file extension>

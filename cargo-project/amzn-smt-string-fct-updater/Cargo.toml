@@ -2,7 +2,7 @@
 name = "amzn-smt-string-fct-updater"
 version = "0.1.0"
 edition = "2018"
-authors = ["Ellen Arteca <artecaea@amazon.com>", "Bruno Dutertre <dutebrun@amazon.com>"]
+authors = ["Ellen Arteca <ellen.arteca@gmail.com>", "Bruno Dutertre <dutebrun@amazon.com>"]
 
 # Setting publish to false prevents the accidental publishing
 # of your code to (the public) crates.io, as described here:
