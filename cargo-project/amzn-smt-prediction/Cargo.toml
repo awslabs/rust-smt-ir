@@ -20,8 +20,4 @@ publish = false
 amzn-smt-ir = { path = "../amzn-smt-ir", version = "0.1" }
 smt2parser = "0.6"
 
-# Example brazil import (Assuming the package TurtleRustCredentialSource is also added to Config)
-# turtle-credential-source = "1.0"
-
-
 # See more Cargo.toml keys and their definitions: https://doc.rust-lang.org/cargo/reference/manifest.html
