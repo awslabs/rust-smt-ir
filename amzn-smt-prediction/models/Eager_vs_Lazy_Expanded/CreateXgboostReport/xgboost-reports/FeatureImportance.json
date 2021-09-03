@@ -1,0 +1,94 @@
+{
+  "features": {
+    "weight": [
+      {
+        "feature": "f0",
+        "importance": 31.26897
+      },
+      {
+        "feature": "f1",
+        "importance": 31.69399
+      },
+      {
+        "feature": "f2",
+        "importance": 0.30358
+      },
+      {
+        "feature": "f3",
+        "importance": 14.63267
+      },
+      {
+        "feature": "f4",
+        "importance": 8.92532
+      },
+      {
+        "feature": "f5",
+        "importance": 0.42502
+      },
+      {
+        "feature": "f6",
+        "importance": 12.75046
+      }
+    ],
+    "gain": [
+      {
+        "feature": "f0",
+        "importance": 8.4689
+      },
+      {
+        "feature": "f1",
+        "importance": 10.30046
+      },
+      {
+        "feature": "f2",
+        "importance": 45.37749
+      },
+      {
+        "feature": "f3",
+        "importance": 11.21201
+      },
+      {
+        "feature": "f4",
+        "importance": 7.9002
+      },
+      {
+        "feature": "f5",
+        "importance": 7.39122
+      },
+      {
+        "feature": "f6",
+        "importance": 9.34972
+      }
+    ],
+    "cover": [
+      {
+        "feature": "f0",
+        "importance": 11.25238
+      },
+      {
+        "feature": "f1",
+        "importance": 12.4261
+      },
+      {
+        "feature": "f2",
+        "importance": 24.07284
+      },
+      {
+        "feature": "f3",
+        "importance": 13.67011
+      },
+      {
+        "feature": "f4",
+        "importance": 11.88518
+      },
+      {
+        "feature": "f5",
+        "importance": 13.00154
+      },
+      {
+        "feature": "f6",
+        "importance": 13.69185
+      }
+    ]
+  }
+}

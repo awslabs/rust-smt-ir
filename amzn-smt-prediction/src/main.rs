@@ -100,8 +100,7 @@ impl Visitor<ALL> for StringCounter {
 // datasets. Defaults to all String predicates
 fn string_counter_csv_header(d: &String) -> String {
     match d.as_str() {
-        "smtcomp" => "str_concat,len,to_re,in_re,re_concat,re_union,re_kleene_star,sing_str_at,substr,prefix_of,contains,index_of,replace,re_kleene_cross,re_range,to_int,from_int\n".to_string(),
-        "zelkova" => "str_concat,len,to_re,in_re,re_all_char,re_concat,re_union,re_intersect,re_kleene_star,substr,prefix_of,suffix_of,contains,re_range,re_loop\n".to_string(),
+        "smtcomp" | "script" => "str_concat,len,to_re,in_re,re_concat,re_union,re_kleene_star,sing_str_at,substr,prefix_of,contains,index_of,replace,re_kleene_cross,re_range,to_int,from_int\n".to_string(),
         "kepler" => "str_concat,len\n".to_string(),
         _ => "str_concat,len,lex_ord,to_re,in_re,re_none,re_all,re_all_char,re_concat,re_union,re_intersect,re_kleene_star,ref_clos_lex_ord,sing_str_at,substr,prefix_of,suffix_of,contains,index_of,replace,replace_all,replace_re,replace_re_all,re_compl,re_diff,re_kleene_cross,re_opt,re_range,re_pow,re_loop,is_digit,to_code,from_code,to_int,from_int\n".to_string()
     }
@@ -142,27 +141,6 @@ fn string_counter_csv_smtcomp(x: StringCounter) -> String {
     )
 }
 
-fn string_counter_csv_zelkova(x: StringCounter) -> String {
-    format!(
-        "{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}\n",
-        x.str_concat,
-        x.len,
-        x.to_re,
-        x.in_re,
-        x.re_all_char,
-        x.re_concat,
-        x.re_union,
-        x.re_intersect,
-        x.re_kleene_star,
-        x.substr,
-        x.prefix_of,
-        x.suffix_of,
-        x.contains,
-        x.re_range,
-        x.re_loop
-    )
-}
-
 fn string_counter_csv_kepler(x: StringCounter) -> String {
     format!("{},{}\n", x.str_concat, x.len)
 }
@@ -171,8 +149,8 @@ fn main() -> std::io::Result<()> {
     let args: Vec<String> = env::args().collect();
 
     if args.len() < 4 {
-        println!("Usage: cargo run <dataset> <path_to_benchmark_list> <name_for_output>");
-        println!("Valid values of dataset: smtcomp, zelkova, kepler, other");
+        println!("Usage: amzn-smt-prediction <dataset> <path_to_benchmark_list> <name_for_output>");
+        println!("Valid values of dataset: smtcomp, kepler, other");
         exit(1)
     }
 
@@ -197,7 +175,7 @@ fn main() -> std::io::Result<()> {
         // Prepend file path
         match dataset.as_str() {
             "smtcomp" | "kepler" => file_name = String::from("SMT_Comp_2020"),
-            "zelkova" => file_name = String::from("Zelkova/problems/"),
+            "script" => file_name = String::from("./"),
             "other" => {
                 println!("No dataset specified. Looking for benchmarks in current directory.");
                 file_name = String::from("./");
@@ -228,11 +206,8 @@ fn main() -> std::io::Result<()> {
 
                 // Write a line to the CSV file
                 match dataset.as_str() {
-                    "smtcomp" => {
+                    "smtcomp" | "script" => {
                         out_writer.write_all(string_counter_csv_smtcomp(counter).as_bytes())?
-                    }
-                    "zelkova" => {
-                        out_writer.write_all(string_counter_csv_zelkova(counter).as_bytes())?
                     }
                     "kepler" => {
                         out_writer.write_all(string_counter_csv_kepler(counter).as_bytes())?

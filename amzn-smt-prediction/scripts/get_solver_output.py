@@ -7,6 +7,42 @@ solvers = ['cvc4', 'z3'] # TODO If adding a new solver, add it here
 
 timeout = 10
 
+
+
+# Runs CVC4 on the problem at b_path and returns the output of the solver
+# If fmf == True, runs with the --strings-fmf option
+def get_cvc4_output(b_path, fmf):
+
+    # WARNING: Using shell=True below introduces some security risks
+    #          (see https://docs.python.org/3/library/subprocess.html#security-considerations)
+    #          In this case it is necessary as CVC4 can't parse the cmdline options when shell=False.
+    try:
+        if fmf:
+            raw_out = subprocess.run("../solvers/cvc4 --strings-exp --rewrite-divk --strings-fmf -t strings-lemma -t strings-conflict " + b_path, capture_output=True, text=True, shell=True, timeout=timeout)
+        else:
+            raw_out = subprocess.run("../solvers/cvc4 --strings-exp --rewrite-divk -t strings-lemma -t strings-conflict " + b_path, capture_output=True, text=True, shell=True, timeout=timeout)
+
+        out = raw_out.stdout.strip()
+
+    except subprocess.TimeoutExpired as e:
+        out = str(e.stdout, 'utf-8')
+
+    return out
+
+
+
+# Runs Z3 on the problem at b_path and returns the output of the solver
+# TODO Set options to enable Z3 output of lemmas
+def get_z3_output(b_path):
+    try:
+        raw_out = subprocess.run(["../solvers/z3", b_path], capture_output=True, text=True, timeout=timeout)
+        out = raw_out.stdout.strip()
+    except subprocess.TimeoutExpired as e:
+        out = str(e.stdout, 'utf-8')
+
+    return out
+
+
 if __name__=='__main__':
 
     # NOTE: A subset of SMT Comp 2020 benchmarks timed out after 300 seconds because CVC4 used a run
@@ -48,29 +84,8 @@ if __name__=='__main__':
 
         fp_out = open(path + '/' + solver + "_rawout_" + b_name, 'w')
 
-        # WARNING: Using shell=True below introduces some security risks
-        #          (see https://docs.python.org/3/library/subprocess.html#security-considerations)
-        #          In this case it is necessary as CVC4 can't parse the cmdline options when shell=False.
-        if solver == 'cvc4':
-            try:
-                if fmf:
-                    raw_out = subprocess.run("../solvers/cvc4 --strings-exp --rewrite-divk --strings-fmf -t strings-lemma -t strings-conflict " + b_path, capture_output=True, text=True, shell=True, timeout=timeout)
-
-                else:
-                    raw_out = subprocess.run("../solvers/cvc4 --strings-exp --rewrite-divk -t strings-lemma -t strings-conflict " + b_path, capture_output=True, text=True, shell=True, timeout=timeout)
-
-                out = raw_out.stdout.strip()
-
-            except subprocess.TimeoutExpired as e:
-                out = str(e.stdout, 'utf-8')
-
-        # TODO Set options to enable Z3 output of lemmas
-        elif solver == 'z3':
-            try:
-                raw_out = subprocess.run(["../solvers/z3", b_path], capture_output=True, text=True, timeout=timeout)
-                out = raw_out.stdout.strip()
-            except subprocess.TimeoutExpired as e:
-                out = str(e.stdout, 'utf-8')
+        if solver == 'cvc4': out = get_cvc4_output(b_path, fmf)
+        elif solver == 'z3': out = get_z3_output(b_path)
 
         fp_out.write(out)
         fp_out.close()
@@ -78,3 +93,4 @@ if __name__=='__main__':
 
     fp_in.close()
     print("Done!")
+
