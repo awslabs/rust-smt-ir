@@ -4,9 +4,17 @@
 # the counts.
 
 import os, sys
-from statistics import stdev
 
 solvers = ['cvc4', 'z3'] # TODO If adding a new solver, add it here
+
+
+# For each line in the raw output of the solver,
+# write the length of the line to a new file
+def write_word_counts(fp_raw_out, fp_count_out):
+    for l in fp_raw_out:
+        num_words = len(l.split())
+        fp_count_out.write(str(num_words) + '\n')
+
 
 if __name__=='__main__':
 
@@ -30,34 +38,19 @@ if __name__=='__main__':
 
     i = 0
 
-    for l1 in fp_in:
+    for l in fp_in:
         i += 1
 
-        counts   = []
-        curr_min = float('inf')
-        curr_max = 0
-
-        b_path = l1[1:-1] # Strip off leading slash and trailing newline
+        b_path = l[1:-1] # Strip off leading slash and trailing newline
         b_name = b_path.replace('/', '_').strip('.smt2')
  
-        fp_raw_output = open(path_to_read  + '/' + solver + "_rawout_" + b_name)     # Path to output of solver
-        fp_out        = open(path_to_write + '/' + solver + "_count_" + b_name, 'w') # Path where we will write the word counts
+        fp_raw_out   = open(path_to_read  + '/' + solver + "_rawout_" + b_name)     # Path to raw output of solver
+        fp_count_out = open(path_to_write + '/' + solver + "_count_" + b_name, 'w') # Path where we will write the word counts
 
-        for l2 in fp_raw_output:
-            num_words = len(l2.split())
+        write_word_counts(fp_raw_out, fp_count_out)
 
-            if num_words < curr_min: curr_min = num_words
-            if num_words > curr_max: curr_max = num_words
-
-            counts.append(num_words)
-            fp_out.write(str(num_words) + "\n")
-
-        # Output stats
-        # Should be useful for determining reasonable distributions for crafting model features from word counts
-        print(str(i) + ": Min=" + str(curr_min) + ", Max=" + str(curr_max), ", Stdev=" + str(round(stdev(counts), 2)))
-
-        fp_raw_output.close()
-        fp_out.close()
+        fp_raw_out.close()
+        fp_count_out.close()
 
 
     fp_in.close()

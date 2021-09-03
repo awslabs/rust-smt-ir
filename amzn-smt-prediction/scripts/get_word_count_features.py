@@ -11,9 +11,12 @@ theories  = ['qf_slia']    # TODO If adding a new theory, add it here
 # -- Number of lines with exactly 9 words
 # -- Number of lines with between 10 and 100 words
 # -- Number of lines with more than 100 words
-buckets = [7, 8, 9, 10, 20, 40, 60, 80, 100]
+default_buckets = [7, 8, 9, 10, 20, 40, 60, 80, 100]
 
-def get_bucket_labels():
+
+
+# Returns a CSV String with the bucket labels
+def get_bucket_labels(buckets=default_buckets):
     out = "less_than_" + str(buckets[0]) + ","
     i = 1
 
@@ -28,6 +31,36 @@ def get_bucket_labels():
 
     out += "over_" + str(buckets[i-1]) + "\n"
     return out
+
+
+
+# Given a file pointer to a list of word counts,
+# computes the feature vector based on the given buckets
+def get_features(fp_count_out, buckets=default_buckets):
+
+    # Initialize feature vector with all zeros
+    features = [0 for i in range(len(default_buckets)+1)]
+
+    for l in fp_count_out:
+        num_words = int(l.strip())
+        
+        # Determine which bucket the count falls into
+        placed = False
+        for i in range(len(buckets)):
+            if num_words < buckets[i]:
+                features[i] += 1
+                placed = True
+                break
+        
+        # If it didn't go in one yet, it goes in the last one (greater than the highest bucket limit)
+        if not placed:
+            features[len(buckets)] += 1
+
+
+    
+    return features
+
+
 
 if __name__=='__main__':
 
@@ -61,39 +94,23 @@ if __name__=='__main__':
 
     i = 0
 
-    for l1 in fp_in:
+    for l in fp_in:
         i += 1
 
-        features = [0 for i in range(len(buckets)+1)]
-
-        b_path = l1[1:-1] # Strip off leading slash and trailing newline
+        b_path = l[1:-1] # Strip off leading slash and trailing newline
         b_name = b_path.replace('/', '_').strip('.smt2')
 
         print(b_name)
  
-        fp_count_output = open(path_to_read  + '/' + solver + "_count_" + b_name) # Path to list of word counts
+        fp_count_out = open(path_to_read  + '/' + solver + "_count_" + b_name) # Path to list of word counts
 
-        for l2 in fp_count_output:
-            num_words = int(l2.strip())
-        
-            # Determine which bucket the count falls into
-            placed = False
-            for i in range(len(buckets)):
-                if num_words < buckets[i]:
-                    features[i] += 1
-                    placed = True
-                    break
-        
-            # If it didn't go in one yet, it goes in the last one (greater than the highest bucket limit)
-            if not placed:
-                features[len(buckets)] += 1
-        
-
-        out_list = [str(x) for x in features]
+        features = get_features(fp_count_out) # Generate feature vector
+        out_list = [str(x) for x in features] # Convert to list of strings
         out_str  = ",".join(out_list) + "\n"  # Convert features to comma-delimited string
+
         fp_out.write(out_str)
 
-        fp_count_output.close()
+        fp_count_out.close()
 
 
     fp_in.close()

@@ -1,0 +1,204 @@
+{
+  "category_loss_per_step": [
+    {
+      "steps": 0,
+      "loss": 0.1954,
+      "category": "train-merror"
+    },
+    {
+      "steps": 5,
+      "loss": 0.14943,
+      "category": "train-merror"
+    },
+    {
+      "steps": 10,
+      "loss": 0.08046,
+      "category": "train-merror"
+    },
+    {
+      "steps": 15,
+      "loss": 0.06897,
+      "category": "train-merror"
+    },
+    {
+      "steps": 20,
+      "loss": 0.04598,
+      "category": "train-merror"
+    },
+    {
+      "steps": 25,
+      "loss": 0.04598,
+      "category": "train-merror"
+    },
+    {
+      "steps": 30,
+      "loss": 0.02299,
+      "category": "train-merror"
+    },
+    {
+      "steps": 35,
+      "loss": 0.02299,
+      "category": "train-merror"
+    },
+    {
+      "steps": 40,
+      "loss": 0.02299,
+      "category": "train-merror"
+    },
+    {
+      "steps": 45,
+      "loss": 0.03448,
+      "category": "train-merror"
+    },
+    {
+      "steps": 50,
+      "loss": 0.03448,
+      "category": "train-merror"
+    },
+    {
+      "steps": 55,
+      "loss": 0.03448,
+      "category": "train-merror"
+    },
+    {
+      "steps": 60,
+      "loss": 0.03448,
+      "category": "train-merror"
+    },
+    {
+      "steps": 65,
+      "loss": 0.03448,
+      "category": "train-merror"
+    },
+    {
+      "steps": 70,
+      "loss": 0.03448,
+      "category": "train-merror"
+    },
+    {
+      "steps": 75,
+      "loss": 0.02299,
+      "category": "train-merror"
+    },
+    {
+      "steps": 80,
+      "loss": 0.02299,
+      "category": "train-merror"
+    },
+    {
+      "steps": 85,
+      "loss": 0.02299,
+      "category": "train-merror"
+    },
+    {
+      "steps": 90,
+      "loss": 0.02299,
+      "category": "train-merror"
+    },
+    {
+      "steps": 95,
+      "loss": 0.02299,
+      "category": "train-merror"
+    },
+    {
+      "steps": 0,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 5,
+      "loss": 0.51724,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 10,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 15,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 20,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 25,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 30,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 35,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 40,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 45,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 50,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 55,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 60,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 65,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 70,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 75,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 80,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 85,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 90,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    },
+    {
+      "steps": 95,
+      "loss": 0.48276,
+      "category": "validation-merror"
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 
 ## Benchmarks
 
-The benchmarks were downloaded from [StarExec](https://www.starexec.org/starexec/secure/explore/spaces.jsp?id=406432) in space ``root/SMT/SMT-LIB benchmarks/2020-04-25``.
+The benchmarks were downloaded from [StarExec](https://www.starexec.org/starexec/secure/explore/spaces.jsp?id=406432) in space ``root/SMT/SMT-LIB benchmarks/2020-04-25/non-incremental/QF_SLIA`` and were stored in ``SMT_Comp_2020/non-incremental``.
 
 To select which benchmarks to include in training and evaluating our model, we started from the [results of the competition](https://github.com/SMT-COMP/smt-comp/tree/master/2020/results/single-query).
 
@@ -32,11 +32,11 @@ The benchmarks are split into two groups due to the way CVC4 was configured to r
 
 The script ``get_file_length_features.py`` simply generates a file with the number of lines in each benchmark file. This was used in some predictive models as a weak benchmark.
 
-NOTE: The following three scripts MUST be run sequentially. They are located in the ``scripts`` folder at the root of the repo (NOT the ``scripts`` folder within ``SMT_COMP_2020``).
+NOTE: The following three scripts MUST be run sequentially.
 
 The script ``get_solver_output.py`` generates the raw output of a solver for a list of benchmarks. This script can be ran directly, but Bash scripts are also provided which run this script for CVC4 on the SMT Comp 2020 benchmarks: ``get_solver_output_fmf.sh`` and ``get_solver_output_no_fmf.sh``.
 
-Next, the script ``get_word_counts.py`` generates a file for each benchmark corresponding to the number of words in each line of the raw output. It also outputs some statistics as it runs to give the user an idea of the distribution of the counts.
+Next, the script ``get_word_counts.py`` generates a file for each benchmark corresponding to the number of words in each line of the raw output.
 
 Finally, the script ``get_word_count_features.py`` generates a feature set, each of which is the number of lines with x words. For example, less than 9 words, between 10 and 100, and more than 100.
 
@@ -47,5 +47,7 @@ In addition to predicting runtime, we also used this dataset to train a model on
 
 ### Data Processing
 
-We expected that the option would improve runtime on many of the benchmarks within ``experiments_QF_SLIA/benchmarks_QF_SLIA_30-to-300.csv`` as these are the ones which were solved by CVC4 using that option. We ran the script ``scripts/find_faster.sh`` to run CVC4 with and without ``--strings-fmf`` and stored those which were faster in ``SMT_Comp_2020/experiments_CVC4_FMF/faster_fmf.csv`` and those which were slower in ``SMT_Comp_2020/experiments_CVC4_FMF/slower_fmf.csv``. Note that we also added all of the benchmarks from ``experiments_QF_SLIA/benchmarks_QF_SLIA_300-to-1200.csv`` to ``SMT_Comp_2020/experiments_CVC4_FMF/slower_fmf.csv`` as CVC4 timed out on these benchmarks in SMT Comp 2020.
+We expected that the option would improve runtime on many of the benchmarks within ``experiments_QF_SLIA/benchmarks_QF_SLIA_30-to-300.csv`` as these are the ones which were solved by CVC4 using that option. We ran the script ``find_faster_fmf.sh`` (which calls ``find_faster_fmf.py``) to run CVC4 with and without ``--strings-fmf`` and stored those which were faster in ``SMT_Comp_2020/experiments_CVC4_FMF/faster_fmf.csv`` and those which were slower in ``SMT_Comp_2020/experiments_CVC4_FMF/slower_fmf.csv``. Note that we also added all of the benchmarks from ``experiments_QF_SLIA/benchmarks_QF_SLIA_300-to-1200.csv`` to ``SMT_Comp_2020/experiments_CVC4_FMF/slower_fmf.csv`` as CVC4 timed out on these benchmarks in SMT Comp 2020.
+
+Then, the scripts ``get_solver_output_fmf_faster.sh`` and ``get_solver_output_fmf_slower.sh`` were run to call ``get_solver_output.py`` on these benchmark sets to generate the solver output on them (after which, ``get_word_counts.py`` and ``get_word_count_features.py`` were called as described above in order to generate the features for the model).
 

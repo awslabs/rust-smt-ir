@@ -1,0 +1,266 @@
+Encoding /home/maxhelle/QF_IDL/bcnscheduling/bcnscheduling100.smt2
+vars: 20, constraints: 1551, a_max: 1, b_max: 85, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/bcnscheduling/bcnscheduling120.smt2
+vars: 20, constraints: 1551, a_max: 1, b_max: 105, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/bcnscheduling/bcnscheduling130.smt2
+vars: 20, constraints: 1551, a_max: 1, b_max: 115, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/bcnscheduling/bcnscheduling145.smt2
+vars: 20, constraints: 1551, a_max: 1, b_max: 130, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/bcnscheduling/bcnscheduling142.smt2
+vars: 20, constraints: 1551, a_max: 1, b_max: 127, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/bcnscheduling/bcnscheduling143.smt2
+vars: 20, constraints: 1551, a_max: 1, b_max: 128, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/bcnscheduling/bcnscheduling144.smt2
+vars: 20, constraints: 1551, a_max: 1, b_max: 129, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/bcnscheduling/bcnscheduling140.smt2
+vars: 20, constraints: 1551, a_max: 1, b_max: 125, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop2-2-1-1-2-4-9.smt2
+vars: 5, constraints: 10, a_max: 1, b_max: 6, k: 0, w: 2, bound: 7 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop12-2-6-6-4-4-11.smt2
+vars: 49, constraints: 480, a_max: 1, b_max: 7, k: 0, w: 2, bound: 10 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop12-2-6-6-2-4-12.smt2
+vars: 49, constraints: 480, a_max: 1, b_max: 10, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/bcnscheduling/bcnscheduling105.smt2
+vars: 20, constraints: 1551, a_max: 1, b_max: 90, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/bcnscheduling/bcnscheduling110.smt2
+vars: 20, constraints: 1551, a_max: 1, b_max: 95, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop14-2-7-7-4-4-11.smt2
+vars: 57, constraints: 644, a_max: 1, b_max: 7, k: 0, w: 2, bound: 10 bits
+Encoding /home/maxhelle/QF_IDL/bcnscheduling/bcnscheduling141.smt2
+vars: 20, constraints: 1551, a_max: 1, b_max: 126, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop2-2-1-1-4-4-12.smt2
+vars: 5, constraints: 10, a_max: 1, b_max: 8, k: 0, w: 2, bound: 7 bits
+Encoding /home/maxhelle/QF_IDL/bcnscheduling/bcnscheduling139.smt2
+vars: 20, constraints: 1551, a_max: 1, b_max: 124, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop2-2-1-1-2-4-12.smt2
+vars: 5, constraints: 10, a_max: 1, b_max: 10, k: 0, w: 2, bound: 7 bits
+Encoding /home/maxhelle/QF_IDL/bcnscheduling/bcnscheduling138.smt2
+vars: 20, constraints: 1551, a_max: 1, b_max: 123, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop26-2-13-13-2-4-12.smt2
+vars: 105, constraints: 2132, a_max: 1, b_max: 12, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop18-2-9-9-4-4-11.smt2
+vars: 73, constraints: 1044, a_max: 1, b_max: 8, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop24-2-12-12-4-4-11.smt2
+vars: 97, constraints: 1824, a_max: 1, b_max: 11, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop24-2-12-12-2-4-9.smt2
+vars: 97, constraints: 1824, a_max: 1, b_max: 11, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop34-2-17-17-4-4-11.smt2
+vars: 137, constraints: 3604, a_max: 1, b_max: 16, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop40-2-20-20-2-4-9.smt2
+vars: 161, constraints: 4960, a_max: 1, b_max: 19, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop34-2-17-17-2-4-12.smt2
+vars: 137, constraints: 3604, a_max: 1, b_max: 16, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop40-2-20-20-4-4-11.smt2
+vars: 161, constraints: 4960, a_max: 1, b_max: 19, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop38-2-19-19-2-4-12.smt2
+vars: 153, constraints: 4484, a_max: 1, b_max: 18, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop4-2-2-2-2-4-12.smt2
+vars: 17, constraints: 64, a_max: 1, b_max: 10, k: 0, w: 2, bound: 9 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop20-2-10-10-4-4-11.smt2
+vars: 81, constraints: 1280, a_max: 1, b_max: 9, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop30-2-15-15-4-4-11.smt2
+vars: 121, constraints: 2820, a_max: 1, b_max: 14, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop18-2-9-9-4-4-12.smt2
+vars: 73, constraints: 1044, a_max: 1, b_max: 8, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop30-2-15-15-2-4-12.smt2
+vars: 121, constraints: 2820, a_max: 1, b_max: 14, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop34-2-17-17-4-4-12.smt2
+vars: 137, constraints: 3604, a_max: 1, b_max: 16, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop46-2-23-23-4-4-12.smt2
+vars: 185, constraints: 6532, a_max: 1, b_max: 22, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop56-2-28-28-2-4-12.smt2
+vars: 225, constraints: 9632, a_max: 1, b_max: 27, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop54-2-27-27-2-4-9.smt2
+vars: 217, constraints: 8964, a_max: 1, b_max: 26, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop60-2-30-30-4-4-12.smt2
+vars: 241, constraints: 11040, a_max: 1, b_max: 29, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop26-2-13-13-2-4-9.smt2
+vars: 105, constraints: 2132, a_max: 1, b_max: 12, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop22-2-11-11-2-4-9.smt2
+vars: 89, constraints: 1540, a_max: 1, b_max: 10, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop36-2-18-18-2-4-12.smt2
+vars: 145, constraints: 4032, a_max: 1, b_max: 17, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop14-2-7-7-2-4-12.smt2
+vars: 57, constraints: 644, a_max: 1, b_max: 10, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop26-2-13-13-4-4-12.smt2
+vars: 105, constraints: 2132, a_max: 1, b_max: 12, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop52-2-26-26-4-4-12.smt2
+vars: 209, constraints: 8320, a_max: 1, b_max: 25, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop36-2-18-18-4-4-12.smt2
+vars: 145, constraints: 4032, a_max: 1, b_max: 17, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop22-2-11-11-2-4-12.smt2
+vars: 89, constraints: 1540, a_max: 1, b_max: 10, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop10-2-5-5-2-4-12.smt2
+vars: 41, constraints: 340, a_max: 1, b_max: 10, k: 0, w: 2, bound: 10 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop28-2-14-14-4-4-11.smt2
+vars: 113, constraints: 2464, a_max: 1, b_max: 13, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop42-2-21-21-2-4-9.smt2
+vars: 169, constraints: 5460, a_max: 1, b_max: 20, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop56-2-28-28-4-4-12.smt2
+vars: 225, constraints: 9632, a_max: 1, b_max: 27, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop20-2-10-10-2-4-9.smt2
+vars: 81, constraints: 1280, a_max: 1, b_max: 9, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop50-2-25-25-4-4-11.smt2
+vars: 201, constraints: 7700, a_max: 1, b_max: 24, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop6-2-3-3-4-4-11.smt2
+vars: 25, constraints: 132, a_max: 1, b_max: 7, k: 0, w: 2, bound: 9 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop44-2-22-22-4-4-11.smt2
+vars: 177, constraints: 5984, a_max: 1, b_max: 21, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop6-2-3-3-4-4-12.smt2
+vars: 25, constraints: 132, a_max: 1, b_max: 8, k: 0, w: 2, bound: 9 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop38-2-19-19-4-4-12.smt2
+vars: 153, constraints: 4484, a_max: 1, b_max: 18, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop56-2-28-28-2-4-9.smt2
+vars: 225, constraints: 9632, a_max: 1, b_max: 27, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop22-2-11-11-4-4-11.smt2
+vars: 89, constraints: 1540, a_max: 1, b_max: 10, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop6-2-3-3-2-4-9.smt2
+vars: 25, constraints: 132, a_max: 1, b_max: 7, k: 0, w: 2, bound: 9 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop46-2-23-23-4-4-11.smt2
+vars: 185, constraints: 6532, a_max: 1, b_max: 22, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop32-2-16-16-2-4-9.smt2
+vars: 129, constraints: 3200, a_max: 1, b_max: 15, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop32-2-16-16-4-4-12.smt2
+vars: 129, constraints: 3200, a_max: 1, b_max: 15, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop30-2-15-15-4-4-12.smt2
+vars: 121, constraints: 2820, a_max: 1, b_max: 14, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop20-2-10-10-2-4-12.smt2
+vars: 81, constraints: 1280, a_max: 1, b_max: 10, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop10-2-5-5-2-4-9.smt2
+vars: 41, constraints: 340, a_max: 1, b_max: 7, k: 0, w: 2, bound: 10 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop40-2-20-20-2-4-12.smt2
+vars: 161, constraints: 4960, a_max: 1, b_max: 19, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop60-2-30-30-2-4-12.smt2
+vars: 241, constraints: 11040, a_max: 1, b_max: 29, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop34-2-17-17-2-4-9.smt2
+vars: 137, constraints: 3604, a_max: 1, b_max: 16, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop2-2-1-1-4-4-11.smt2
+vars: 5, constraints: 10, a_max: 1, b_max: 7, k: 0, w: 2, bound: 7 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop12-2-6-6-2-4-9.smt2
+vars: 49, constraints: 480, a_max: 1, b_max: 7, k: 0, w: 2, bound: 10 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop16-2-8-8-2-4-9.smt2
+vars: 65, constraints: 832, a_max: 1, b_max: 7, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop38-2-19-19-4-4-11.smt2
+vars: 153, constraints: 4484, a_max: 1, b_max: 18, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop42-2-21-21-4-4-11.smt2
+vars: 169, constraints: 5460, a_max: 1, b_max: 20, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop28-2-14-14-2-4-9.smt2
+vars: 113, constraints: 2464, a_max: 1, b_max: 13, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop58-2-29-29-4-4-11.smt2
+vars: 233, constraints: 10324, a_max: 1, b_max: 28, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop42-2-21-21-4-4-12.smt2
+vars: 169, constraints: 5460, a_max: 1, b_max: 20, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop50-2-25-25-4-4-12.smt2
+vars: 201, constraints: 7700, a_max: 1, b_max: 24, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop14-2-7-7-4-4-12.smt2
+vars: 57, constraints: 644, a_max: 1, b_max: 8, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop32-2-16-16-4-4-11.smt2
+vars: 129, constraints: 3200, a_max: 1, b_max: 15, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop16-2-8-8-4-4-11.smt2
+vars: 65, constraints: 832, a_max: 1, b_max: 7, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop36-2-18-18-4-4-11.smt2
+vars: 145, constraints: 4032, a_max: 1, b_max: 17, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop14-2-7-7-2-4-9.smt2
+vars: 57, constraints: 644, a_max: 1, b_max: 7, k: 0, w: 2, bound: 10 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop30-2-15-15-2-4-9.smt2
+vars: 121, constraints: 2820, a_max: 1, b_max: 14, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop12-2-6-6-4-4-12.smt2
+vars: 49, constraints: 480, a_max: 1, b_max: 8, k: 0, w: 2, bound: 10 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop24-2-12-12-4-4-12.smt2
+vars: 97, constraints: 1824, a_max: 1, b_max: 11, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop56-2-28-28-4-4-11.smt2
+vars: 225, constraints: 9632, a_max: 1, b_max: 27, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop8-2-4-4-4-4-11.smt2
+vars: 33, constraints: 224, a_max: 1, b_max: 7, k: 0, w: 2, bound: 10 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop18-2-9-9-2-4-12.smt2
+vars: 73, constraints: 1044, a_max: 1, b_max: 10, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop40-2-20-20-4-4-12.smt2
+vars: 161, constraints: 4960, a_max: 1, b_max: 19, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop54-2-27-27-4-4-11.smt2
+vars: 217, constraints: 8964, a_max: 1, b_max: 26, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop10-2-5-5-4-4-11.smt2
+vars: 41, constraints: 340, a_max: 1, b_max: 7, k: 0, w: 2, bound: 10 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop52-2-26-26-2-4-12.smt2
+vars: 209, constraints: 8320, a_max: 1, b_max: 25, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop58-2-29-29-4-4-12.smt2
+vars: 233, constraints: 10324, a_max: 1, b_max: 28, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop36-2-18-18-2-4-9.smt2
+vars: 145, constraints: 4032, a_max: 1, b_max: 17, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop32-2-16-16-2-4-12.smt2
+vars: 129, constraints: 3200, a_max: 1, b_max: 15, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop48-2-24-24-4-4-12.smt2
+vars: 193, constraints: 7104, a_max: 1, b_max: 23, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop44-2-22-22-4-4-12.smt2
+vars: 177, constraints: 5984, a_max: 1, b_max: 21, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop16-2-8-8-2-4-12.smt2
+vars: 65, constraints: 832, a_max: 1, b_max: 10, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop24-2-12-12-2-4-12.smt2
+vars: 97, constraints: 1824, a_max: 1, b_max: 11, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop20-2-10-10-4-4-12.smt2
+vars: 81, constraints: 1280, a_max: 1, b_max: 9, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop54-2-27-27-2-4-12.smt2
+vars: 217, constraints: 8964, a_max: 1, b_max: 26, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop22-2-11-11-4-4-12.smt2
+vars: 89, constraints: 1540, a_max: 1, b_max: 10, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop28-2-14-14-4-4-12.smt2
+vars: 113, constraints: 2464, a_max: 1, b_max: 13, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop44-2-22-22-2-4-9.smt2
+vars: 177, constraints: 5984, a_max: 1, b_max: 21, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop52-2-26-26-4-4-11.smt2
+vars: 209, constraints: 8320, a_max: 1, b_max: 25, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop50-2-25-25-2-4-9.smt2
+vars: 201, constraints: 7700, a_max: 1, b_max: 24, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop48-2-24-24-2-4-9.smt2
+vars: 193, constraints: 7104, a_max: 1, b_max: 23, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop38-2-19-19-2-4-9.smt2
+vars: 153, constraints: 4484, a_max: 1, b_max: 18, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop18-2-9-9-2-4-9.smt2
+vars: 73, constraints: 1044, a_max: 1, b_max: 8, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop6-2-3-3-2-4-12.smt2
+vars: 25, constraints: 132, a_max: 1, b_max: 10, k: 0, w: 2, bound: 10 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop8-2-4-4-2-4-12.smt2
+vars: 33, constraints: 224, a_max: 1, b_max: 10, k: 0, w: 2, bound: 10 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop60-2-30-30-4-4-11.smt2
+vars: 241, constraints: 11040, a_max: 1, b_max: 29, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop16-2-8-8-4-4-12.smt2
+vars: 65, constraints: 832, a_max: 1, b_max: 8, k: 0, w: 2, bound: 11 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop4-2-2-2-4-4-12.smt2
+vars: 17, constraints: 64, a_max: 1, b_max: 8, k: 0, w: 2, bound: 9 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop50-2-25-25-2-4-12.smt2
+vars: 201, constraints: 7700, a_max: 1, b_max: 24, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop26-2-13-13-4-4-11.smt2
+vars: 105, constraints: 2132, a_max: 1, b_max: 12, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop4-2-2-2-4-4-11.smt2
+vars: 17, constraints: 64, a_max: 1, b_max: 7, k: 0, w: 2, bound: 9 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop58-2-29-29-2-4-12.smt2
+vars: 233, constraints: 10324, a_max: 1, b_max: 28, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop10-2-5-5-4-4-12.smt2
+vars: 41, constraints: 340, a_max: 1, b_max: 8, k: 0, w: 2, bound: 10 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop28-2-14-14-2-4-12.smt2
+vars: 113, constraints: 2464, a_max: 1, b_max: 13, k: 0, w: 2, bound: 12 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop48-2-24-24-4-4-11.smt2
+vars: 193, constraints: 7104, a_max: 1, b_max: 23, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop42-2-21-21-2-4-12.smt2
+vars: 169, constraints: 5460, a_max: 1, b_max: 20, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop4-2-2-2-2-4-9.smt2
+vars: 17, constraints: 64, a_max: 1, b_max: 7, k: 0, w: 2, bound: 9 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop8-2-4-4-4-4-12.smt2
+vars: 33, constraints: 224, a_max: 1, b_max: 8, k: 0, w: 2, bound: 10 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop58-2-29-29-2-4-9.smt2
+vars: 233, constraints: 10324, a_max: 1, b_max: 28, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop8-2-4-4-2-4-9.smt2
+vars: 33, constraints: 224, a_max: 1, b_max: 7, k: 0, w: 2, bound: 10 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop54-2-27-27-4-4-12.smt2
+vars: 217, constraints: 8964, a_max: 1, b_max: 26, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop44-2-22-22-2-4-12.smt2
+vars: 177, constraints: 5984, a_max: 1, b_max: 21, k: 0, w: 2, bound: 13 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop52-2-26-26-2-4-9.smt2
+vars: 209, constraints: 8320, a_max: 1, b_max: 25, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop46-2-23-23-2-4-12.smt2
+vars: 185, constraints: 6532, a_max: 1, b_max: 22, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop48-2-24-24-2-4-12.smt2
+vars: 193, constraints: 7104, a_max: 1, b_max: 23, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop46-2-23-23-2-4-9.smt2
+vars: 185, constraints: 6532, a_max: 1, b_max: 22, k: 0, w: 2, bound: 14 bits
+Encoding /home/maxhelle/QF_IDL/job_shop/jobshop60-2-30-30-2-4-9.smt2
+vars: 241, constraints: 11040, a_max: 1, b_max: 29, k: 0, w: 2, bound: 14 bits

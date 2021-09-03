@@ -1,0 +1,776 @@
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/handler_sigchld/prp-1-47.smt2
+vars: 5675, constraints: 12138, a_max: 1, b_max: 2147483647, k: 0, w: 2, bound: 45 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/handler_sigchld/prp-9-48.smt2
+vars: 6052, constraints: 12959, a_max: 1, b_max: 2147483647, k: 0, w: 2, bound: 45 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/int_from_list/prp-44-43.smt2
+vars: 5126, constraints: 11775, a_max: 1, b_max: 2147483647, k: 0, w: 2, bound: 45 bits
+vars: 33, constraints: 64, a_max: 1, b_max: 1, k: 0, w: 2, bound: 8 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/handler_sigchld/prp-2-48.smt2
+vars: 6052, constraints: 12959, a_max: 1, b_max: 2147483647, k: 0, w: 2, bound: 45 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/med/checkpass_pwd/prp-1-21.smt2
+vars: 359, constraints: 668, a_max: 1, b_max: 2147483647, k: 6, w: 3, bound: 59 bits
+vars: 691, constraints: 1657, a_max: 1, b_max: 629, k: 0, w: 1, bound: 20 bits
+Encoding /home/maxhelle/QF_LIA/20180326-Bromberger/more_slacked/CAV_2009_benchmarks/smt/10-vars/v10_problem__018.smt2.slack.smt2
+vars: 20, constraints: 40, a_max: 3, b_max: 1, k: 20, w: 11, bound: 112 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/getoption_group/prp-51-46.smt2
+vars: 7178, constraints: 16250, a_max: 1, b_max: 2147483647, k: 0, w: 2, bound: 45 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/int_from_list/prp-35-42.smt2
+vars: 4843, constraints: 11121, a_max: 1, b_max: 2147483647, k: 0, w: 2, bound: 45 bits
+vars: 31, constraints: 60, a_max: 1, b_max: 1, k: 0, w: 2, bound: 7 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/med/int_from_list/prp-32-38.smt2
+vars: 3780, constraints: 8644, a_max: 1, b_max: 2147483647, k: 0, w: 2, bound: 44 bits
+vars: 23, constraints: 44, a_max: 1, b_max: 1, k: 0, w: 2, bound: 7 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/med/int_from_list/prp-39-38.smt2
+vars: 3780, constraints: 8644, a_max: 1, b_max: 2147483647, k: 0, w: 2, bound: 44 bits
+vars: 23, constraints: 44, a_max: 1, b_max: 1, k: 0, w: 2, bound: 7 bits
+Encoding /home/maxhelle/QF_LIA/bofill-scheduling/SMT_random_LIA/ex24500_2600_100.smt2
+vars: 780, constraints: 3277, a_max: 1, b_max: 24500, k: 280, w: 20, bound: 1245 bits
+Encoding /home/maxhelle/QF_LIA/bofill-scheduling/SMT_random_LIA/ex18700_2600_100.smt2
+vars: 780, constraints: 3277, a_max: 1, b_max: 18700, k: 280, w: 20, bound: 1245 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/checkpass_pwd/prp-14-36.smt2
+vars: 3561, constraints: 8822, a_max: 1, b_max: 629, k: 0, w: 1, bound: 23 bits
+vars: 2057, constraints: 3737, a_max: 1, b_max: 2147483647, k: 82, w: 3, bound: 184 bits
+Encoding /home/maxhelle/QF_LIA/bofill-scheduling/SMT_random_LIA/ex12600_2600_100.smt2
+vars: 780, constraints: 3277, a_max: 1, b_max: 12600, k: 280, w: 20, bound: 1244 bits
+Encoding /home/maxhelle/QF_LIA/rings/ring_2exp8_5vars_1ite_unsat.smt2
+vars: 62, constraints: 153, a_max: 2048, b_max: 4096, k: 20, w: 9, bound: 309 bits
+Encoding /home/maxhelle/QF_LIA/convert/convert-jpg2gif-query-1370.smt2
+vars: 180, constraints: 605, a_max: 4294967296, b_max: 4294967296, k: 66, w: 17, bound: 2430 bits
+vars: 14, constraints: 35, a_max: 32768, b_max: 4294967296, k: 5, w: 3, bound: 124 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 12, constraints: 30, a_max: 16384, b_max: 4294967296, k: 4, w: 3, bound: 103 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 12, constraints: 29, a_max: 524288, b_max: 4294967296, k: 4, w: 3, bound: 123 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 14, constraints: 35, a_max: 32768, b_max: 4294967296, k: 5, w: 3, bound: 124 bits
+vars: 13, constraints: 36, a_max: 4294967296, b_max: 4294967296, k: 4, w: 4, bound: 177 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 40, constraints: 92, a_max: 4294967296, b_max: 4294967296, k: 12, w: 10, bound: 468 bits
+vars: 14, constraints: 38, a_max: 4294967296, b_max: 4294967296, k: 4, w: 5, bound: 179 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 9, k: 0, w: 1, bound: 5 bits
+vars: 12, constraints: 30, a_max: 16384, b_max: 4294967296, k: 4, w: 3, bound: 103 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 14, constraints: 35, a_max: 4096, b_max: 4294967296, k: 5, w: 3, bound: 109 bits
+vars: 18, constraints: 44, a_max: 268435456, b_max: 4294967296, k: 6, w: 3, bound: 220 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 9, constraints: 23, a_max: 512, b_max: 4294967296, k: 3, w: 3, bound: 72 bits
+vars: 12, constraints: 30, a_max: 4194304, b_max: 4294967296, k: 4, w: 3, bound: 135 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 128, k: 0, w: 1, bound: 9 bits
+vars: 9, constraints: 23, a_max: 65536, b_max: 4294967296, k: 3, w: 3, bound: 93 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 14, constraints: 35, a_max: 16384, b_max: 4294967296, k: 5, w: 3, bound: 119 bits
+vars: 11, constraints: 28, a_max: 512, b_max: 4294967296, k: 4, w: 3, bound: 83 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 11, constraints: 28, a_max: 8192, b_max: 4294967296, k: 4, w: 3, bound: 99 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 13, constraints: 36, a_max: 4294967296, b_max: 4294967296, k: 4, w: 4, bound: 177 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 15, constraints: 37, a_max: 16777216, b_max: 4294967296, k: 5, w: 3, bound: 170 bits
+vars: 10, constraints: 28, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 64, k: 0, w: 1, bound: 8 bits
+vars: 9, constraints: 26, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 128, k: 0, w: 1, bound: 9 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 14, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 5, k: 0, w: 1, bound: 4 bits
+vars: 11, constraints: 28, a_max: 2048, b_max: 4294967296, k: 4, w: 3, bound: 91 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 10, k: 0, w: 1, bound: 5 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 128, k: 0, w: 1, bound: 9 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 3, k: 0, w: 1, bound: 4 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 1, constraints: 4, a_max: 1, b_max: 4294967296, k: 0, w: 1, bound: 34 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 4, a_max: 1, b_max: 4294967296, k: 0, w: 1, bound: 34 bits
+vars: 2, constraints: 5, a_max: 1073741824, b_max: 1073741824, k: 1, w: 1, bound: 65 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 32, k: 0, w: 1, bound: 7 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 12, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 15, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 32, k: 0, w: 1, bound: 7 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 11, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 6, k: 0, w: 1, bound: 5 bits
+vars: 2, constraints: 5, a_max: 268435456, b_max: 1073741824, k: 1, w: 1, bound: 63 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 32, k: 0, w: 1, bound: 7 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 7, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 13, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 2, constraints: 5, a_max: 536870912, b_max: 1073741824, k: 1, w: 1, bound: 64 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+Encoding /home/maxhelle/QF_LIA/rings/ring_2exp16_6vars_3ite_unsat.smt2
+vars: 87, constraints: 205, a_max: 1048576, b_max: 2097152, k: 29, w: 9, bound: 707 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/getoption_group/prp-53-47.smt2
+vars: 8049, constraints: 18203, a_max: 1, b_max: 2147483647, k: 6, w: 3, bound: 68 bits
+Encoding /home/maxhelle/QF_LIA/rings_preprocessed/ring_2exp10_7vars_3ite_unsat.smt2
+vars: 101, constraints: 223, a_max: 16384, b_max: 2048, k: 56, w: 23, bound: 1063 bits
+Encoding /home/maxhelle/QF_LIA/rings/ring_2exp10_9vars_3ite_unsat.smt2
+vars: 144, constraints: 337, a_max: 131072, b_max: 262144, k: 55, w: 18, bound: 1198 bits
+Encoding /home/maxhelle/QF_LIA/rings/ring_2exp4_9vars_4ite_unsat.smt2
+vars: 146, constraints: 342, a_max: 2048, b_max: 4096, k: 52, w: 18, bound: 817 bits
+Encoding /home/maxhelle/QF_LIA/tropical-matrix/constraint-642278.smt2
+vars: 2882, constraints: 6470, a_max: 2, b_max: 0, k: 2, w: 2, bound: 28 bits
+Encoding /home/maxhelle/QF_LIA/calypto/problem-004327.cvc.1.smt2
+vars: 10, constraints: 20, a_max: 1, b_max: 1, k: 1, w: 9, bound: 13 bits
+vars: 20, constraints: 38, a_max: 4294967296, b_max: 4294967296, k: 1, w: 3, bound: 76 bits
+vars: 48, constraints: 100, a_max: 1, b_max: 7, k: 0, w: 1, bound: 10 bits
+vars: 9, constraints: 19, a_max: 1, b_max: 256, k: 1, w: 9, bound: 19 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/med/checkpass_pwd/prp-24-31.smt2
+vars: 2334, constraints: 5743, a_max: 1, b_max: 629, k: 0, w: 1, bound: 22 bits
+vars: 1290, constraints: 2392, a_max: 1, b_max: 2147483647, k: 57, w: 3, bound: 144 bits
+Encoding /home/maxhelle/QF_LIA/bofill-scheduling/SMT_real_LIA/ex2160_2400_100.smt2
+vars: 576, constraints: 2372, a_max: 1, b_max: 10000, k: 210, w: 16, bound: 873 bits
+Encoding /home/maxhelle/QF_LIA/20180326-Bromberger/more_slacked/CAV_2009_benchmarks/smt/15-vars/v15_problem_2__007.smt2.slack.smt2
+vars: 30, constraints: 50, a_max: 2, b_max: 1, k: 20, w: 18, bound: 116 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/getoption_group/prp-67-47.smt2
+vars: 8049, constraints: 18203, a_max: 1, b_max: 2147483647, k: 6, w: 3, bound: 68 bits
+Encoding /home/maxhelle/QF_LIA/rings_preprocessed/ring_2exp12_9vars_1ite_unsat.smt2
+vars: 133, constraints: 301, a_max: 524288, b_max: 8192, k: 61, w: 32, bound: 1493 bits
+Encoding /home/maxhelle/QF_LIA/cut_lemmas/20-vars/cut_lemma_01_012.smt2
+vars: 35, constraints: 36, a_max: 964938, b_max: 1223339, k: 19, w: 18, bound: 489 bits
+Encoding /home/maxhelle/QF_LIA/convert/convert-jpg2gif-query-1586.smt2
+vars: 15, constraints: 37, a_max: 1048576, b_max: 4294967296, k: 5, w: 3, bound: 150 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 180, constraints: 605, a_max: 4294967296, b_max: 4294967296, k: 66, w: 17, bound: 2430 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 18, constraints: 44, a_max: 268435456, b_max: 4294967296, k: 6, w: 3, bound: 220 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 11, constraints: 27, a_max: 256, b_max: 4294967296, k: 4, w: 3, bound: 79 bits
+vars: 17, constraints: 42, a_max: 65536, b_max: 4294967296, k: 6, w: 3, bound: 147 bits
+vars: 18, constraints: 44, a_max: 131072, b_max: 4294967296, k: 6, w: 3, bound: 154 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 40, constraints: 92, a_max: 4294967296, b_max: 4294967296, k: 12, w: 10, bound: 468 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 11, constraints: 28, a_max: 512, b_max: 4294967296, k: 4, w: 3, bound: 83 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 13, constraints: 35, a_max: 4294967296, b_max: 4294967296, k: 4, w: 4, bound: 177 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 67, constraints: 136, a_max: 36893484127329714176, b_max: 4294967296, k: 19, w: 23, bound: 1367 bits
+vars: 11, constraints: 28, a_max: 2048, b_max: 4294967296, k: 4, w: 3, bound: 91 bits
+vars: 10, constraints: 28, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 10, constraints: 28, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 64, k: 0, w: 1, bound: 8 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 21, constraints: 50, a_max: 33554432, b_max: 4294967296, k: 8, w: 3, bound: 255 bits
+vars: 21, constraints: 51, a_max: 134217728, b_max: 4294967296, k: 7, w: 3, bound: 243 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 10, constraints: 28, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 10, constraints: 28, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 6, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 17, constraints: 42, a_max: 1048576, b_max: 4294967296, k: 6, w: 3, bound: 171 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 14, constraints: 35, a_max: 4096, b_max: 4294967296, k: 5, w: 3, bound: 109 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 32, k: 0, w: 1, bound: 7 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 13, constraints: 35, a_max: 4294967296, b_max: 4294967296, k: 4, w: 4, bound: 177 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 10, constraints: 28, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 11, constraints: 28, a_max: 8192, b_max: 4294967296, k: 4, w: 3, bound: 99 bits
+vars: 14, constraints: 35, a_max: 16384, b_max: 4294967296, k: 5, w: 3, bound: 119 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 13, constraints: 36, a_max: 4294967296, b_max: 4294967296, k: 4, w: 4, bound: 177 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 18, constraints: 44, a_max: 536870912, b_max: 4294967296, k: 6, w: 3, bound: 226 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 20, constraints: 48, a_max: 8388608, b_max: 4294967296, k: 7, w: 3, bound: 214 bits
+vars: 12, constraints: 30, a_max: 4194304, b_max: 4294967296, k: 4, w: 3, bound: 135 bits
+vars: 17, constraints: 41, a_max: 4096, b_max: 4294967296, k: 7, w: 3, bound: 137 bits
+vars: 12, constraints: 30, a_max: 16384, b_max: 4294967296, k: 4, w: 3, bound: 103 bits
+vars: 14, constraints: 35, a_max: 32768, b_max: 4294967296, k: 5, w: 3, bound: 124 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 9, constraints: 23, a_max: 512, b_max: 4294967296, k: 3, w: 3, bound: 72 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 14, constraints: 35, a_max: 32768, b_max: 4294967296, k: 5, w: 3, bound: 124 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 13, constraints: 36, a_max: 4294967296, b_max: 4294967296, k: 4, w: 4, bound: 177 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 10, constraints: 28, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 12, constraints: 30, a_max: 131072, b_max: 4294967296, k: 4, w: 3, bound: 115 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 12, constraints: 29, a_max: 256, b_max: 4294967296, k: 4, w: 3, bound: 79 bits
+vars: 12, constraints: 29, a_max: 4096, b_max: 4294967296, k: 5, w: 3, bound: 109 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 21, constraints: 57, a_max: 4294967296, b_max: 4294967296, k: 6, w: 6, bound: 250 bits
+vars: 9, constraints: 26, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 3, k: 0, w: 1, bound: 4 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 13, k: 0, w: 1, bound: 5 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 12, constraints: 30, a_max: 16384, b_max: 4294967296, k: 4, w: 3, bound: 103 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 11, constraints: 28, a_max: 512, b_max: 4294967296, k: 4, w: 3, bound: 83 bits
+vars: 2, constraints: 5, a_max: 536870912, b_max: 1073741824, k: 1, w: 1, bound: 64 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 15, constraints: 36, a_max: 524288, b_max: 4294967296, k: 5, w: 3, bound: 145 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 64, k: 0, w: 1, bound: 8 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 12, constraints: 29, a_max: 524288, b_max: 4294967296, k: 4, w: 3, bound: 123 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 15, constraints: 37, a_max: 16777216, b_max: 4294967296, k: 5, w: 3, bound: 170 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 10, k: 0, w: 1, bound: 5 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 4, a_max: 1, b_max: 4294967296, k: 0, w: 1, bound: 34 bits
+vars: 9, constraints: 26, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 128, k: 0, w: 1, bound: 9 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 128, k: 0, w: 1, bound: 9 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 14, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 3, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 128, k: 0, w: 1, bound: 9 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 9, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 3, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 12, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 5, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 128, k: 0, w: 1, bound: 9 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 15, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 2, constraints: 5, a_max: 268435456, b_max: 1073741824, k: 1, w: 1, bound: 63 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 5, k: 0, w: 1, bound: 4 bits
+vars: 2, constraints: 5, a_max: 1073741824, b_max: 1073741824, k: 1, w: 1, bound: 65 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 32, k: 0, w: 1, bound: 7 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 32, k: 0, w: 1, bound: 7 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 64, k: 0, w: 1, bound: 8 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 32, k: 0, w: 1, bound: 7 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 32, k: 0, w: 1, bound: 7 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 11, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 32, k: 0, w: 1, bound: 7 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 3, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 5, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 3, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 7, k: 0, w: 1, bound: 5 bits
+Encoding /home/maxhelle/QF_LIA/CAV_2009_benchmarks/smt/25-vars/problem__016.smt2
+vars: 99, constraints: 109, a_max: 5, b_max: 1, k: 35, w: 24, bound: 258 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/bftpd_login/prp-64-48.smt2
+vars: 21364, constraints: 48168, a_max: 1, b_max: 65536, k: 16, w: 3, bound: 72 bits
+Encoding /home/maxhelle/QF_LIA/20180326-Bromberger/more_slacked/CAV_2009_benchmarks/smt/15-vars/v15_problem__003.smt2.slack.smt2
+vars: 30, constraints: 45, a_max: 2, b_max: 1, k: 15, w: 14, bound: 85 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/checkpass_pwd/prp-17-50.smt2
+vars: 7881, constraints: 19798, a_max: 1, b_max: 629, k: 0, w: 1, bound: 24 bits
+vars: 4699, constraints: 8375, a_max: 1, b_max: 2147483647, k: 157, w: 3, bound: 306 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/checkpass_pwd/prp-47-49.smt2
+vars: 7531, constraints: 18908, a_max: 1, b_max: 629, k: 0, w: 1, bound: 24 bits
+vars: 4488, constraints: 8007, a_max: 1, b_max: 2147483647, k: 154, w: 3, bound: 301 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/getoption_user/prp-23-48.smt2
+vars: 15137, constraints: 34613, a_max: 1, b_max: 2147483647, k: 18, w: 2, bound: 78 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/checkpass_pwd/prp-40-49.smt2
+vars: 7531, constraints: 18908, a_max: 1, b_max: 629, k: 0, w: 1, bound: 24 bits
+vars: 4488, constraints: 8007, a_max: 1, b_max: 2147483647, k: 154, w: 3, bound: 301 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/med/checkpass_pwd/prp-10-33.smt2
+vars: 2805, constraints: 6921, a_max: 1, b_max: 629, k: 0, w: 1, bound: 22 bits
+vars: 1531, constraints: 2825, a_max: 1, b_max: 2147483647, k: 65, w: 3, bound: 157 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/checkpass_pwd/prp-30-46.smt2
+vars: 6522, constraints: 16340, a_max: 1, b_max: 629, k: 0, w: 1, bound: 23 bits
+vars: 3876, constraints: 6935, a_max: 1, b_max: 2147483647, k: 141, w: 3, bound: 280 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/med/checkpass_pwd/prp-19-33.smt2
+vars: 1531, constraints: 2825, a_max: 1, b_max: 2147483647, k: 65, w: 3, bound: 157 bits
+vars: 2805, constraints: 6921, a_max: 1, b_max: 629, k: 0, w: 1, bound: 22 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/getoption_user/prp-41-50.smt2
+vars: 17072, constraints: 39048, a_max: 1, b_max: 2147483647, k: 20, w: 2, bound: 81 bits
+Encoding /home/maxhelle/QF_LIA/bofill-scheduling/SMT_real_LIA/ex7120_2400_100.smt2
+vars: 576, constraints: 2372, a_max: 1, b_max: 10000, k: 210, w: 16, bound: 873 bits
+Encoding /home/maxhelle/QF_LIA/20180326-Bromberger/unbd-sage/unbd100v110c/unbd-sage2.smt2
+vars: 100, constraints: 110, a_max: 377, b_max: 4140, k: 110, w: 100, bound: 1699 bits
+Encoding /home/maxhelle/QF_LIA/bofill-scheduling/SMT_real_LIA/ex8100_2400_100.smt2
+vars: 576, constraints: 2372, a_max: 1, b_max: 10000, k: 210, w: 16, bound: 873 bits
+Encoding /home/maxhelle/QF_LIA/rings/ring_2exp6_8vars_7ite_unsat.smt2
+vars: 154, constraints: 348, a_max: 4096, b_max: 8192, k: 44, w: 9, bound: 697 bits
+Encoding /home/maxhelle/QF_LIA/convert/convert-jpg2gif-query-1171.smt2
+vars: 14, constraints: 35, a_max: 32768, b_max: 4294967296, k: 5, w: 3, bound: 124 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 180, constraints: 605, a_max: 4294967296, b_max: 4294967296, k: 66, w: 17, bound: 2430 bits
+vars: 12, constraints: 30, a_max: 16384, b_max: 4294967296, k: 4, w: 3, bound: 103 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 14, constraints: 35, a_max: 4096, b_max: 4294967296, k: 5, w: 3, bound: 109 bits
+vars: 18, constraints: 44, a_max: 268435456, b_max: 4294967296, k: 6, w: 3, bound: 220 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 11, constraints: 28, a_max: 8192, b_max: 4294967296, k: 4, w: 3, bound: 99 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 14, constraints: 35, a_max: 32768, b_max: 4294967296, k: 5, w: 3, bound: 124 bits
+vars: 9, constraints: 26, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 13, constraints: 36, a_max: 4294967296, b_max: 4294967296, k: 4, w: 4, bound: 177 bits
+vars: 9, constraints: 23, a_max: 512, b_max: 4294967296, k: 3, w: 3, bound: 72 bits
+vars: 10, constraints: 29, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 10, constraints: 28, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 128, k: 0, w: 1, bound: 9 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 12, constraints: 30, a_max: 4194304, b_max: 4294967296, k: 4, w: 3, bound: 135 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 7, k: 0, w: 1, bound: 5 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 32, k: 0, w: 1, bound: 7 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 13, k: 0, w: 1, bound: 5 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 14, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 32, k: 0, w: 1, bound: 7 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 5, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 3, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 10, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 64, k: 0, w: 1, bound: 8 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 12, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 6, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 11, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 15, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 9, k: 0, w: 1, bound: 5 bits
+Encoding /home/maxhelle/QF_LIA/convert/convert-jpg2gif-query-1483.smt2
+vars: 12, constraints: 30, a_max: 16384, b_max: 4294967296, k: 4, w: 3, bound: 103 bits
+vars: 180, constraints: 605, a_max: 4294967296, b_max: 4294967296, k: 66, w: 17, bound: 2430 bits
+vars: 10, constraints: 28, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 11, constraints: 28, a_max: 2048, b_max: 4294967296, k: 4, w: 3, bound: 91 bits
+vars: 14, constraints: 35, a_max: 32768, b_max: 4294967296, k: 5, w: 3, bound: 124 bits
+vars: 40, constraints: 92, a_max: 4294967296, b_max: 4294967296, k: 12, w: 10, bound: 468 bits
+vars: 1, constraints: 4, a_max: 1, b_max: 4294967296, k: 0, w: 1, bound: 34 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 14, constraints: 35, a_max: 32768, b_max: 4294967296, k: 5, w: 3, bound: 124 bits
+vars: 9, constraints: 23, a_max: 512, b_max: 4294967296, k: 3, w: 3, bound: 72 bits
+vars: 22, constraints: 58, a_max: 4294967296, b_max: 4294967296, k: 6, w: 5, bound: 249 bits
+vars: 21, constraints: 51, a_max: 134217728, b_max: 4294967296, k: 7, w: 3, bound: 243 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 11, k: 0, w: 1, bound: 5 bits
+vars: 12, constraints: 29, a_max: 256, b_max: 4294967296, k: 4, w: 3, bound: 79 bits
+vars: 13, constraints: 36, a_max: 4294967296, b_max: 4294967296, k: 4, w: 4, bound: 177 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 67, constraints: 136, a_max: 36893484127329714176, b_max: 4294967296, k: 16, w: 23, bound: 1158 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 5, k: 0, w: 1, bound: 4 bits
+vars: 12, constraints: 29, a_max: 524288, b_max: 4294967296, k: 4, w: 3, bound: 123 bits
+vars: 18, constraints: 44, a_max: 131072, b_max: 4294967296, k: 6, w: 3, bound: 154 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 3, k: 0, w: 1, bound: 4 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 18, constraints: 44, a_max: 268435456, b_max: 4294967296, k: 6, w: 3, bound: 220 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 11, constraints: 27, a_max: 256, b_max: 4294967296, k: 5, w: 3, bound: 89 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 9, k: 0, w: 1, bound: 5 bits
+vars: 13, constraints: 35, a_max: 4294967296, b_max: 4294967296, k: 4, w: 4, bound: 177 bits
+vars: 10, constraints: 28, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 2, constraints: 5, a_max: 536870912, b_max: 1073741824, k: 1, w: 1, bound: 64 bits
+vars: 14, constraints: 35, a_max: 16384, b_max: 4294967296, k: 5, w: 3, bound: 119 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 15, constraints: 37, a_max: 16777216, b_max: 4294967296, k: 5, w: 3, bound: 170 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 9, constraints: 26, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 17, constraints: 42, a_max: 65536, b_max: 4294967296, k: 6, w: 3, bound: 147 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 11, constraints: 28, a_max: 8192, b_max: 4294967296, k: 4, w: 3, bound: 99 bits
+vars: 14, constraints: 35, a_max: 4096, b_max: 4294967296, k: 5, w: 3, bound: 109 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 12, constraints: 30, a_max: 16384, b_max: 4294967296, k: 4, w: 3, bound: 103 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 10, constraints: 28, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 6, k: 0, w: 1, bound: 5 bits
+vars: 9, constraints: 23, a_max: 536870912, b_max: 4294967296, k: 3, w: 3, bound: 132 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 5, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 12, constraints: 30, a_max: 131072, b_max: 4294967296, k: 4, w: 3, bound: 115 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 12, constraints: 30, a_max: 4194304, b_max: 4294967296, k: 4, w: 3, bound: 135 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 128, k: 0, w: 1, bound: 9 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 1, constraints: 4, a_max: 1, b_max: 4294967296, k: 0, w: 1, bound: 34 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 9, constraints: 25, a_max: 65536, b_max: 4294967296, k: 3, w: 2, bound: 91 bits
+vars: 11, constraints: 28, a_max: 512, b_max: 4294967296, k: 4, w: 3, bound: 83 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 3, k: 0, w: 1, bound: 4 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 128, k: 0, w: 1, bound: 9 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 13, constraints: 36, a_max: 4294967296, b_max: 4294967296, k: 4, w: 4, bound: 177 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 7, constraints: 19, a_max: 4294967296, b_max: 4294967296, k: 2, w: 4, bound: 108 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 2, constraints: 5, a_max: 268435456, b_max: 1073741824, k: 1, w: 1, bound: 63 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 10, constraints: 27, a_max: 4294967296, b_max: 4294967296, k: 3, w: 4, bound: 143 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 32, k: 0, w: 1, bound: 7 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 6, constraints: 17, a_max: 65536, b_max: 4294967296, k: 2, w: 2, bound: 73 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 64, k: 0, w: 1, bound: 8 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 12, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 3, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 14, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 64, k: 0, w: 1, bound: 8 bits
+vars: 7, constraints: 17, a_max: 4294967296, b_max: 4294967296, k: 3, w: 3, bound: 140 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 15, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 32, k: 0, w: 1, bound: 7 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 64, k: 0, w: 1, bound: 8 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 32, k: 0, w: 1, bound: 7 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 128, k: 0, w: 1, bound: 9 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 16, k: 0, w: 1, bound: 6 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 10, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 7, k: 0, w: 1, bound: 5 bits
+vars: 2, constraints: 5, a_max: 1073741824, b_max: 1073741824, k: 1, w: 1, bound: 65 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 3, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 32, k: 0, w: 1, bound: 7 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 13, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 8, k: 0, w: 1, bound: 5 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 3, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 3, a_max: 1, b_max: 65536, k: 0, w: 1, bound: 18 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 5, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 4, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 2, k: 0, w: 1, bound: 4 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/getoption_user/prp-3-48.smt2
+vars: 15137, constraints: 34613, a_max: 1, b_max: 2147483647, k: 18, w: 2, bound: 78 bits
+Encoding /home/maxhelle/QF_LIA/prime-cone/prime_cone_unsat_10.smt2
+vars: 10, constraints: 22, a_max: 128, b_max: 128, k: 12, w: 10, bound: 139 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/int_from_list/prp-62-49.smt2
+vars: 6939, constraints: 15923, a_max: 1, b_max: 2147483647, k: 5, w: 3, bound: 66 bits
+Encoding /home/maxhelle/QF_LIA/bofill-scheduling/SMT_real_LIA/ex9060_2400_100.smt2
+vars: 576, constraints: 2372, a_max: 1, b_max: 10000, k: 210, w: 16, bound: 873 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/bftpd_login/prp-42-47.smt2
+vars: 19395, constraints: 43697, a_max: 1, b_max: 65536, k: 14, w: 3, bound: 68 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/checkpass_pwd/prp-63-50.smt2
+vars: 7881, constraints: 19798, a_max: 1, b_max: 629, k: 0, w: 1, bound: 24 bits
+vars: 4699, constraints: 8375, a_max: 1, b_max: 2147483647, k: 157, w: 3, bound: 306 bits
+Encoding /home/maxhelle/QF_LIA/CAV_2009_benchmarks/smt/15-vars/problem__014.smt2
+vars: 59, constraints: 69, a_max: 3, b_max: 1, k: 25, w: 15, bound: 152 bits
+Encoding /home/maxhelle/QF_LIA/rings_preprocessed/ring_2exp10_5vars_3ite_unsat.smt2
+vars: 64, constraints: 144, a_max: 4096, b_max: 2048, k: 39, w: 15, bound: 645 bits
+Encoding /home/maxhelle/QF_LIA/rings_preprocessed/ring_2exp14_4vars_3ite_unsat.smt2
+vars: 46, constraints: 105, a_max: 32768, b_max: 32768, k: 29, w: 11, bound: 563 bits
+Encoding /home/maxhelle/QF_LIA/bofill-scheduling/SMT_real_LIA/ex9180_2400_100.smt2
+vars: 576, constraints: 2372, a_max: 1, b_max: 10000, k: 210, w: 16, bound: 873 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/bftpd_login/prp-7-47.smt2
+vars: 19395, constraints: 43697, a_max: 1, b_max: 65536, k: 14, w: 3, bound: 68 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/med/int_from_list/prp-26-38.smt2
+vars: 3780, constraints: 8644, a_max: 1, b_max: 2147483647, k: 0, w: 2, bound: 44 bits
+vars: 23, constraints: 44, a_max: 1, b_max: 1, k: 0, w: 2, bound: 7 bits
+Encoding /home/maxhelle/QF_LIA/bofill-scheduling/SMT_real_LIA/ex9840_2400_100.smt2
+vars: 576, constraints: 2372, a_max: 1, b_max: 10000, k: 210, w: 16, bound: 873 bits
+Encoding /home/maxhelle/QF_LIA/CIRC/simplebitadder/SIMPLEBITADDER_COMPOSE_8.msat.smt2
+vars: 30, constraints: 116, a_max: 128, b_max: 256, k: 5, w: 8, bound: 69 bits
+vars: 1, constraints: 2, a_max: 1, b_max: 1, k: 0, w: 1, bound: 3 bits
+Encoding /home/maxhelle/QF_LIA/mathsat/FISCHER10-14-fair.smt2
+vars: 315, constraints: 918, a_max: 1, b_max: 10, k: 150, w: 2, bound: 172 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/bftpd_login/prp-80-50.smt2
+vars: 25898, constraints: 58366, a_max: 1, b_max: 65536, k: 26, w: 3, bound: 88 bits
+Encoding /home/maxhelle/QF_LIA/rings/ring_2exp4_7vars_0ite_unsat.smt2
+vars: 79, constraints: 207, a_max: 512, b_max: 64, k: 33, w: 16, bound: 449 bits
+Encoding /home/maxhelle/QF_LIA/dillig/30-14.smt2
+vars: 131, constraints: 131, a_max: 3, b_max: 1, k: 38, w: 22, bound: 246 bits
+Encoding /home/maxhelle/QF_LIA/CAV_2009_benchmarks/smt/20-vars/problem__019.smt2
+vars: 80, constraints: 95, a_max: 4, b_max: 1, k: 35, w: 19, bound: 234 bits
+Encoding /home/maxhelle/QF_LIA/rings/ring_2exp8_4vars_3ite_unsat.smt2
+vars: 49, constraints: 117, a_max: 1024, b_max: 2048, k: 16, w: 3, bound: 209 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/checkpass_pwd/prp-13-45.smt2
+vars: 3673, constraints: 6577, a_max: 1, b_max: 2147483647, k: 136, w: 3, bound: 272 bits
+vars: 6197, constraints: 15512, a_max: 1, b_max: 629, k: 0, w: 1, bound: 23 bits
+Encoding /home/maxhelle/QF_LIA/bofill-scheduling/SMT_real_LIA/ex9120_2400_100.smt2
+vars: 576, constraints: 2372, a_max: 1, b_max: 10000, k: 210, w: 16, bound: 873 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/getoption_user/prp-20-46.smt2
+vars: 13125, constraints: 30036, a_max: 1, b_max: 2147483647, k: 16, w: 2, bound: 76 bits
+Encoding /home/maxhelle/QF_LIA/nec-smt/large/checkpass/prp-29-50.smt2
+vars: 10182, constraints: 25666, a_max: 1, b_max: 2415, k: 0, w: 1, bound: 26 bits
+vars: 6635, constraints: 12586, a_max: 1, b_max: 2147483647, k: 47, w: 3, bound: 132 bits
+Encoding /home/maxhelle/QF_LIA/bofill-scheduling/SMT_real_LIA/ex9540_2400_100.smt2
+vars: 576, constraints: 2372, a_max: 1, b_max: 10000, k: 210, w: 16, bound: 873 bits
+Encoding /home/maxhelle/QF_LIA/20180326-Bromberger/more_slacked/CAV_2009_benchmarks/smt/35-vars/v35_problem_2__004.smt2.slack.smt2
+vars: 70, constraints: 90, a_max: 3, b_max: 1, k: 20, w: 36, bound: 150 bits
+Encoding /home/maxhelle/QF_LIA/dillig/25-24.smt2
+vars: 112, constraints: 127, a_max: 4, b_max: 1, k: 45, w: 18, bound: 294 bits
+Encoding /home/maxhelle/QF_LIA/slacks/20-15.slack.smt2
+vars: 40, constraints: 70, a_max: 3, b_max: 1, k: 30, w: 23, bound: 197 bits
+Encoding /home/maxhelle/QF_LIA/bofill-scheduling/SMT_random_LIA/ex25700_2600_100.smt2
+vars: 780, constraints: 3277, a_max: 1, b_max: 25700, k: 280, w: 20, bound: 1246 bits
+Encoding /home/maxhelle/QF_LIA/dillig/45-6.smt2
+vars: 186, constraints: 166, a_max: 3, b_max: 1, k: 28, w: 35, bound: 205 bits
+Encoding /home/maxhelle/QF_LIA/rings_preprocessed/ring_2exp16_3vars_2ite_unsat.smt2
+vars: 31, constraints: 71, a_max: 131072, b_max: 131072, k: 18, w: 9, bound: 392 bits
+Encoding /home/maxhelle/QF_LIA/bofill-scheduling/SMT_random_LIA/ex15500_2600_100.smt2
+vars: 780, constraints: 3277, a_max: 1, b_max: 15500, k: 280, w: 20, bound: 1245 bits
+Encoding /home/maxhelle/QF_LIA/dillig/40-21.smt2
+vars: 175, constraints: 175, a_max: 3, b_max: 1, k: 46, w: 29, bound: 314 bits
+Encoding /home/maxhelle/QF_LIA/dillig/35-25.smt2
+vars: 158, constraints: 163, a_max: 3, b_max: 1, k: 50, w: 25, bound: 329 bits
+Encoding /home/maxhelle/QF_LIA/CAV_2009_benchmarks/smt/35-vars/problem_2__031.smt2
+vars: 140, constraints: 155, a_max: 4, b_max: 1, k: 50, w: 32, bound: 367 bits
+Encoding /home/maxhelle/QF_LIA/20180326-Bromberger/more_slacked/cut_lemmas/20-vars/cut_lemma_02_008.smt2.slack.smt2
+vars: 40, constraints: 61, a_max: 193, b_max: 344, k: 18, w: 38, bound: 252 bits
+Encoding /home/maxhelle/QF_LIA/20180326-Bromberger/unbd-sage/unbd050v55c/unbd-sage19.smt2
+vars: 50, constraints: 55, a_max: 132, b_max: 1885, k: 55, w: 50, bound: 722 bits
+Encoding /home/maxhelle/QF_LIA/CAV_2009_benchmarks/smt/45-vars/problem_2__033.smt2
+vars: 180, constraints: 185, a_max: 4, b_max: 1, k: 50, w: 42, bound: 387 bits
+Encoding /home/maxhelle/QF_LIA/CAV_2009_benchmarks/smt/40-vars/problem__032.smt2
+vars: 160, constraints: 170, a_max: 4, b_max: 1, k: 50, w: 37, bound: 378 bits
+Encoding /home/maxhelle/QF_LIA/slacks/40-19.slack.smt2
+vars: 80, constraints: 115, a_max: 3, b_max: 1, k: 35, w: 47, bound: 265 bits
+Encoding /home/maxhelle/QF_LIA/20180326-Bromberger/more_slacked/CAV_2009_benchmarks/smt/35-vars/v35_problem__032.smt2.slack.smt2
+vars: 70, constraints: 120, a_max: 3, b_max: 1, k: 50, w: 36, bound: 353 bits
+Encoding /home/maxhelle/QF_LIA/20180326-Bromberger/more_slacked/CAV_2009_benchmarks/smt/35-vars/v35_problem_2__020.smt2.slack.smt2
+vars: 70, constraints: 105, a_max: 3, b_max: 1, k: 35, w: 35, bound: 250 bits
+Encoding /home/maxhelle/QF_LIA/20180326-Bromberger/more_slacked/CAV_2009_benchmarks/smt/35-vars/v35_problem__017.smt2.slack.smt2
+vars: 70, constraints: 105, a_max: 3, b_max: 1, k: 35, w: 36, bound: 251 bits
+Encoding /home/maxhelle/QF_LIA/20180326-Bromberger/more_slacked/CAV_2009_benchmarks/smt/45-vars/v45_problem_2__014.smt2.slack.smt2
+vars: 90, constraints: 120, a_max: 3, b_max: 1, k: 30, w: 44, bound: 227 bits
+Encoding /home/maxhelle/QF_LIA/20180326-Bromberger/more_slacked/CAV_2009_benchmarks/smt/25-vars/v25_problem__030.smt2.slack.smt2
+vars: 50, constraints: 95, a_max: 3, b_max: 1, k: 45, w: 24, bound: 292 bits
+Encoding /home/maxhelle/QF_LIA/slacks/25-24.slack.smt2
+vars: 50, constraints: 90, a_max: 4, b_max: 1, k: 40, w: 26, bound: 282 bits
+Encoding /home/maxhelle/QF_LIA/slacks/40-13.slack.smt2
+vars: 80, constraints: 110, a_max: 3, b_max: 1, k: 30, w: 42, bound: 225 bits
+Encoding /home/maxhelle/QF_LIA/20180326-Bromberger/more_slacked/CAV_2009_benchmarks/smt/15-vars/v15_problem_2__023.smt2.slack.smt2
+vars: 30, constraints: 65, a_max: 3, b_max: 1, k: 35, w: 17, bound: 211 bits
+Encoding /home/maxhelle/QF_LIA/CAV_2009_benchmarks/coef-size/smt/size-30/problem__006.smt2
+vars: 39, constraints: 49, a_max: 45, b_max: 29, k: 39, w: 10, bound: 361 bits
+Encoding /home/maxhelle/QF_LIA/20180326-Bromberger/more_slacked/CAV_2009_benchmarks/smt/15-vars/v15_problem_2__025.smt2.slack.smt2
+vars: 30, constraints: 65, a_max: 3, b_max: 1, k: 34, w: 17, bound: 205 bits
+Encoding /home/maxhelle/QF_LIA/20180326-Bromberger/unbd-sage/unbd010v15c/unbd-sage7.smt2
+vars: 10, constraints: 15, a_max: 36, b_max: 267, k: 15, w: 10, bound: 144 bits
+Encoding /home/maxhelle/QF_LIA/slacks/20-14.slack.smt2
+vars: 40, constraints: 70, a_max: 3, b_max: 1, k: 30, w: 21, bound: 193 bits
+Encoding /home/maxhelle/QF_LIA/20180326-Bromberger/more_slacked/CAV_2009_benchmarks/smt/40-vars/v40_problem__015.smt2.slack.smt2
+vars: 80, constraints: 110, a_max: 3, b_max: 1, k: 30, w: 39, bound: 221 bits
