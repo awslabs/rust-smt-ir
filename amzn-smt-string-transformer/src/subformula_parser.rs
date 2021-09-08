@@ -90,7 +90,8 @@ impl IntraLogicFolder<ALL> for StringSubformulaCountBuilder {
                 _ => {}
             }
         }
-        let output = Command::Assert(term_to_ret.fold_with(self)?);
+        let output = term_to_ret.fold_with(self)?;
+        let output = Command::Assert { term: output };
         if useless_command {
             self.remap_useless_commands.insert(output.clone());
         }

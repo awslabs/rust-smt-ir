@@ -17,7 +17,7 @@ publish = false
 [dependencies]
 amzn-smt-ir = { path = "../amzn-smt-ir", version = "0.1" }
 chrono = "0.4"
-smt2parser = "0.6"
+smt2parser = "0.6.1"
 serde = "1.0"
 serde_json = "1.0"
 structopt = "0.3"

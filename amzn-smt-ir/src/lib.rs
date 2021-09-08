@@ -16,8 +16,6 @@ extern crate self as amzn_smt_ir;
 
 pub mod ackerman;
 pub mod cnf;
-mod command;
-pub use command::Command;
 pub mod eliminate;
 pub mod fold;
 pub mod term;

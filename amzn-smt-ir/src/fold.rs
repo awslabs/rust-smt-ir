@@ -171,7 +171,8 @@ pub trait Folder<T: Logic, M = ()>: Compose {
     /// Transforms an asserted term.
     /// By default, calls [`Self::fold_term`].
     fn fold_assert(&mut self, asserted: Term<T>) -> Result<Command<Self::Output>, Self::Error> {
-        self.fold_term(asserted).map(Command::Assert)
+        self.fold_term(asserted)
+            .map(|term| Command::Assert { term })
     }
 
     /// Transforms a constant declaration.
@@ -697,12 +698,12 @@ impl<L: Logic, Out> Fold<L, Out> for Command<Term<L>> {
     where
         F: Folder<L, M, Output = Out>,
     {
-        use Command::*;
+        use smt2parser::concrete::Command::*;
         if let Some(ctx) = folder.context_mut() {
             ctx.process(&self);
         }
         let command = match self {
-            Assert(t) => folder.fold_assert(t)?,
+            Assert { term } => folder.fold_assert(term)?,
             CheckSat => CheckSat,
             CheckSatAssuming { literals } => CheckSatAssuming { literals },
             DeclareConst { symbol, sort } => folder.fold_declare_const(symbol, sort)?,

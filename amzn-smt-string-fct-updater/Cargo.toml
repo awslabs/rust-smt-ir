@@ -16,5 +16,5 @@ publish = false
 
 [dependencies]
 amzn-smt-ir = { path = "../amzn-smt-ir", version = "0.1" }
-smt2parser = "0.6"
+smt2parser = "0.6.1"
 

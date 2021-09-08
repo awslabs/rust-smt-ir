@@ -22,7 +22,7 @@ ena = "0.14"
 itertools = "0.10"
 num-traits = "0.2"
 smallvec = { version = "1.6", features = ["union"] }
-smt2parser = "0.6"
+smt2parser = "0.6.1"
 structopt = "0.3"
 thiserror = "1.0"
 

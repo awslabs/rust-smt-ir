@@ -89,7 +89,8 @@ pub trait InterLogicFolder<T: Logic>: Sized {
     /// Transforms an asserted term.
     /// By default, calls [`Self::fold_term`].
     fn fold_assert(&mut self, asserted: Term<T>) -> Result<Command<Term<Self::U>>, Self::Error> {
-        self.fold_term(asserted).map(Command::Assert)
+        self.fold_term(asserted)
+            .map(|term| Command::Assert { term })
     }
 
     /// Transforms a constant declaration.

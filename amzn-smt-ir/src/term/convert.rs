@@ -9,14 +9,21 @@ use crate::{
     quantifier::{self, InvalidQuantifier, Quantifier},
     term::operation::InvalidOp,
     uf::UninterpretedFunction,
-    Constant, IConst, ICoreOp, IIdentifier, IOp, ISort, ISymbol, IVar, Identifier, Let, Logic,
-    Operation, QualIdentifier, Sort, Symbol, Term, IUF,
+    Command, Constant, IConst, ICoreOp, IIdentifier, IOp, ISort, ISymbol, IVar, Identifier, Let,
+    Logic, Operation, ParseError, QualIdentifier, Sort, Symbol, Term, IUF,
 };
 use either::Either;
-use smt2parser::visitors::Index;
-
-use smt2parser::concrete::Term as RawTerm;
+use smt2parser::{concrete::Term as RawTerm, visitors::Index};
 use std::{convert::TryFrom, marker::PhantomData};
+
+pub fn convert_command<L: Logic>(
+    command: smt2parser::concrete::Command,
+) -> Result<Command<Term<L>>, ParseError<L>>
+where
+    QualIdentifier: Into<L::Var>,
+{
+    command.accept(&mut Converter::default())
+}
 
 fn convert_qual_identifier(ident: smt2parser::concrete::QualIdentifier) -> QualIdentifier {
     use smt2parser::concrete::QualIdentifier::*;
@@ -97,7 +104,7 @@ where
 
     let ident = convert_qual_identifier;
 
-    let convert_or_enqueue = |t, pending: &mut Vec<_>| {
+    let convert_or_enqueue = |t: RawTerm, pending: &mut Vec<_>| {
         use RawTerm::*;
         match t {
             Constant(c) => Ok(Some(Term::Constant(c.into()))),
@@ -265,7 +272,9 @@ impl<T: Logic> From<&IVar<T::Var>> for Term<T> {
 
 mod visitors {
     use super::*;
-    use crate::{Command, IQuantifier, ParseError, SExpr};
+    use crate::{
+        AttributeValue, Command, DatatypeDec, FunctionDec, IQuantifier, ParseError, SExpr,
+    };
     use smt2parser::{
         concrete::{Keyword, SyntaxBuilder},
         visitors::*,
@@ -341,7 +350,7 @@ mod visitors {
         fn visit_attributes(
             &mut self,
             term: Self::T,
-            _attributes: Vec<(Keyword, AttributeValue<IConst, ISymbol, SExpr>)>,
+            _attributes: Vec<(Keyword, AttributeValue)>,
         ) -> Result<Self::T, Self::E> {
             // TODO: take attributes into account?
             eprintln!("warning: attributes are currently ignored");
@@ -482,7 +491,7 @@ mod visitors {
         type E = ParseError<L>;
 
         fn visit_assert(&mut self, term: Term<L>) -> Result<Self::T, Self::E> {
-            Ok(Command::Assert(term))
+            Ok(Command::Assert { term })
         }
 
         fn visit_check_sat(&mut self) -> Result<Self::T, Self::E> {
@@ -507,14 +516,14 @@ mod visitors {
         fn visit_declare_datatype(
             &mut self,
             symbol: ISymbol,
-            datatype: DatatypeDec<ISymbol, ISort>,
+            datatype: DatatypeDec,
         ) -> Result<Self::T, Self::E> {
             Ok(Command::DeclareDatatype { symbol, datatype })
         }
 
         fn visit_declare_datatypes(
             &mut self,
-            datatypes: Vec<(ISymbol, Numeral, DatatypeDec<ISymbol, ISort>)>,
+            datatypes: Vec<(ISymbol, Numeral, DatatypeDec)>,
         ) -> Result<Self::T, Self::E> {
             Ok(Command::DeclareDatatypes { datatypes })
         }
@@ -542,7 +551,7 @@ mod visitors {
 
         fn visit_define_fun(
             &mut self,
-            sig: FunctionDec<ISymbol, ISort>,
+            sig: FunctionDec,
             term: Term<L>,
         ) -> Result<Self::T, Self::E> {
             Ok(Command::DefineFun { sig, term })
@@ -550,7 +559,7 @@ mod visitors {
 
         fn visit_define_fun_rec(
             &mut self,
-            sig: FunctionDec<ISymbol, ISort>,
+            sig: FunctionDec,
             term: Term<L>,
         ) -> Result<Self::T, Self::E> {
             Ok(Command::DefineFunRec { sig, term })
@@ -558,7 +567,7 @@ mod visitors {
 
         fn visit_define_funs_rec(
             &mut self,
-            funs: Vec<(FunctionDec<ISymbol, ISort>, Term<L>)>,
+            funs: Vec<(FunctionDec, Term<L>)>,
         ) -> Result<Self::T, Self::E> {
             Ok(Command::DefineFunsRec { funs })
         }
@@ -639,7 +648,7 @@ mod visitors {
         fn visit_set_info(
             &mut self,
             keyword: Keyword,
-            value: AttributeValue<IConst, ISymbol, SExpr>,
+            value: AttributeValue,
         ) -> Result<Self::T, Self::E> {
             Ok(Command::SetInfo { keyword, value })
         }
@@ -651,7 +660,7 @@ mod visitors {
         fn visit_set_option(
             &mut self,
             keyword: Keyword,
-            value: AttributeValue<IConst, ISymbol, SExpr>,
+            value: AttributeValue,
         ) -> Result<Self::T, Self::E> {
             Ok(Command::SetOption { keyword, value })
         }

@@ -18,6 +18,6 @@ publish = false
 # Example third-party import
 # serde = "^1.0"
 amzn-smt-ir = { path = "../amzn-smt-ir", version = "0.1" }
-smt2parser = "0.6"
+smt2parser = "0.6.1"
 
 # See more Cargo.toml keys and their definitions: https://doc.rust-lang.org/cargo/reference/manifest.html
