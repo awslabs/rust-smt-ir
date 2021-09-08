@@ -63,7 +63,7 @@ pub fn into_cnf<T: Logic>(
         .try_fold(&mut folder)?
         .into_iter()
         .for_each(|command| match command {
-            Command::Assert(lit) => cnf.push(clause![lit]),
+            Command::Assert { term: lit } => cnf.push(clause![lit]),
             _ => {}
         });
     Ok((cnf.and(CnfTerm(folder.clauses)), folder.vars))

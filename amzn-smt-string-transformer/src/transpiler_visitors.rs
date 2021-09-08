@@ -167,7 +167,8 @@ impl IdentifyStringsBuilder {
 /// example: given "new_var1" and term t, this creates an assertion
 /// (assert (= new_var1 t))
 pub fn new_assert_equal(new_var_name: ISymbol, t: &Term) -> Command {
-    Command::Assert(CoreOp::Eq([Term::Variable(new_var_name.into()), t.clone()].into()).into())
+    let term = CoreOp::Eq([Term::Variable(new_var_name.into()), t.clone()].into()).into();
+    Command::Assert { term }
 }
 
 /// Implement visitors for the relevant AST elements for the IdentifyStringsBuilder

@@ -115,7 +115,7 @@ impl<T: Logic> Script<Term<T>> {
     pub fn visit_asserted<V: Visitor<T>>(&self, visitor: &mut V) -> ControlFlow<V::BreakTy> {
         for command in self.commands.iter() {
             match command {
-                Command::Assert(t) => try_break!(t.visit_with(visitor)),
+                Command::Assert { term } => try_break!(term.visit_with(visitor)),
                 cmd => {
                     if let Some(ctx) = visitor.context_mut() {
                         ctx.process(cmd)
@@ -155,7 +155,7 @@ impl<Term> Script<Term> {
         self.commands
             .into_iter()
             .filter_map(|command| match command {
-                Command::Assert(t) => Some(t),
+                Command::Assert { term } => Some(term),
                 _ => None,
             })
     }
@@ -190,7 +190,7 @@ impl<Term> Script<Term> {
     /// # }
     /// ```
     pub fn add_asserts(&mut self, asserts: impl IntoIterator<Item = Term>) {
-        let asserts = asserts.into_iter().map(Command::Assert);
+        let asserts = asserts.into_iter().map(|term| Command::Assert { term });
         let check_sat_idx = (self.commands.iter())
             .enumerate()
             .rev()
@@ -256,7 +256,7 @@ impl Ctx {
     }
 
     pub(crate) fn process<T>(&mut self, command: &Command<T>) {
-        use Command::*;
+        use smt2parser::concrete::Command::*;
         match command {
             DeclareSort { symbol, arity } => self.declare_sort(symbol.clone(), arity.clone()),
             DeclareFun {

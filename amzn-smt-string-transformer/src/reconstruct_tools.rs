@@ -9,7 +9,6 @@ use amzn_smt_ir::{FunctionDec, ISymbol};
 use smt2parser::concrete::*;
 use smt2parser::CommandStream;
 use std::collections::HashMap;
-use std::convert::TryFrom;
 use std::{fs, io, io::BufRead};
 
 /// enum of possible acceptable results from running a solver on an attempted reconstruction
@@ -57,7 +56,7 @@ fn add_asserts_to_original_problem(
     let mut commands: Vec<Command> = Vec::new();
     for opt_c in problem {
         let c = opt_c.unwrap_or_else(|err| panic!("ERROR in command: {:?}", err));
-        let c = Command::try_from(c).unwrap();
+        let c = amzn_smt_ir::convert::convert_command(c).unwrap();
         // make sure to add the new assertions before the check-sat
         if let Command::CheckSat = c {
             check_sat_found = true;
@@ -139,7 +138,7 @@ pub fn reconstruct_and_add_assertions(
     let mut new_assertions: Vec<Command> = Vec::new();
 
     for o in model_out.flatten() {
-        if let Ok(comm) = Command::try_from(o) {
+        if let Ok(comm) = amzn_smt_ir::convert::convert_command(o) {
             if let Some(new_assert) = build_string_var_assertions(&new_map, &comm) {
                 new_assertions.push(new_assert);
             }

@@ -6,12 +6,10 @@ use super::{
     CoreOp, Let, Logic, Match, Quantifier, Term, UF,
 };
 use internment::Intern;
-use itertools::Itertools;
 use num_traits::ToPrimitive;
 use once_cell::sync::Lazy;
 pub use smt2parser::{
-    concrete::{Constant, Keyword, Symbol},
-    visitors::Identifier,
+    concrete::{Constant, Identifier, Keyword, Symbol},
     Binary, Decimal, Hexadecimal, Numeral,
 };
 use std::{
@@ -23,31 +21,13 @@ use std::{
     iter, ops,
 };
 
+pub type Command<Term> =
+    smt2parser::concrete::Command<Term, ISymbol, ISort, Keyword, IConst, SExpr>;
+pub type SExpr = smt2parser::concrete::SExpr<IConst, ISymbol, Keyword>;
 pub type Index = smt2parser::visitors::Index<ISymbol>;
-pub type DatatypeDec = smt2parser::visitors::DatatypeDec<ISymbol, ISort>;
-pub type FunctionDec = smt2parser::visitors::FunctionDec<ISymbol, ISort>;
-pub type AttributeValue = smt2parser::visitors::AttributeValue<IConst, ISymbol, SExpr>;
-
-#[derive(Clone, Debug, Hash, PartialEq, Eq)]
-pub enum SExpr {
-    Constant(IConst),
-    Symbol(ISymbol),
-    Keyword(Keyword),
-    Application(Vec<SExpr>),
-}
-
-impl fmt::Display for SExpr {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        // ⟨spec_constant⟩ | ⟨symbol⟩ | ⟨keyword⟩ | ( ⟨s_expr⟩∗ )
-        use SExpr::*;
-        match self {
-            Constant(c) => write!(f, "{}", c),
-            Symbol(s) => write!(f, "{}", s),
-            Keyword(k) => write!(f, "{}", k),
-            Application(values) => write!(f, "({})", values.iter().format(" ")),
-        }
-    }
-}
+pub type DatatypeDec = smt2parser::concrete::DatatypeDec<ISymbol, ISort>;
+pub type FunctionDec = smt2parser::concrete::FunctionDec<ISymbol, ISort>;
+pub type AttributeValue = smt2parser::concrete::AttributeValue<IConst, ISymbol, SExpr>;
 
 /// An identifier possibly annotated with a sort.
 #[derive(Clone, Copy, Debug, Hash, PartialEq, Eq)]
@@ -73,7 +53,7 @@ impl Sort {
     pub fn bv_width(&self) -> Option<&Numeral> {
         match self {
             Sort::Simple { identifier } => match identifier.as_ref() {
-                smt2parser::visitors::Identifier::Indexed { symbol, indices } => {
+                smt2parser::concrete::Identifier::Indexed { symbol, indices } => {
                     match (symbol.as_ref().0.as_ref(), indices.as_slice()) {
                         ("BitVec", [Index::Numeral(n)]) => Some(n),
                         _ => None,

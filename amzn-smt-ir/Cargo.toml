@@ -22,7 +22,7 @@ itertools = "0.10"
 num-traits = "0.2"
 once_cell = "1.8"
 smallvec = { version = "1.6", features = ["union"] }
-smt2parser = "0.6"
+smt2parser = "0.6.1"
 stacker = "0.1"
 thiserror = "1.0"
 varisat = { version = "0.2", optional = true }
