@@ -109,11 +109,13 @@ where
     }
 
     pub fn from_commands(commands: Vec<Command<Term<T>>>) -> Self {
-        Self {commands: commands}
+        Self { commands: commands }
     }
 
     pub fn new() -> Self {
-        Self {commands: Vec::new()}
+        Self {
+            commands: Vec::new(),
+        }
     }
 
     pub fn push(&mut self, cmd: Command<Term<T>>) {
