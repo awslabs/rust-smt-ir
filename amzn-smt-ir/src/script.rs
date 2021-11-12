@@ -109,7 +109,7 @@ where
     }
 
     pub fn from_commands(commands: Vec<Command<Term<T>>>) -> Self {
-        Self { commands: commands }
+        Self { commands }
     }
 
     pub fn new() -> Self {

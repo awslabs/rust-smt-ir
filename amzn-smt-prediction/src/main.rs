@@ -98,8 +98,8 @@ impl Visitor<ALL> for StringCounter {
 
 // Returns a header for the CSV file based on which String predicates are observed in the various
 // datasets. Defaults to all String predicates
-fn string_counter_csv_header(d: &String) -> String {
-    match d.as_str() {
+fn string_counter_csv_header(d: &str) -> String {
+    match d {
         "smtcomp" | "script" => "str_concat,len,to_re,in_re,re_concat,re_union,re_kleene_star,sing_str_at,substr,prefix_of,contains,index_of,replace,re_kleene_cross,re_range,to_int,from_int\n".to_string(),
         "kepler" => "str_concat,len\n".to_string(),
         _ => "str_concat,len,lex_ord,to_re,in_re,re_none,re_all,re_all_char,re_concat,re_union,re_intersect,re_kleene_star,ref_clos_lex_ord,sing_str_at,substr,prefix_of,suffix_of,contains,index_of,replace,replace_all,replace_re,replace_re_all,re_compl,re_diff,re_kleene_cross,re_opt,re_range,re_pow,re_loop,is_digit,to_code,from_code,to_int,from_int\n".to_string()

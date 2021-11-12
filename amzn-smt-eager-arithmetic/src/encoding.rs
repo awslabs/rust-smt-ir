@@ -76,7 +76,7 @@ impl InterLogicFolder<ALL> for Encoder {
     }
 
     fn fold_core_op(&mut self, op: ICoreOp<ALL>) -> Result<Term<Self::U>, Self::Error> {
-        Ok(match op.clone().super_fold_with(self)? {
+        Ok(match op.super_fold_with(self)? {
             CoreOp::Eq(args) => {
                 let sort = (args.first())
                     .ok_or_else(|| UnknownSort(Term::from(CoreOp::Eq(args.clone()))))?
