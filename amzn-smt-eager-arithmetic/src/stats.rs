@@ -389,9 +389,7 @@ impl Visitor<ALL> for StatsVisitor<'_> {
         use CoreOp::*;
         match op.as_ref() {
             Distinct(..) | Ite(..) => ControlFlow::Break(self.invalid(op.clone())),
-            Eq(args)
-                if args.first().map(|t| t.sort(self.context)) != Some(Ok(ISort::bool())) =>
-            {
+            Eq(args) if args.first().map(|t| t.sort(self.context)) != Some(Ok(ISort::bool())) => {
                 self.visit_constraint(op.into(), args)
             }
             True | False | Not(..) | And(..) | Or(..) | Xor(..) | Imp(..) | Eq(..) => {

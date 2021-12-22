@@ -57,10 +57,7 @@ fn update_and_get_next_char(char_map: &mut CharMap, offset: u32, update_map_offs
 
 /// transform a given string using the char-to-char mapping strategy, with the mapping specified
 /// in the given CharMap.
-pub fn map_string_char_to_char(
-    s: &str,
-    char_map: &mut CharMap,
-) -> Result<String, StringMapError> {
+pub fn map_string_char_to_char(s: &str, char_map: &mut CharMap) -> Result<String, StringMapError> {
     // error if the string has to maintain all properties
     if matches!(
         char_map.string_lit_props.get(s).unwrap(),
@@ -716,10 +713,7 @@ fn gen_gap_mapped(
 /// map a string where no properties need to be maintained.
 /// the only thing that needs to be checked is that the mapped string is not already in the
 /// string_map.
-pub fn gen_string_freeforall(
-    _s: &str,
-    char_map: &mut CharMap,
-) -> Result<String, StringMapError> {
+pub fn gen_string_freeforall(_s: &str, char_map: &mut CharMap) -> Result<String, StringMapError> {
     let offset = char_map.non_range_offset;
     // just do this to make sure it's a valid char (don't actually modify the map)
     let next_char = update_and_get_next_char(char_map, offset, false);
@@ -854,8 +848,7 @@ pub fn map_string_no_reconstruct(
                         to_ret = gen_string_freeforall(s, char_map)?;
                     } else if !keep_substrings {
                         // range case! keep ranges (if there's none, that is fine)
-                        to_ret =
-                            gen_string_keep_ranges(s, char_map, len_bool, keep_ints, false);
+                        to_ret = gen_string_keep_ranges(s, char_map, len_bool, keep_ints, false);
                     } else {
                         // keep substrings should have already been mapped, so now bail and map with char-to-char
                         to_ret = map_string_char_to_char(s, char_map).unwrap();

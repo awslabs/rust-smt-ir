@@ -932,8 +932,7 @@ pub fn transform_ast(
                 if let Some(sym_replace_term) = opt_sym_replace_term {
                     replace_terms.insert(var_defn.clone(), sym_replace_term);
                     // add to list of affected vars, if we're remapping a string wrt this var
-                    if let Ok(cvars_affected) =
-                        callgraph.get_constraint_vars_in_partition_with(sym)
+                    if let Ok(cvars_affected) = callgraph.get_constraint_vars_in_partition_with(sym)
                     {
                         mod_constraint_vars.extend(cvars_affected);
                     } else {

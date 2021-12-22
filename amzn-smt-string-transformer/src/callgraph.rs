@@ -325,12 +325,7 @@ impl CallGraph {
                 if let Some(contrib) = &cur_node.data.built_from {
                     return Ok((contrib.clone(), AffectOk::AlreadyDone));
                 }
-                self.propagate_through_relnodes(
-                    var,
-                    cur_node.children(),
-                    &cur_node.data,
-                    direction,
-                )
+                self.propagate_through_relnodes(var, cur_node.children(), &cur_node.data, direction)
             }
             GraphTraversalDir::UsedToBuild => {
                 // parents
