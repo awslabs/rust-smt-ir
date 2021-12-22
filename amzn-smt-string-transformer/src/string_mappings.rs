@@ -637,13 +637,8 @@ pub fn gen_string_keep_substrings(
             to_ret.push_str(&gap_mapped);
         }
         // finally map the current mid_string
-        let midpoint_mapped = gen_string_keep_substrings(
-            mid_string,
-            char_map,
-            len_bool,
-            keep_ints,
-            keep_ranges,
-        )?;
+        let midpoint_mapped =
+            gen_string_keep_substrings(mid_string, char_map, len_bool, keep_ints, keep_ranges)?;
         to_ret.push_str(&midpoint_mapped);
         cur_startpoint = mid_ind + mid_string.len();
     }
