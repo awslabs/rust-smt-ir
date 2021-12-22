@@ -638,7 +638,7 @@ pub fn gen_string_keep_substrings(
         }
         // finally map the current mid_string
         let midpoint_mapped = gen_string_keep_substrings(
-            &mid_string.to_string(),
+            mid_string,
             char_map,
             len_bool,
             keep_ints,

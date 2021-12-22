@@ -196,7 +196,7 @@ pub fn build_string_var_assertions(
 
             // the solver doesn't play well with '\u{0}', it seems to be represented as \x00 so just
             // replace it with this
-            let reconstructed = reconstructed.replace("\u{0}", "\\x00");
+            let reconstructed = reconstructed.replace('\u{0}', "\\x00");
 
             let un_alpha_map = new_map.get_un_alpha_map();
             let var_name = match un_alpha_map.get(var_name_str) {
