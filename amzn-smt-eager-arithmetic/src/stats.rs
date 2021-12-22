@@ -335,10 +335,10 @@ impl Visitor<ALL> for StatsVisitor<'_> {
     type BreakTy = anyhow::Error;
 
     fn context(&self) -> Option<&Ctx> {
-        Some(&self.context)
+        Some(self.context)
     }
     fn context_mut(&mut self) -> Option<&mut Ctx> {
-        Some(&mut self.context)
+        Some(self.context)
     }
 
     fn visit_const(&mut self, c: &IConst) -> ControlFlow<Self::BreakTy> {
@@ -390,7 +390,7 @@ impl Visitor<ALL> for StatsVisitor<'_> {
         match op.as_ref() {
             Distinct(..) | Ite(..) => ControlFlow::Break(self.invalid(op.clone())),
             Eq(args)
-                if args.first().map(|t| t.sort(&mut self.context)) != Some(Ok(ISort::bool())) =>
+                if args.first().map(|t| t.sort(self.context)) != Some(Ok(ISort::bool())) =>
             {
                 self.visit_constraint(op.into(), args)
             }

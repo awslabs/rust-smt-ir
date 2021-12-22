@@ -198,7 +198,7 @@ fn string_consts_affected(
     // var_defn: &Term,
     callgraph: &mut CallGraph,
 ) -> Result<BTreeSet<String>, AffectErr> {
-    let string_consts = &callgraph.get_data_for_var(&cur_sym)?.string_lits_built_from;
+    let string_consts = &callgraph.get_data_for_var(cur_sym)?.string_lits_built_from;
     Ok(string_consts.clone())
 }
 
@@ -259,7 +259,7 @@ pub fn char_level_substrings_required(
 /// used here.
 fn construct_mapping(
     sorted_string_list: Vec<&String>,
-    mut char_map: &mut CharMap,
+    char_map: &mut CharMap,
 ) -> Result<HashMap<String, String>, string_mappings::StringMapError> {
     let mut string_map: HashMap<String, String> = HashMap::new();
     // first, map all the strings where the substrings need to be preserved
@@ -284,7 +284,7 @@ fn construct_mapping(
                     // this bails out if it's an error; right now behaviour is to try again remapping char_to_char
                     string_mappings::gen_string_keep_substrings(
                         s,
-                        &mut char_map,
+                        char_map,
                         len_bool,
                         ki,
                         keep_ranges,
@@ -901,7 +901,7 @@ pub fn transform_ast(
     }
     // if we're using the global (persistent) map, read it in
     if use_global_map {
-        let global_map_opt = Mapping::build_from_json_file(&("global_mapping.json"));
+        let global_map_opt = Mapping::build_from_json_file("global_mapping.json");
         if let Ok(global_map) = global_map_opt {
             char_map.persist_string_map = global_map
                 .persistent_string_map
@@ -924,16 +924,16 @@ pub fn transform_ast(
     let mut var_index = 0;
     while var_index < string_vars.len() {
         let sym = string_vars[var_index];
-        if let Some(var_defn) = identify_builder.string_var_defn_map.get(&sym) {
+        if let Some(var_defn) = identify_builder.string_var_defn_map.get(sym) {
             // transpile strings related to the current string var
             if let Ok(opt_sym_replace_term) =
-                compute_replacement_strings(&sym, var_defn, &mut callgraph, &mut char_map)
+                compute_replacement_strings(sym, var_defn, &mut callgraph, &mut char_map)
             {
                 if let Some(sym_replace_term) = opt_sym_replace_term {
                     replace_terms.insert(var_defn.clone(), sym_replace_term);
                     // add to list of affected vars, if we're remapping a string wrt this var
                     if let Ok(cvars_affected) =
-                        callgraph.get_constraint_vars_in_partition_with(&sym)
+                        callgraph.get_constraint_vars_in_partition_with(sym)
                     {
                         mod_constraint_vars.extend(cvars_affected);
                     } else {

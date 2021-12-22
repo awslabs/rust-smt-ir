@@ -160,7 +160,7 @@ pub fn reconstruct_string(reconstruct_me: Vec<char>, re_map: HashMap<char, char>
     reconstruct_me
         .iter()
         .map(|c| {
-            if let Some(new_c) = re_map.get(&c) {
+            if let Some(new_c) = re_map.get(c) {
                 *new_c
             } else {
                 *c

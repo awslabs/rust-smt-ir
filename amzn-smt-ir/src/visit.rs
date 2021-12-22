@@ -343,7 +343,7 @@ impl<T: Logic> Visit<T> for ILet<T> {
         if let Some(ctx) = visitor.context_mut() {
             for (sym, old_sort) in old_bindings {
                 match old_sort {
-                    None => ctx.local.unbind_var(&sym),
+                    None => ctx.local.unbind_var(sym),
                     Some(sort) => {
                         ctx.local.bind_var(sym.clone(), sort);
                     }

@@ -49,7 +49,7 @@ impl<'a, U: Logic<Var = QualIdentifier>> Ackermanizer<'a, U> {
                 let var = match self.arg_vars.entry(t) {
                     Entry::Occupied(entry) => entry.get().clone(),
                     Entry::Vacant(entry) => {
-                        let sort = entry.key().sort(&mut self.ctx)?;
+                        let sort = entry.key().sort(self.ctx)?;
                         let var = self.ctx.fresh_var(sort)?;
                         entry.insert(var).clone()
                     }
@@ -146,11 +146,11 @@ where
     type U = U;
 
     fn context(&self) -> Option<&Ctx> {
-        Some(&self.ctx)
+        Some(self.ctx)
     }
 
     fn context_mut(&mut self) -> Option<&mut Ctx> {
-        Some(&mut self.ctx)
+        Some(self.ctx)
     }
 
     fn fold_uninterpreted_func(&mut self, uf: IUF<T>) -> Result<Term<U>, Self::Error> {

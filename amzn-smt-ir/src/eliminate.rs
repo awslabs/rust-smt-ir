@@ -53,11 +53,11 @@ impl<L: Logic<Var = QualIdentifier>> IntraLogicFolder<L> for EliminateLets<'_, L
     type Error = EliminationError<L>;
 
     fn context(&self) -> Option<&Ctx> {
-        Some(&self.ctx)
+        Some(self.ctx)
     }
 
     fn context_mut(&mut self) -> Option<&mut Ctx> {
-        Some(&mut self.ctx)
+        Some(self.ctx)
     }
 
     fn fold_var(&mut self, var: IVar) -> Result<Term<L>, Self::Error> {
@@ -79,7 +79,7 @@ impl<L: Logic<Var = QualIdentifier>> IntraLogicFolder<L> for EliminateLets<'_, L
                     Term::Constant(..) | Term::Variable(..) => t,
                     Term::CoreOp(op) if matches!(op.as_ref(), CoreOp::True | CoreOp::False) => t,
                     _ => {
-                        let sort = t.sort(&mut self.ctx)?;
+                        let sort = t.sort(self.ctx)?;
                         let v = Term::from(self.ctx.fresh_var(sort)?);
                         self.asserts.push(CoreOp::Eq([v.clone(), t].into()).into());
                         v

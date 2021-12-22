@@ -59,7 +59,7 @@ fn update_and_get_next_char(char_map: &mut CharMap, offset: u32, update_map_offs
 /// in the given CharMap.
 pub fn map_string_char_to_char(
     s: &str,
-    mut char_map: &mut CharMap,
+    char_map: &mut CharMap,
 ) -> Result<String, StringMapError> {
     // error if the string has to maintain all properties
     if matches!(
@@ -95,7 +95,7 @@ pub fn map_string_char_to_char(
                 }
                 // if not in a range, use the next available char
                 if !in_range {
-                    offset = update_and_get_next_char(&mut char_map, offset, true);
+                    offset = update_and_get_next_char(char_map, offset, true);
                 }
                 char_map.char_map.insert(c, char::from_u32(offset).unwrap());
                 char::from_u32(offset).unwrap()
@@ -115,7 +115,7 @@ pub fn map_string_char_to_char(
 /// if you want to map a string while preserving substring relationships, call `gen_string_keep_substrings`.
 pub fn gen_string_keep_ranges(
     s: &str,
-    mut char_map: &mut CharMap,
+    char_map: &mut CharMap,
     len_bool: bool,
     keep_ints: KeepInts,
     consider_substrings: bool,
@@ -178,7 +178,7 @@ pub fn gen_string_keep_ranges(
     let repeat_fix = fix_repeated_string(
         s.to_string(),
         to_ret.clone(),
-        &mut char_map,
+        char_map,
         100u8, // number of retries allowed
         keep_ints,
         consider_substrings,
@@ -186,7 +186,7 @@ pub fn gen_string_keep_ranges(
     );
     if matches!(repeat_fix, Err(_)) {
         // if there was an error bail and map char-to-char
-        to_ret = map_string_char_to_char(s, &mut char_map).unwrap();
+        to_ret = map_string_char_to_char(s, char_map).unwrap();
     } else {
         to_ret = repeat_fix.unwrap();
     }
@@ -406,7 +406,7 @@ fn is_contained_in(pair1: (usize, usize), pair2: (usize, usize)) -> PairOverlap 
 /// where these substring relationships need to be preserved
 pub fn gen_string_keep_substrings(
     s: &str,
-    mut char_map: &mut CharMap,
+    char_map: &mut CharMap,
     len_bool: bool,
     keep_ints: KeepInts,
     keep_ranges: bool,
@@ -512,9 +512,9 @@ pub fn gen_string_keep_substrings(
     // call recursively; if it's already in the map then it'll be returned directly
     // bail if either of them error
     let mapped_prefix =
-        gen_string_keep_substrings(&s_prefix, &mut char_map, len_bool, keep_ints, keep_ranges)?;
+        gen_string_keep_substrings(&s_prefix, char_map, len_bool, keep_ints, keep_ranges)?;
     let mapped_suffix =
-        gen_string_keep_substrings(&s_suffix, &mut char_map, len_bool, keep_ints, keep_ranges)?;
+        gen_string_keep_substrings(&s_suffix, char_map, len_bool, keep_ints, keep_ranges)?;
 
     let mut to_ret = mapped_prefix;
 
@@ -636,13 +636,13 @@ pub fn gen_string_keep_substrings(
         // if theres some gap here, map the string subsection in between
         if cur_startpoint < mid_ind {
             let gap_string = s[cur_startpoint..mid_ind].to_string();
-            let gap_mapped = gen_gap_mapped(s, gap_string, &mut char_map, len_bool, keep_ints)?;
+            let gap_mapped = gen_gap_mapped(s, gap_string, char_map, len_bool, keep_ints)?;
             to_ret.push_str(&gap_mapped);
         }
         // finally map the current mid_string
         let midpoint_mapped = gen_string_keep_substrings(
             &mid_string.to_string(),
-            &mut char_map,
+            char_map,
             len_bool,
             keep_ints,
             keep_ranges,
@@ -653,7 +653,7 @@ pub fn gen_string_keep_substrings(
     // if theres a gap between last mid_string and suffix
     if cur_startpoint < s.len() - s_suffix.len() {
         let gap_string = s[cur_startpoint..s.len() - s_suffix.len()].to_string();
-        let gap_mapped = gen_gap_mapped(s, gap_string, &mut char_map, len_bool, keep_ints)?;
+        let gap_mapped = gen_gap_mapped(s, gap_string, char_map, len_bool, keep_ints)?;
         to_ret.push_str(&gap_mapped);
     }
 
@@ -699,11 +699,11 @@ pub fn gen_string_keep_substrings(
 fn gen_gap_mapped(
     _s: &str,
     gap_string: String,
-    mut char_map: &mut CharMap,
+    char_map: &mut CharMap,
     len_bool: bool,
     keep_ints: KeepInts,
 ) -> Result<String, StringMapError> {
-    let gap_mapped = gen_string_keep_ranges(&gap_string, &mut char_map, len_bool, keep_ints, true);
+    let gap_mapped = gen_string_keep_ranges(&gap_string, char_map, len_bool, keep_ints, true);
     // last bool is consider_substrings
     let gap_mapped = fix_repeated_string(
         gap_string, gap_mapped, char_map, 100u8, keep_ints, true, len_bool,
@@ -718,11 +718,11 @@ fn gen_gap_mapped(
 /// string_map.
 pub fn gen_string_freeforall(
     _s: &str,
-    mut char_map: &mut CharMap,
+    char_map: &mut CharMap,
 ) -> Result<String, StringMapError> {
     let offset = char_map.non_range_offset;
     // just do this to make sure it's a valid char (don't actually modify the map)
-    let next_char = update_and_get_next_char(&mut char_map, offset, false);
+    let next_char = update_and_get_next_char(char_map, offset, false);
     let mut to_ret = char::from_u32(next_char).unwrap().to_string();
     // fix if already there
     // just do a simpler version than fix_repeated_strings, since we don't need to check properties or
@@ -734,7 +734,7 @@ pub fn gen_string_freeforall(
     while char_map.string_map.values().any(|val| val == &to_ret) && cur_tries < retries {
         // get next valid offset, this auto-skips illegal chars
         // but wont update the map
-        let next_char = update_and_get_next_char(&mut char_map, cur_offset + offset, false);
+        let next_char = update_and_get_next_char(char_map, cur_offset + offset, false);
         // make sure it's ascii
         if next_char > 127 {
             cur_offset = 1;
@@ -767,7 +767,7 @@ pub fn gen_string_freeforall(
 /// the earlier mappings and so the string will be mapped char-to-char.
 pub fn map_string_no_reconstruct(
     s: &str,
-    mut char_map: &mut CharMap,
+    char_map: &mut CharMap,
 ) -> Result<String, StringMapError> {
     let req_props = char_map.string_lit_props.get(s).unwrap().clone();
     if matches!(req_props, StringSetProperties::Everything) {
@@ -851,14 +851,14 @@ pub fn map_string_no_reconstruct(
                     {
                         // then all bets are off, no constraints are here
                         // just make a new string of length 1
-                        to_ret = gen_string_freeforall(s, &mut char_map)?;
+                        to_ret = gen_string_freeforall(s, char_map)?;
                     } else if !keep_substrings {
                         // range case! keep ranges (if there's none, that is fine)
                         to_ret =
-                            gen_string_keep_ranges(s, &mut char_map, len_bool, keep_ints, false);
+                            gen_string_keep_ranges(s, char_map, len_bool, keep_ints, false);
                     } else {
                         // keep substrings should have already been mapped, so now bail and map with char-to-char
-                        to_ret = map_string_char_to_char(s, &mut char_map).unwrap();
+                        to_ret = map_string_char_to_char(s, char_map).unwrap();
                     }
                 }
                 StringSetProperties::Everything => {}

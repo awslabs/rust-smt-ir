@@ -327,7 +327,7 @@ impl CallGraph {
                 }
                 self.propagate_through_relnodes(
                     var,
-                    &cur_node.children(),
+                    cur_node.children(),
                     &cur_node.data,
                     direction,
                 )
@@ -337,7 +337,7 @@ impl CallGraph {
                 if let Some(contrib) = &cur_node.data.used_to_build {
                     return Ok((contrib.clone(), AffectOk::AlreadyDone));
                 }
-                self.propagate_through_relnodes(var, &cur_node.parents(), &cur_node.data, direction)
+                self.propagate_through_relnodes(var, cur_node.parents(), &cur_node.data, direction)
             }
             _ => Err(AffectErr::InvalidOption),
         }
@@ -559,7 +559,7 @@ impl CallGraph {
         let mut constraint_cliques: HashMap<NodeId, NodeSetData> =
             HashMap::with_capacity(self.constraint_vars.len());
         for cvar in &self.constraint_vars {
-            if let Some(cvar_utbs) = &self.get_data_for_ind(&cvar)?.used_to_build {
+            if let Some(cvar_utbs) = &self.get_data_for_ind(cvar)?.used_to_build {
                 let mut clique_vars: BTreeSet<NodeId> =
                     cvar_utbs.vars.iter().cloned().collect::<BTreeSet<_>>();
                 let mut clique_string_fcts: HashSet<(StringFct, StringFctArgs)> = cvar_utbs
@@ -573,7 +573,7 @@ impl CallGraph {
                     .cloned()
                     .collect::<BTreeSet<_>>();
                 for utb_var in &cvar_utbs.vars {
-                    if let Some(utb_bfs) = &self.get_data_for_ind(&utb_var)?.built_from {
+                    if let Some(utb_bfs) = &self.get_data_for_ind(utb_var)?.built_from {
                         clique_vars.extend(utb_bfs.vars.iter().cloned());
                         clique_string_fcts.extend(utb_bfs.string_fcts.iter().cloned());
                         clique_string_lits.extend(utb_bfs.string_lits.iter().cloned());

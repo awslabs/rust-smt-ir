@@ -565,6 +565,7 @@ mod tests {
         check!(super::Q);
     }
 
+    #[allow(clippy::upper_case_acronyms)]
     #[derive(Clone, Debug, Default, Hash, PartialEq, Eq)]
     struct QUF;
     impl Logic for QUF {

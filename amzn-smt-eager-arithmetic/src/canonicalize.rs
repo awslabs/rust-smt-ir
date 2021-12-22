@@ -150,7 +150,7 @@ impl<'a> Canonicalizer<'a> {
             })
             // pull out constants
             .filter(|arg| {
-                if let Some((x, pos)) = int_term(&arg) {
+                if let Some((x, pos)) = int_term(arg) {
                     if pos {
                         c_pos += x;
                     } else {
@@ -212,10 +212,10 @@ impl IntraLogicFolder<ALL> for Canonicalizer<'_> {
     type Error = anyhow::Error;
 
     fn context(&self) -> Option<&Ctx> {
-        Some(&self.context)
+        Some(self.context)
     }
     fn context_mut(&mut self) -> Option<&mut Ctx> {
-        Some(&mut self.context)
+        Some(self.context)
     }
 
     fn fold_core_op(&mut self, op: ICoreOp<ALL>) -> Result<Term, Self::Error> {
@@ -224,7 +224,7 @@ impl IntraLogicFolder<ALL> for Canonicalizer<'_> {
             CoreOp::Eq(args) => {
                 let sort = (args.first())
                     .ok_or_else(|| UnknownSort(CoreOp::Eq(args.clone()).into()))
-                    .and_then(|arg| arg.sort(&mut self.context));
+                    .and_then(|arg| arg.sort(self.context));
                 if sort == Ok(ISort::int()) {
                     chained(args, |l, r| {
                         let (l, r) = Self::normalize_constraint(l, r);
@@ -236,9 +236,9 @@ impl IntraLogicFolder<ALL> for Canonicalizer<'_> {
             }
             // TODO: can the bound be computed with `ite` and `distinct` applications left as-is?
             CoreOp::Ite(cond, consq, alt) => {
-                let sort = consq.sort(&mut self.context)?;
+                let sort = consq.sort(self.context)?;
                 debug_assert_eq!(
-                    alt.sort(&mut self.context)?,
+                    alt.sort(self.context)?,
                     sort,
                     "ite branches are of different sorts"
                 );
@@ -262,7 +262,7 @@ impl IntraLogicFolder<ALL> for Canonicalizer<'_> {
             CoreOp::Distinct(args) => {
                 let sort = (args.first())
                     .ok_or_else(|| UnknownSort(CoreOp::Distinct(args.clone()).into()))
-                    .and_then(|arg| arg.sort(&mut self.context));
+                    .and_then(|arg| arg.sort(self.context));
                 if sort == Ok(ISort::int()) {
                     pairwise(&args, |x, y| {
                         let (l, r) = Self::normalize_constraint(x, y);

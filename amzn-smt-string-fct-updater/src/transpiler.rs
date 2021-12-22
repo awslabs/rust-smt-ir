@@ -148,7 +148,7 @@ impl IntraLogicFolder<ALL> for ModernizeStringsBuilder {
 
     fn fold_const(&mut self, constant: IConst) -> Result<Term, Self::Error> {
         Ok(match constant.as_ref() {
-            Constant::String(s) => Constant::String(convert_z3escapes(&s)).into(),
+            Constant::String(s) => Constant::String(convert_z3escapes(s)).into(),
             _ => constant.into(),
         })
     }

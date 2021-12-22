@@ -76,7 +76,7 @@ impl IdentifyStringsBuilder {
             let mut string_lits = BTreeSet::<String>::new();
             self.char_level_substring_vars
                 .extend(char_level_substrings_required(
-                    &op.args()
+                    op.args()
                         .into_iter()
                         .cloned()
                         .collect::<Vec<Term>>()
@@ -89,7 +89,7 @@ impl IdentifyStringsBuilder {
                     let ident_sym = identifier.sym();
                     if self.string_var_list.contains(&ident_sym.clone()) {
                         ident_args.insert(ident_sym.clone());
-                        self.callgraph.add_parent_child(&var_sym, &ident_sym).ok();
+                        self.callgraph.add_parent_child(&var_sym, ident_sym).ok();
                     }
                 } else if let Term::Constant(c) = arg {
                     if let Constant::String(s) = c.as_ref() {

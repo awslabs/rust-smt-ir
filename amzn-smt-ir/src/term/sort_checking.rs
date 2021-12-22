@@ -128,23 +128,23 @@ impl<L: Logic> Folder<L> for SortChecker<'_> {
     }
 
     fn fold_var(&mut self, var: crate::IVar<L::Var>) -> Result<Self::Output, Self::Error> {
-        var.sort(&mut self.0)
+        var.sort(self.0)
     }
 
     fn fold_core_op(&mut self, op: ICoreOp<L>) -> Result<Self::Output, Self::Error> {
-        op.sort(&mut self.0)
+        op.sort(self.0)
     }
 
     fn fold_theory_op(&mut self, op: crate::IOp<L>) -> Result<Self::Output, Self::Error> {
-        op.sort(&mut self.0)
+        op.sort(self.0)
     }
 
     fn fold_uninterpreted_func(&mut self, uf: crate::IUF<L>) -> Result<Self::Output, Self::Error> {
-        uf.sort(&mut self.0)
+        uf.sort(self.0)
     }
 
     fn fold_let(&mut self, l: crate::ILet<L>) -> Result<Self::Output, Self::Error> {
-        l.term.sort(&mut self.0)
+        l.term.sort(self.0)
     }
 
     fn fold_match(&mut self, m: crate::IMatch<L>) -> Result<Self::Output, Self::Error> {
@@ -152,6 +152,6 @@ impl<L: Logic> Folder<L> for SortChecker<'_> {
     }
 
     fn fold_quantifier(&mut self, quantifier: IQuantifier<L>) -> Result<Self::Output, Self::Error> {
-        quantifier.sort(&mut self.0)
+        quantifier.sort(self.0)
     }
 }
