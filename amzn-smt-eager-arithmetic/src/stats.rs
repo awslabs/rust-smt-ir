@@ -270,7 +270,7 @@ impl<'a> StatsVisitor<'a> {
     /// form of linear constraints (for now just of the form `sum >= b` where `sum` is a linear
     /// combination of variables and `b` is a constant) joined by AND/OR/NOT. If the formula doesn't
     /// have the right form, the invalid subformula is returned as an error.
-    /// See: http://reports-archive.adm.cs.cmu.edu/anon/2003/CMU-CS-03-210.pdf
+    /// See: <http://reports-archive.adm.cs.cmu.edu/anon/2003/CMU-CS-03-210.pdf>
     pub fn solution_size_upper_bound_bits(self) -> HashMap<ISymbol, u64> {
         let mut partition_bounds = HashMap::new();
         let mut stats = self.stats;
