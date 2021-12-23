@@ -25,10 +25,10 @@ use smt2parser::Numeral;
 /// `Folder<T>`, as the latter only includes types that directly implement `Folder`. See
 /// [Emulating Specialization](#emulating-specialization) below for details.
 ///
-/// [`Const`], [`Var`], [`CoreOp`], and [`Op`] implement [`Fold`]; when [`Fold::fold_with`] is called
+/// [`IConst`], [`IVar`], [`CoreOp`], and [`IOp`] implement [`Fold`]; when [`Fold::fold_with`] is called
 /// with a folder, it will recursively fold all of the subexpressions contained within. For types
 /// that have corresponding hooks in [`Folder`] (e.g. [`Folder::fold_var`], [`Folder::fold_core_op`]),
-/// [`Fold::fold_with`] will call the hook, which should then recusively fold subexpressions -- this
+/// [`Fold::fold_with`] will call the hook, which should then recursively fold subexpressions -- this
 /// can be accomplished through a call to [`SuperFold::super_fold_with`].
 ///
 /// # Emulating specialization

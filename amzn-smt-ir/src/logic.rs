@@ -16,7 +16,7 @@ use std::{
 /// An SMT logic with variables of type [`Self::Var`],
 /// operations of type [`Self::Op`], and quantifiers of type [`Self::Quantifier`].
 ///
-/// [`Op`](super::Op) always includes the operations in SMT-LIB's Core theory (`and`, `or`, `not`,
+/// [`Op`](Self::Op) always includes the operations in SMT-LIB's Core theory (`and`, `or`, `not`,
 /// etc.) so an implementation of [`Logic`] that doesn't need any extra operators can specify an
 /// uninhabited type for [`Self::Op`]. ([`Void`](crate::Void) is provided for this purpose.
 
@@ -75,7 +75,7 @@ pub trait Logic: Clone + Debug + Default + Hash + PartialEq + Eq + 'static {
         + Debug
         + Display;
 
-    /// Type of quantifiers in the logic -- either [`Void`] for a quantifier-free logic or
+    /// Type of quantifiers in the logic -- either [`Void`](crate::Void) for a quantifier-free logic or
     /// [`Quantifier`](crate::Quantifier) for a quantified logic.
     type Quantifier: Internable
         + Quantifier<Self>
@@ -88,7 +88,7 @@ pub trait Logic: Clone + Debug + Default + Hash + PartialEq + Eq + 'static {
         + Debug
         + Display;
 
-    /// Type of uninterpreted functions in the logic -- either [`Void`] for a logic without
+    /// Type of uninterpreted functions in the logic -- either [`Void`](crate::Void) for a logic without
     /// uninterpreted functions or [`UF`](crate::UF) for a logic containing them.
     type UninterpretedFunc: Internable
         + UninterpretedFunction<Self>

@@ -89,7 +89,7 @@ where
     ///
     /// ## Parsing a script from a string
     ///
-    /// This example parses a simple SMT-LIB script into [`Terms`] in [`ALL`](crate::logic::ALL)
+    /// This example parses a simple SMT-LIB script into [`Term`](crate::term::Term) in [`ALL`](crate::logic::ALL)
     /// (the most general logic).
     ///
     /// ```
@@ -130,9 +130,9 @@ impl<T: Logic> Script<Term<T>> {
         for command in self.commands.iter() {
             match command {
                 Command::Assert { term } => try_break!(term.visit_with(visitor)),
-                cmd => {
+                _ => {
                     if let Some(ctx) = visitor.context_mut() {
-                        ctx.process(cmd)
+                        ctx.process(command)
                     }
                 }
             }

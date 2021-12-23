@@ -26,11 +26,11 @@ macro_rules! try_break {
 
 /// A `Visitor` recursively traverses terms to compute some result.
 ///
-/// [`Const`], [`Var`], [`CoreOp`], and [`Op`] implement [`Visit`]; when [`Visit::visit_with`] is
+/// [`IConst`], [`IVar`], [`CoreOp`], and [`IOp`] implement [`Visit`]; when [`Visit::visit_with`] is
 /// called with a visitor, it will recursively visit all of the subexpressions contained within.
 /// For types that have corresponding hooks in [`Visitor`] (e.g. [`Visitor::visit_var`],
 /// [`Visitor::visit_core_op`]), [`Visit::visit_with`] will call the hook, which should then
-/// recusively visit subexpressions -- this can be accomplished through a call to
+/// recursively visit subexpressions -- this can be accomplished through a call to
 /// [`SuperVisit::super_visit_with`].
 ///
 /// # Examples
