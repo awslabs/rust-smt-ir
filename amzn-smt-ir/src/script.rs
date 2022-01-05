@@ -107,20 +107,6 @@ where
     pub fn parse(smt: impl io::BufRead) -> Result<Self, ParseError<T>> {
         CommandStream::new(smt, Converter::<T>::default(), None).collect()
     }
-
-    pub fn from_commands(commands: Vec<Command<Term<T>>>) -> Self {
-        Self { commands }
-    }
-
-    pub fn new() -> Self {
-        Self {
-            commands: Vec::new(),
-        }
-    }
-
-    pub fn push(&mut self, cmd: Command<Term<T>>) {
-        self.commands.push(cmd);
-    }
 }
 
 impl<T: Logic> Script<Term<T>> {
@@ -217,6 +203,20 @@ impl<Term> Script<Term> {
         } else {
             self.extend(asserts);
         }
+    }
+
+    pub fn from_commands(commands: Vec<Command<Term>>) -> Self {
+        Self { commands }
+    }
+
+    pub fn new() -> Self {
+        Self {
+            commands: Vec::new(),
+        }
+    }
+
+    pub fn push(&mut self, cmd: Command<Term>) {
+        self.commands.push(cmd);
     }
 }
 
