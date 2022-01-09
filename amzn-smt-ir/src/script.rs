@@ -48,6 +48,12 @@ impl<Term> IntoIterator for Script<Term> {
     }
 }
 
+impl<Term> AsRef<[Command<Term>]> for Script<Term> {
+    fn as_ref(&self) -> &[Command<Term>] {
+        &self.commands
+    }
+}
+
 impl<Term> Extend<Command<Term>> for Script<Term> {
     fn extend<T: IntoIterator<Item = Command<Term>>>(&mut self, iter: T) {
         self.commands.extend(iter)
