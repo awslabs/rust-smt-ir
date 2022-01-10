@@ -226,6 +226,12 @@ impl<Term> Script<Term> {
     }
 }
 
+impl<Term> Default for Script<T> {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 /// `Ctx` tracks the global context of a script (e.g. defined sorts and functions), along with local
 /// context inside of terms (e.g. variables bound by `let`, `forall`, `exists`).
 #[derive(Clone, Debug, Default)]
