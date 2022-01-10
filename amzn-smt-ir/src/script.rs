@@ -226,7 +226,7 @@ impl<Term> Script<Term> {
     }
 }
 
-impl<Term> Default for Script<T> {
+impl<Term> Default for Script<Term> {
     fn default() -> Self {
         Self::new()
     }
