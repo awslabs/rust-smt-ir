@@ -1,6 +1,6 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
-use crate::{ISort, ISymbol, Logic, Term};
+use crate::{Command, FunctionDec, ISort, ISymbol, Logic, Script, Term};
 use itertools::Itertools;
 use std::{fmt, iter::FromIterator};
 
@@ -66,6 +66,41 @@ impl<L: Logic> Model<L> {
             } if s == sym && args.is_empty() => Some(body.clone()),
             _ => None,
         })
+    }
+
+    pub fn from_script(script: Script<Term<L>>) -> Result<Self, Box<dyn std::error::Error>> {
+        let elems_result: Result<Vec<DefineFun<Term<L>>>, Box<dyn std::error::Error>> = script
+            .into_iter()
+            .map(|elem| match elem {
+                Command::DefineFun { sig, term } => Ok(DefineFun {
+                    sym: sig.name,
+                    args: sig.parameters,
+                    sort: sig.result,
+                    body: term,
+                }),
+                _ => Err(format!("Script element {} cannot be converted to a Model", &elem).into()),
+            })
+            .collect();
+
+        Ok(Self {
+            defns: elems_result?,
+        })
+    }
+
+    pub fn into_script(self) -> Script<Term<L>> {
+        let iter = self.defns.into_iter().map(|elem| {
+            let sig: FunctionDec = FunctionDec {
+                name: elem.sym,
+                parameters: elem.args,
+                result: elem.sort,
+            };
+
+            Command::DefineFun {
+                sig,
+                term: elem.body,
+            }
+        });
+        Script::from_iter(iter)
     }
 }
 
