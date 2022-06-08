@@ -209,7 +209,7 @@ where
     for<'a> T: From<&'a T>,
 {
     fn from(v: &T) -> Self {
-        IVar(Intern::from(v))
+        IVar(Intern::from_ref(v))
     }
 }
 
