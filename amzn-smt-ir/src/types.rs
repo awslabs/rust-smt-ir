@@ -426,7 +426,7 @@ macro_rules! from_borrowed {
             $($param: Clone),*
         {
             fn from(val: &$inner) -> Self {
-                Self(Intern::from(val))
+                Self(Intern::from_ref(val))
             }
         }
     };
