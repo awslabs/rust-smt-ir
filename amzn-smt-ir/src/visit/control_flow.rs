@@ -6,7 +6,7 @@
 /// you want the user to be able to choose whether to exit early.
 /// Having the enum makes it clearer -- no more wondering "wait, what did `false`
 /// mean again?" -- and allows including a value.
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum ControlFlow<B, C = ()> {
     /// Move on to the next phase of the operation as normal.
     Continue(C),

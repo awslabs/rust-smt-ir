@@ -12,16 +12,6 @@ combine_ops! {
     }
 }
 
-#[cfg(test)]
-mod size_assertions {
-    use super::*;
-    static_assertions::assert_eq_size!(Op<Term>, [*const (); 8]);
-    static_assertions::assert_eq_size!(ArithOp<Term>, [*const (); 6]);
-    static_assertions::assert_eq_size!(ArrayOp<Term>, [*const (); 7]);
-    static_assertions::assert_eq_size!(BvOp<Term>, [*const (); 6]);
-    static_assertions::assert_eq_size!(StringOp<Term>, [*const (); 7]);
-}
-
 #[derive(Clone, Default, Debug, Hash, PartialEq, Eq)]
 #[allow(non_camel_case_types)]
 pub struct ALL;
