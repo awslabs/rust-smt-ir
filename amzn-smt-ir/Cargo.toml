@@ -12,8 +12,6 @@ keywords = ["smt", "smt-lib", "solver"]
 categories = ["science"]
 edition = "2018"
 
-publish = false
-
 [dependencies]
 amzn-smt-ir-derive = "0.1"
 either = "1.6"
