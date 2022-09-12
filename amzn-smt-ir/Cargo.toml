@@ -15,7 +15,7 @@ edition = "2018"
 publish = false
 
 [dependencies]
-amzn-smt-ir-derive = { path = "../amzn-smt-ir-derive", version = "0.1" }
+amzn-smt-ir-derive = "0.1"
 either = "1.6"
 internment = "0.7.0"
 itertools = "0.10"
