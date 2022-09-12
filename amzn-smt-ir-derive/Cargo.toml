@@ -1,7 +1,7 @@
 [package]
 name = "amzn-smt-ir-derive"
 version = "0.1.0"
-decription = "Intermediate representation for SMT problems"
+description = "Intermediate representation for SMT problems"
 repository = "https://github.com/awslabs/rust-smt-ir"
 authors = ["Max Heller <maxhelle@amazon.com>"]
 license = "Apache-2.0"
