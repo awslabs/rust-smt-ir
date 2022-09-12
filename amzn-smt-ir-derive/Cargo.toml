@@ -1,7 +1,10 @@
 [package]
 name = "amzn-smt-ir-derive"
 version = "0.1.0"
+decription = "Intermediate representation for SMT problems"
+repository = "https://github.com/awslabs/rust-smt-ir"
 authors = ["Max Heller <maxhelle@amazon.com>"]
+license = "Apache-2.0"
 edition = "2018"
 
 # Setting publish to false prevents the accidental publishing
