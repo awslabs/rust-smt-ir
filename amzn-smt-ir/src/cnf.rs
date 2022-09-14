@@ -54,9 +54,11 @@ macro_rules! clause {
     };
 }
 
+type VarMap<V> = HashMap<IVar<V>, Variable>;
+
 pub fn into_cnf<T: Logic>(
     script: Script<Term<T>>,
-) -> Result<(CnfTerm, HashMap<IVar<T::Var>, Variable>), TransformationError<T>> {
+) -> Result<(CnfTerm, VarMap<T::Var>), TransformationError<T>> {
     let mut folder = CnfFolder::default();
     let mut cnf = CnfTerm::default();
     script

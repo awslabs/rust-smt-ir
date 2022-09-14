@@ -10,7 +10,7 @@ use crate::{
 use itertools::Itertools;
 use std::collections::HashMap;
 
-struct Ackermanizer<'a, U: Logic> {
+struct Ackermannizer<'a, U: Logic> {
     ctx: &'a mut Ctx,
     uf_vars: HashMap<UF<Term<U>>, MappedApplication<U>>,
     arg_vars: HashMap<Term<U>, IVar<U::Var>>,
@@ -23,16 +23,16 @@ struct MappedApplication<U: Logic> {
 }
 
 #[derive(Debug, thiserror::Error, PartialEq, Eq)]
-pub enum AckermanizationError<T: Logic, U: Logic> {
+pub enum AckermannizationError<T: Logic, U: Logic> {
     #[error(transparent)]
     FreshVar(#[from] FreshVarError),
     #[error(transparent)]
     UnknownSort(#[from] UnknownSort<Term<U>>),
-    #[error("Ackermanization cannot handle quantifiers: {0}")]
+    #[error("Ackermannization cannot handle quantifiers: {0}")]
     Quantifier(IQuantifier<T>),
 }
 
-impl<'a, U: Logic<Var = QualIdentifier>> Ackermanizer<'a, U> {
+impl<'a, U: Logic<Var = QualIdentifier>> Ackermannizer<'a, U> {
     fn new(ctx: &'a mut Ctx) -> Self {
         Self {
             ctx,
@@ -41,20 +41,19 @@ impl<'a, U: Logic<Var = QualIdentifier>> Ackermanizer<'a, U> {
         }
     }
 
-    fn purify_arg<T: Logic>(&mut self, t: Term<U>) -> Result<Term<U>, AckermanizationError<T, U>> {
+    fn purify_arg<T: Logic>(&mut self, t: Term<U>) -> Result<Term<U>, AckermannizationError<T, U>> {
         Ok(match t {
             Term::Constant(..) | Term::Variable(..) => t,
             _ => {
                 use std::collections::hash_map::Entry;
-                let var = match self.arg_vars.entry(t) {
-                    Entry::Occupied(entry) => entry.get().clone(),
+                match self.arg_vars.entry(t) {
+                    Entry::Occupied(entry) => entry.get().into(),
                     Entry::Vacant(entry) => {
                         let sort = entry.key().sort(self.ctx)?;
                         let var = self.ctx.fresh_var(sort)?;
-                        entry.insert(var).clone()
+                        entry.insert(var).clone().into()
                     }
-                };
-                var.into()
+                }
             }
         })
     }
@@ -68,7 +67,7 @@ impl<'a, U: Logic<Var = QualIdentifier>> Ackermanizer<'a, U> {
             .map(|defn| {
                 debug_assert!(
                     defn.args.is_empty(),
-                    "Ackermanization eliminates uninterpreted functions"
+                    "Ackermannization eliminates uninterpreted functions"
                 );
                 (defn.sym.clone(), defn.body.clone())
             })
@@ -135,14 +134,14 @@ impl<'a, U: Logic<Var = QualIdentifier>> Ackermanizer<'a, U> {
     }
 }
 
-impl<T, U> InterLogicFolder<T> for Ackermanizer<'_, U>
+impl<T, U> InterLogicFolder<T> for Ackermannizer<'_, U>
 where
     T: Logic<UninterpretedFunc = UF<Term<T>>, Var = QualIdentifier>,
     U: Logic<Var = QualIdentifier>,
     Void: Into<IUF<U>>,
     T::Op: SuperFold<T, Term<U>, Output = U::Op>,
 {
-    type Error = AckermanizationError<T, U>;
+    type Error = AckermannizationError<T, U>;
     type U = U;
 
     fn context(&self) -> Option<&Ctx> {
@@ -198,21 +197,21 @@ where
         &mut self,
         quantifier: IQuantifier<T>,
     ) -> Result<Term<Self::U>, Self::Error> {
-        Err(AckermanizationError::Quantifier(quantifier))
+        Err(AckermannizationError::Quantifier(quantifier))
     }
 }
 
-pub fn ackermanize<T, U>(
+pub fn ackermannize<T, U>(
     ctx: &mut Ctx,
     script: Script<Term<T>>,
-) -> Result<(Script<Term<U>>, impl FnOnce(Model<U>) -> Model<U>), AckermanizationError<T, U>>
+) -> Result<(Script<Term<U>>, impl FnOnce(Model<U>) -> Model<U>), AckermannizationError<T, U>>
 where
     T: Logic<UninterpretedFunc = UF<Term<T>>, Var = QualIdentifier>,
     U: Logic<Var = QualIdentifier>,
     Void: Into<IUF<U>>,
     T::Op: SuperFold<T, Term<U>, Output = U::Op>,
 {
-    let mut folder = Ackermanizer::<U>::new(ctx);
+    let mut folder = Ackermannizer::<U>::new(ctx);
     let mut script = script.try_fold(&mut folder)?;
     let grouped = folder
         .uf_vars
@@ -239,7 +238,7 @@ where
     script.add_asserts(new_constraints);
     let (uf_vars, arg_vars) = (folder.uf_vars, folder.arg_vars);
     Ok((script, |model| {
-        Ackermanizer::reconstruct_uninterpreted_funcs(uf_vars, arg_vars, model)
+        Ackermannizer::reconstruct_uninterpreted_funcs(uf_vars, arg_vars, model)
     }))
 }
 
@@ -271,7 +270,7 @@ mod test {
     }
 
     #[test]
-    fn ackermanization() {
+    fn ackermannization() {
         let smt = "
             (declare-fun f (Bool) Bool)
             (declare-const x Bool)
@@ -280,7 +279,7 @@ mod test {
             (assert (and (= y (f z)) (= x (f (f z))) (not (= x (f y)))))
         ";
         let script = Script::<Term<QF_UF>>::parse(smt.as_bytes()).unwrap();
-        let (script, _) = ackermanize::<_, QF>(&mut Ctx::default(), script).unwrap();
+        let (script, _) = ackermannize::<_, QF>(&mut Ctx::default(), script).unwrap();
         // TODO: actually test something
         println!("{}", script);
     }

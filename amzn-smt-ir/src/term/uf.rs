@@ -14,7 +14,7 @@ pub trait UninterpretedFunction<T: Logic>: Sized + Sorted<T> {
     fn func(&self) -> ISymbol;
 }
 
-/// An uninterpreted function.
+/// An uninterpreted function applied to some arguments
 #[derive(Clone, Debug, Hash, PartialEq, Eq)]
 pub struct UF<Term> {
     pub func: ISymbol,

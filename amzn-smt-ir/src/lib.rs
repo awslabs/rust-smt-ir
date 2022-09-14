@@ -14,7 +14,7 @@ use std::{convert::Infallible, io};
 // normal code/tests inside the crate.
 extern crate self as amzn_smt_ir;
 
-pub mod ackerman;
+pub mod ackermann;
 pub mod cnf;
 pub mod eliminate;
 pub mod fold;

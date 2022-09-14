@@ -1,6 +1,6 @@
 [package]
 name = "amzn-smt-ir"
-version = "0.1.0"
+version = "0.2.0"
 description = "Intermediate representation for SMT problems"
 repository = "https://github.com/awslabs/rust-smt-ir"
 authors = ["Max Heller",
@@ -15,7 +15,7 @@ edition = "2018"
 [dependencies]
 amzn-smt-ir-derive = "0.1"
 either = "1.6"
-internment = "0.7.0"
+internment = { version = "0.7.0", features = ["intern"] }
 itertools = "0.10"
 num-traits = "0.2"
 once_cell = "1.8"
