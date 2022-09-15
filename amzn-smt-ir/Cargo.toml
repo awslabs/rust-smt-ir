@@ -13,7 +13,7 @@ categories = ["science"]
 edition = "2018"
 
 [dependencies]
-amzn-smt-ir-derive = "0.1"
+amzn-smt-ir-derive = { path = "../amzn-smt-ir-derive", version = "0.1" }
 either = "1.6"
 internment = { version = "0.7.0", features = ["intern"] }
 itertools = "0.10"
