@@ -1,16 +1,16 @@
-# amzn-smt-ir
+# aws-smt-ir
 
-`amzn-smt-ir` is a Rust library for working with SMT-LIB formulas.
+`aws-smt-ir` is a Rust library for working with SMT-LIB formulas.
 
 ## Representation
 
 ### Logics
 
-SMT-LIB logics are represented by the `amzn_smt_ir::Logic` trait, which encapsulates the type of
+SMT-LIB logics are represented by the `aws_smt_ir::Logic` trait, which encapsulates the type of
 operations in the logic (more on this later) as well as whether quantifiers and uninterpreted
 functions are allowed (corresponding to the `QF` (**Q**uantifier-**F**ree) and `UF` (including
 **U**ninterpreted **F**unctions) prefixes in SMT-LIB logic names.) Logics that wish to leave out
-non-`Core` operations, quantifiers, or uninterpreted functions can specify `amzn_smt_ir::Void` as
+non-`Core` operations, quantifiers, or uninterpreted functions can specify `aws_smt_ir::Void` as
 the corresponding associated type -- since `Void` is uninhabitable, it will be impossible at the
 type level for terms in the resulting logic to contain the corresponding components.
 
@@ -36,13 +36,13 @@ arguments (since it is annotated with `:left-assoc`).
 _Note:_ Indexed functions are defined as containing an array of indices as their first tuple field
 e.g. `Extract([IIndex; 2], Term)` for the bit-vector `extract` function.
 
-Pre-defined `Logic`s and their corresponding operation types are defined in the `amzn_smt_ir::logic`
+Pre-defined `Logic`s and their corresponding operation types are defined in the `aws_smt_ir::logic`
 module. Users can also define custom `Logic`s and operations using the provided derive macros to
 implement the expected traits (see the "Derives" section).
 
 ### Terms
 
-Terms are represented by `amzn_smt_ir::Term<L: Logic>`, which represents an SMT term in logic `L`:
+Terms are represented by `aws_smt_ir::Term<L: Logic>`, which represents an SMT term in logic `L`:
 
 ```rust
 enum Term<T: Logic> {

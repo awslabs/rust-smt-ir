@@ -21,8 +21,8 @@ pub struct Marker;
 ///
 /// ```
 /// # fn main() {
-/// use amzn_smt_ir::fold::{Fold, SuperFold, IntraLogicFolder};
-/// use amzn_smt_ir::{CoreOp, ICoreOp, Term, Let, Match, Logic, Void};
+/// use aws_smt_ir::fold::{Fold, SuperFold, IntraLogicFolder};
+/// use aws_smt_ir::{CoreOp, ICoreOp, Term, Let, Match, Logic, Void};
 ///
 /// struct PartiallyEvaluateNot;
 ///

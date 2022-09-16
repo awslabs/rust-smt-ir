@@ -633,7 +633,7 @@ impl fmt::Display for CnfTerm {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use amzn_smt_ir::{args, fold::Fold, Logic, Void};
+    use aws_smt_ir::{args, fold::Fold, Logic, Void};
     use paste::paste;
     use std::iter::FromIterator;
 

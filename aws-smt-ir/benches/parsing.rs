@@ -1,6 +1,6 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
-use amzn_smt_ir::{logic::QF_LIA, Logic, QualIdentifier, Script, Term};
+use aws_smt_ir::{logic::QF_LIA, Logic, QualIdentifier, Script, Term};
 use criterion::{black_box, criterion_group, criterion_main, BenchmarkId, Criterion, Throughput};
 use smt2parser::{concrete::SyntaxBuilder, CommandStream};
 use std::{
@@ -69,7 +69,7 @@ fn bench_parse<L: Logic>(
 
         group.throughput(Throughput::Bytes(instance_size_bytes as u64));
         group.bench_with_input(
-            BenchmarkId::new("amzn-smt-ir", bench_name),
+            BenchmarkId::new("aws-smt-ir", bench_name),
             &path,
             |b, path| {
                 // Don't use `iter_with_large_drop` because we include z3's teardown time as well

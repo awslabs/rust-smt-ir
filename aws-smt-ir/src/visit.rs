@@ -5,7 +5,7 @@ use crate::{
     script::Ctx, CoreOp, IConst, ICoreOp, IIndex, ILet, IMatch, IOp, IQuantifier, ISort, ISymbol,
     IVar, Index, Let, Logic, Match, Quantifier, Sorted, Term, Void, IUF, UF,
 };
-pub use amzn_smt_ir_derive::Visit;
+pub use aws_smt_ir_derive::Visit;
 
 mod control_flow;
 pub use control_flow::ControlFlow;
@@ -39,7 +39,7 @@ macro_rules! try_break {
 ///
 /// ```
 /// # fn main() {
-/// use amzn_smt_ir::{visit::{SuperVisit, Visit, Visitor, ControlFlow}, CoreOp, Term, ICoreOp, Logic};
+/// use aws_smt_ir::{visit::{SuperVisit, Visit, Visitor, ControlFlow}, CoreOp, Term, ICoreOp, Logic};
 ///
 /// #[derive(Default)]
 /// struct AndCounter(usize);
@@ -74,7 +74,7 @@ macro_rules! try_break {
 ///
 /// ```
 /// # fn main() {
-/// use amzn_smt_ir::{visit::{Visit, Visitor, ControlFlow}, *};
+/// use aws_smt_ir::{visit::{Visit, Visitor, ControlFlow}, *};
 ///
 /// struct ConstantFinder;
 ///
@@ -174,7 +174,7 @@ pub trait Visitor<T: Logic>: Sized {
 ///
 /// ```
 /// # fn main() {
-/// use amzn_smt_ir::{visit::Visit, Term, Logic};
+/// use aws_smt_ir::{visit::Visit, Term, Logic};
 ///
 /// #[derive(Visit)]
 /// enum AddOrSubtract<Term> {

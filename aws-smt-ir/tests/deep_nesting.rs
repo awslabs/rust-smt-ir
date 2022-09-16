@@ -1,4 +1,4 @@
-use amzn_smt_ir::{logic::*, Script, Term};
+use aws_smt_ir::{logic::*, Script, Term};
 
 #[test]
 fn main() {

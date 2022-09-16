@@ -29,7 +29,7 @@ use std::{
 ///
 /// ```
 /// # fn main() {
-/// use amzn_smt_ir::{fold::Fold, visit::Visit, *};
+/// use aws_smt_ir::{fold::Fold, visit::Visit, *};
 ///
 /// #[derive(Clone, Debug, Default, Hash, PartialEq, Eq)]
 /// struct BasicArith;

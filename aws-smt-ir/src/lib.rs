@@ -12,7 +12,7 @@ use std::{convert::Infallible, io};
 // This renaming is necessary for the derive macros to work in doctests/integration tests, since
 // `proc_macro_crate` can't distinguish between those contexts (treated as separate crates) and
 // normal code/tests inside the crate.
-extern crate self as amzn_smt_ir;
+extern crate self as aws_smt_ir;
 
 pub mod ackermann;
 pub mod cnf;

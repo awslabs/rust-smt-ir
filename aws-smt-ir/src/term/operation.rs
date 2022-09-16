@@ -1,5 +1,5 @@
 use crate::{args, CoreOp, ICoreOp, IOp, ISymbol, Logic, QualIdentifier, Term, Void};
-pub use amzn_smt_ir_derive::Operation;
+pub use aws_smt_ir_derive::Operation;
 use std::fmt;
 
 /// An `Operation` is a type that can be used as the operation of a [`Logic`] i.e. `T::Op` where
@@ -18,7 +18,7 @@ use std::fmt;
 ///
 /// ```
 /// # fn main() {
-/// use amzn_smt_ir::{fold::Fold, visit::Visit, Term, Operation, Logic, Void, QualIdentifier, ISort, UnknownSort, Sorted, Ctx};
+/// use aws_smt_ir::{fold::Fold, visit::Visit, Term, Operation, Logic, Void, QualIdentifier, ISort, UnknownSort, Sorted, Ctx};
 /// use smt2parser::concrete::Constant;
 ///
 /// #[derive(Operation, Fold, Visit, Clone, Hash, PartialEq, Eq)]

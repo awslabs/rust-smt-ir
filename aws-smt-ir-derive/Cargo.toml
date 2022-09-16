@@ -1,5 +1,5 @@
 [package]
-name = "amzn-smt-ir-derive"
+name = "aws-smt-ir-derive"
 version = "0.1.0"
 description = "Intermediate representation for SMT problems"
 repository = "https://github.com/awslabs/rust-smt-ir"

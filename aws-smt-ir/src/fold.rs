@@ -5,7 +5,7 @@ use crate::{
     Command, CoreOp, Ctx, FunctionDec, IConst, ICoreOp, IIndex, ILet, IMatch, IOp, IQuantifier,
     ISort, ISymbol, IVar, Let, Logic, Quantifier, Sorted, Term, Void, IUF, UF,
 };
-pub use amzn_smt_ir_derive::Fold;
+pub use aws_smt_ir_derive::Fold;
 
 mod compose;
 pub use compose::{Compose, TryComposed};
@@ -49,8 +49,8 @@ use smt2parser::Numeral;
 ///
 /// ```
 /// # fn main() {
-/// use amzn_smt_ir::fold::{Fold, Folder, SuperFold};
-/// use amzn_smt_ir::{CoreOp, ICoreOp, IVar, IUF, IOp, Term, ILet, IMatch, Logic, Void, IConst, IQuantifier};
+/// use aws_smt_ir::fold::{Fold, Folder, SuperFold};
+/// use aws_smt_ir::{CoreOp, ICoreOp, IVar, IUF, IOp, Term, ILet, IMatch, Logic, Void, IConst, IQuantifier};
 ///
 /// struct PartiallyEvaluateNot;
 ///
@@ -281,7 +281,7 @@ pub trait Folder<T: Logic, M = ()>: Compose {
 ///
 /// ```
 /// # fn main() {
-/// use amzn_smt_ir::{fold::Fold, Term, Logic, Operation};
+/// use aws_smt_ir::{fold::Fold, Term, Logic, Operation};
 ///
 /// #[derive(Operation, Fold)]
 /// enum AddOrSubtract<Term> {

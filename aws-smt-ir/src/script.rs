@@ -100,7 +100,7 @@ where
     ///
     /// ```
     /// # fn main() -> Result<(), Box<dyn std::error::Error>> {
-    /// use amzn_smt_ir::{Script, logic::ALL, Term};
+    /// use aws_smt_ir::{Script, logic::ALL, Term};
     /// let smt = "
     ///     (declare-const x Int)
     ///     (assert (= x 3))
@@ -186,7 +186,7 @@ impl<Term> Script<Term> {
     ///
     /// ```
     /// # fn main() -> Result<(), Box<dyn std::error::Error>> {
-    /// use amzn_smt_ir::{Script, Term, logic::ALL};
+    /// use aws_smt_ir::{Script, Term, logic::ALL};
     /// let smt = "(assert true) (check-sat)".as_bytes();
     /// let mut script: Script<Term> = Script::parse(smt)?;
     /// script.add_asserts([Term::from(false)]);

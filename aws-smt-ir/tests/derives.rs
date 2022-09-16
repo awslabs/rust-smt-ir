@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-use amzn_smt_ir::{
+use aws_smt_ir::{
     fold::{Fold, Folder, SuperFold},
     visit::{SuperVisit, Visit, Visitor},
     Logic, Operation,

@@ -37,7 +37,7 @@ pub use uf::UF;
 ///
 /// ```
 /// # fn main() {
-/// use amzn_smt_ir::{CoreOp, Term, Void};
+/// use aws_smt_ir::{CoreOp, Term, Void};
 /// use smt2parser::concrete::Constant;
 ///
 /// let constant: Term = Term::Constant(Constant::Numeral(0u8.into()).into());
@@ -54,7 +54,7 @@ pub use uf::UF;
 ///
 /// ```
 /// # fn main() {
-/// # use amzn_smt_ir::{CoreOp, Term, Void, IVar};
+/// # use aws_smt_ir::{CoreOp, Term, Void, IVar};
 /// use Term::*;
 ///
 /// let (x, y): (IVar, IVar) = ("x".into(), "y".into());

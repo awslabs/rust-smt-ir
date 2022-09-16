@@ -245,7 +245,7 @@ where
 #[cfg(test)]
 mod test {
     use super::*;
-    use amzn_smt_ir::{Logic, QualIdentifier, Script, Term, Void, UF};
+    use aws_smt_ir::{Logic, QualIdentifier, Script, Term, Void, UF};
 
     #[allow(non_camel_case_types)]
     #[derive(Clone, Debug, Default, Hash, PartialEq, Eq)]
