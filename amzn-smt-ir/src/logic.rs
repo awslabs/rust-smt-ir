@@ -250,3 +250,6 @@ pub mod arith;
 pub use arith::*;
 pub mod strings;
 pub use strings::*;
+pub mod cvc5_sets;
+pub use cvc5_sets::*;
+
