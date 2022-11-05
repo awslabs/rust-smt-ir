@@ -1,9 +1,7 @@
-use amzn_smt_ir::{logic::*, 
-    Script, Term, 
-    Command as IRCommand, CoreOp};
+use amzn_smt_ir::{logic::*, Command as IRCommand, CoreOp, Script, Term};
 
-    type IRTerm = Term<ALL>;
-    // type IRUF = UF<ALL>;
+type IRTerm = Term<ALL>;
+// type IRUF = UF<ALL>;
 
 fn parse_term(t: &Term) {
     println!("The parsed term is: {t:?}");
@@ -17,7 +15,7 @@ fn parse_term(t: &Term) {
                 }
                 _ => {}
             }
-        },
+        }
         Term::UF(iuf) => {
             let uf = iuf.as_ref();
             let fs = &uf.func;
@@ -30,27 +28,27 @@ fn parse_term(t: &Term) {
             match i.as_ref() {
                 all::Op::String(s) => {
                     println!("String operation term is: {s:?}");
-                },
+                }
                 all::Op::Set(x) => {
                     println!("Set operation term is: {x:?}");
                     //parse_term(t);
-                },
+                }
                 _ => {}
             }
-        }, 
+        }
         Term::Constant(_c) => {
             println!("Term is a constant");
-        },
+        }
         Term::Variable(i) => {
             println!("Term is a variable");
             let iv = i.as_ref();
             let sym = iv.sym();
-            let indices = iv.indices(); 
+            let indices = iv.indices();
             println!("IV: {iv:?}, sym: {sym:?}, indices: {indices:?}");
-        },
+        }
         Term::Let(_il) => {
             println!("Term is a let binding");
-        },
+        }
         Term::Match(_im) => {
             println!("Term is a match.");
         }
@@ -58,7 +56,6 @@ fn parse_term(t: &Term) {
             println!("Term is a quantifier");
         }
     }
-
 }
 
 #[test]
@@ -69,10 +66,10 @@ fn test_cvc5_set_parsing() {
     for i in script.into_iter() {
         println!("The command is: {:?}", i);
         match i {
-            IRCommand::Assert{term: t}  => {
+            IRCommand::Assert { term: t } => {
                 parse_term(&t);
-            },
+            }
             _ => {}
         }
-    } 
+    }
 }
