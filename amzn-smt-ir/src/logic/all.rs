@@ -1,6 +1,6 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
-use super::{ArithOp, ArrayOp, BvOp, StringOp, SetOp};
+use super::{ArithOp, ArrayOp, BvOp, SetOp, StringOp};
 use crate::{Logic, QualIdentifier, Quantifier, Term, UF};
 
 combine_ops! {
