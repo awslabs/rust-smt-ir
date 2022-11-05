@@ -28,8 +28,6 @@ pub enum SetOp<Term> {
     Card(Term),
     #[symbol("set.complement")]
     Complement(Term),
-    #[symbol("as set.empty")]
-    Empty(Term),
 }
 
 impl<L: Logic> Sorted<L> for SetOp<Term<L>>
