@@ -3,13 +3,7 @@
 use amzn_smt_ir::{logic::QF_LIA, Logic, QualIdentifier, Script, Term};
 use criterion::{black_box, criterion_group, criterion_main, BenchmarkId, Criterion, Throughput};
 use smt2parser::{concrete::SyntaxBuilder, CommandStream};
-use std::{
-    ffi::{CStr, CString},
-    fs::File,
-    io::BufReader,
-    path::Path,
-    process::Command,
-};
+use std::{fs::File, io::BufReader, path::Path, process::Command};
 
 const QFLIA_FILES: &[&str] = &[
     "mathsat/FISCHER8-1-fair.smt2",
@@ -18,31 +12,6 @@ const QFLIA_FILES: &[&str] = &[
     "mathsat/FISCHER8-4-fair.smt2",
     "mathsat/FISCHER8-5-fair.smt2",
 ];
-
-fn z3_parse_file(path: impl AsRef<CStr>) {
-    use z3_sys::*;
-    unsafe {
-        let cfg = Z3_mk_config();
-        assert!(!cfg.is_null());
-
-        let ctx = Z3_mk_context(cfg);
-        assert_eq!(Z3_get_error_code(ctx), ErrorCode::OK);
-        assert!(!ctx.is_null());
-
-        let solver = Z3_mk_solver(ctx);
-        assert_eq!(Z3_get_error_code(ctx), ErrorCode::OK);
-        assert!(!solver.is_null());
-        Z3_solver_inc_ref(ctx, solver);
-
-        Z3_solver_from_file(ctx, solver, path.as_ref().as_ptr());
-        assert_eq!(Z3_get_error_code(ctx), ErrorCode::OK);
-
-        Z3_solver_dec_ref(ctx, solver);
-        Z3_solver_dec_ref(ctx, solver);
-        Z3_del_context(ctx);
-        Z3_del_config(cfg);
-    }
-}
 
 fn cvc4_parse_file(path: &str) {
     let status = Command::new("cvc4")
@@ -99,10 +68,6 @@ fn bench_parse<L: Logic>(
         group.bench_with_input(BenchmarkId::new("cvc4", bench_name), path, |b, path| {
             b.iter(|| black_box(cvc4_parse_file(path)))
         });
-        let path = CString::new(path).unwrap();
-        group.bench_with_input(BenchmarkId::new("z3", bench_name), &path, |b, path| {
-            b.iter(|| black_box(z3_parse_file(path)))
-        });
     }
 }
 
@@ -112,3 +77,40 @@ pub fn bench_qflia(c: &mut Criterion) {
 
 criterion_group!(benches, bench_qflia);
 criterion_main!(benches);
+
+/*
+   Code removed to get rid of z3 dependencies within crate.
+//    ffi::{CStr, CString},
+
+fn z3_parse_file(path: impl AsRef<CStr>) {
+    use z3_sys::*;
+    unsafe {
+        let cfg = Z3_mk_config();
+        assert!(!cfg.is_null());
+
+        let ctx = Z3_mk_context(cfg);
+        assert_eq!(Z3_get_error_code(ctx), ErrorCode::OK);
+        assert!(!ctx.is_null());
+
+        let solver = Z3_mk_solver(ctx);
+        assert_eq!(Z3_get_error_code(ctx), ErrorCode::OK);
+        assert!(!solver.is_null());
+        Z3_solver_inc_ref(ctx, solver);
+
+        Z3_solver_from_file(ctx, solver, path.as_ref().as_ptr());
+        assert_eq!(Z3_get_error_code(ctx), ErrorCode::OK);
+
+        Z3_solver_dec_ref(ctx, solver);
+        Z3_solver_dec_ref(ctx, solver);
+        Z3_del_context(ctx);
+        Z3_del_config(cfg);
+    }
+}
+
+in bench_parse:
+        let path = CString::new(path).unwrap();
+        group.bench_with_input(BenchmarkId::new("z3", bench_name), &path, |b, path| {
+            b.iter(|| black_box(z3_parse_file(path)))
+        });
+
+*/

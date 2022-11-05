@@ -1,15 +1,17 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
 use crate::{
-    fold::Fold, visit::Visit, Ctx, IOp, ISort, Logic, Operation, QualIdentifier, Sorted, Term,
-    UnknownSort, Void,
+    fold::Fold, visit::Visit, Ctx, IOp, ISort, Logic, Operation, QualIdentifier, SmallVec, Sorted,
+    Term, UnknownSort, Void,
 };
+
+type Args<T> = SmallVec<[T; 2]>;
 
 #[derive(Operation, Visit, Fold, Clone, PartialEq, Eq, Hash)]
 pub enum SetOp<Term> {
     // Empty(Term, Term),
     #[symbol("set.insert")]
-    Insert(Term, Term),
+    Insert(Args<Term>),
     #[symbol("set.union")]
     Union(Term, Term),
     #[symbol("set.inter")]
