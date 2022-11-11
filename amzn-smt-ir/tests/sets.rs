@@ -8,12 +8,9 @@ fn parse_term(t: &Term) {
     match t {
         Term::CoreOp(i) => {
             println!("Term {i:?} is a CoreOp");
-            match i.as_ref() {
-                CoreOp::Eq(args) => {
-                    println!("Eq args are: {args:?}");
-                    parse_term(&args[1]);
-                }
-                _ => {}
+            if let CoreOp::Eq(args) = i.as_ref() {
+                println!("Eq args are: {args:?}");
+                parse_term(&args[1]);
             }
         }
         Term::UF(iuf) => {
@@ -65,11 +62,8 @@ fn test_cvc5_set_parsing() {
     println!("The script that was read is: {:?}", script);
     for i in script.into_iter() {
         println!("The command is: {:?}", i);
-        match i {
-            IRCommand::Assert { term: t } => {
-                parse_term(&t);
-            }
-            _ => {}
+        if let IRCommand::Assert { term: t } = i {
+            parse_term(&t);
         }
     }
 }
