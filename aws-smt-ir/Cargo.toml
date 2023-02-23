@@ -1,0 +1,39 @@
+[package]
+name = "aws-smt-ir"
+version = "0.2.0"
+description = "Intermediate representation for SMT problems"
+repository = "https://github.com/awslabs/rust-smt-ir"
+authors = ["Max Heller",
+	"Mike Whalen <mww@amazon.com>",
+	"Bruno Dutertre <dutebrun@amazon.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+keywords = ["smt", "smt-lib", "solver"]
+categories = ["science"]
+edition = "2018"
+
+publish = true
+
+[dependencies]
+# amzn-smt-ir-derive = { path = "../amzn-smt-ir-derive", version = "0.1" }
+aws-smt-ir-derive = "0.1.0"
+either = "1.6"
+internment = { version = "0.7.0", features = ["intern"] }
+itertools = "0.10"
+num-traits = "0.2"
+once_cell = "1.8"
+smallvec = { version = "1.6", features = ["union"] }
+smt2parser = "0.6.1"
+stacker = "0.1"
+thiserror = "1.0"
+varisat = { version = "0.2", optional = true }
+
+[dev-dependencies]
+criterion = "0.3"
+paste = "1.0"
+static_assertions = "1.1"
+varisat = "0.2"
+
+[[bench]]
+name = "parsing"
+harness = false
