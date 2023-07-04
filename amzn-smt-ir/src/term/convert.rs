@@ -634,7 +634,7 @@ mod visitors {
         }
 
         fn visit_push(&mut self, level: smt2parser::Numeral) -> Result<Self::T, Self::E> {
-            Ok(Command::Pop { level })
+            Ok(Command::Push { level })
         }
 
         fn visit_reset(&mut self) -> Result<Self::T, Self::E> {
