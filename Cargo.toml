@@ -1,7 +1,7 @@
 [workspace]
 members = [
-    "amzn-smt-ir",
-    "amzn-smt-ir-derive",
+    "aws-smt-ir",
+    "aws-smt-ir-derive",
 ]
 
 # ThinLTO seems to be necessary for Fold impls to inline properly and avoid stack overflows

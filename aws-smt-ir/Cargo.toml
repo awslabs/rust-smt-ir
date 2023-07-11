@@ -1,6 +1,6 @@
 [package]
 name = "aws-smt-ir"
-version = "0.2.0"
+version = "0.2.1"
 description = "Intermediate representation for SMT problems"
 repository = "https://github.com/awslabs/rust-smt-ir"
 authors = ["Max Heller",
@@ -15,7 +15,6 @@ edition = "2018"
 publish = true
 
 [dependencies]
-# amzn-smt-ir-derive = { path = "../amzn-smt-ir-derive", version = "0.1" }
 aws-smt-ir-derive = "0.1.0"
 either = "1.6"
 internment = { version = "0.7.0", features = ["intern"] }
