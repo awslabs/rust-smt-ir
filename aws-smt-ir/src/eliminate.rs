@@ -27,7 +27,7 @@ pub fn eliminate_lets<L: Logic<Var = QualIdentifier>>(
 ) -> Result<Script<Term<L>>, EliminationError<L>> {
     let mut folder = EliminateLets::new(ctx);
     let mut script = script.try_fold(&mut folder)?;
-    script.add_asserts(folder.asserts.into_iter());
+    script.add_asserts(folder.asserts);
     Ok(script)
 }
 
