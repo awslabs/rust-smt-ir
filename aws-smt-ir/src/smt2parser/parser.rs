@@ -107,7 +107,7 @@ pomelo! {
     // attribute_value ::= ⟨spec_constant⟩ | ⟨symbol⟩ | ( ⟨s_expr⟩∗ ) |
     attribute_value ::= constant(x) { visitors::AttributeValue::Constant(x) }
     attribute_value ::= bound_symbol(x) { visitors::AttributeValue::Symbol(x) }
-    attribute_value ::= LeftParen s_exprs?(xs) RightParen { visitors::AttributeValue::SExpr(xs.unwrap_or_else(Vec::new)) }
+    attribute_value ::= LeftParen s_exprs?(xs) RightParen { visitors::AttributeValue::SExpr(xs.unwrap_or_default()) }
     attribute_value ::= { visitors::AttributeValue::None }
 
     attributes ::= keyword(k) attribute_value(v) { vec![(k, v)] }
@@ -117,7 +117,7 @@ pomelo! {
     s_expr ::= constant(x) { extra.0.visit_constant_s_expr(x)? }
     s_expr ::= bound_symbol(x) { extra.0.visit_symbol_s_expr(x)? }
     s_expr ::= keyword(x) { extra.0.visit_keyword_s_expr(x)? }
-    s_expr ::= LeftParen s_exprs?(xs) RightParen { extra.0.visit_application_s_expr(xs.unwrap_or_else(Vec::new))? }
+    s_expr ::= LeftParen s_exprs?(xs) RightParen { extra.0.visit_application_s_expr(xs.unwrap_or_default())? }
 
     s_exprs ::= s_expr(x) { vec![x] }
     s_exprs ::= s_exprs(mut xs) s_expr(x) { xs.push(x); xs }
@@ -215,7 +215,7 @@ pomelo! {
     // constructor_dec ::= ( ⟨symbol⟩ ⟨selector_dec⟩∗ )
     constructor_dec ::= LeftParen fresh_symbol(x) selector_decs?(xs) RightParen
     {
-        visitors::ConstructorDec { symbol:x, selectors:xs.unwrap_or_else(Vec::new) }
+        visitors::ConstructorDec { symbol:x, selectors:xs.unwrap_or_default() }
     }
 
     constructor_decs ::= constructor_dec(x) { vec![x] }
@@ -239,7 +239,7 @@ pomelo! {
     {
         visitors::FunctionDec {
             name: x,
-            parameters: xs.unwrap_or_else(Vec::new),
+            parameters: xs.unwrap_or_default(),
             result: s,
         }
     }
@@ -261,7 +261,7 @@ pomelo! {
     //   ( check-sat-assuming ( ⟨prop_literal⟩∗ ) )
     command ::= LeftParen CheckSatAssuming LeftParen prop_literals?(xs) RightParen RightParen
     {
-        extra.0.visit_check_sat_assuming(xs.unwrap_or_else(Vec::new))?
+        extra.0.visit_check_sat_assuming(xs.unwrap_or_default())?
     }
     //   ( declare-const ⟨symbol⟩ ⟨sort⟩ )
     command ::= LeftParen DeclareConst fresh_symbol(x) sort(s) RightParen
@@ -290,7 +290,7 @@ pomelo! {
     //   ( declare-fun ⟨symbol⟩ ( ⟨sort⟩∗ ) ⟨sort⟩ )
     command ::= LeftParen DeclareFun fresh_symbol(x) LeftParen sorts?(xs) RightParen sort(r) RightParen
     {
-        extra.0.visit_declare_fun(x, xs.unwrap_or_else(Vec::new), r)?
+        extra.0.visit_declare_fun(x, xs.unwrap_or_default(), r)?
     }
     //   ( declare-sort ⟨symbol⟩ ⟨numeral⟩ )
     command ::= LeftParen DeclareSort fresh_symbol(x) Numeral(num) RightParen
@@ -320,7 +320,7 @@ pomelo! {
     //   ( define-sort ⟨symbol⟩ ( ⟨symbol⟩∗ ) ⟨sort⟩ )
     command ::= LeftParen DefineSort fresh_symbol(x) LeftParen fresh_symbols?(xs) RightParen sort(r) RightParen
     {
-        extra.0.visit_define_sort(x, xs.unwrap_or_else(Vec::new), r)?
+        extra.0.visit_define_sort(x, xs.unwrap_or_default(), r)?
     }
     //   ( echo ⟨string⟩ )
     command ::= LeftParen Echo String(x) RightParen { extra.0.visit_echo(x)? }
@@ -366,7 +366,7 @@ pub(crate) mod tests {
     use crate::smt2parser::{concrete::*, lexer::Lexer};
 
     pub(crate) fn parse_tokens<I: IntoIterator<Item = Token>>(tokens: I) -> Result<Command, Error> {
-        let mut builder = SyntaxBuilder::default();
+        let mut builder = SyntaxBuilder;
         let mut position = crate::smt2parser::Position::default();
         let mut p = Parser::new((&mut builder, &mut position));
         for token in tokens.into_iter() {
@@ -509,7 +509,7 @@ pub(crate) mod tests {
 
         assert!(matches!(value, Command::DeclareDatatypes { .. }));
         // Test syntax visiting while we're at it.
-        let mut builder = crate::smt2parser::concrete::SyntaxBuilder::default();
+        let mut builder = crate::smt2parser::concrete::SyntaxBuilder;
         assert_eq!(value, value.clone().accept(&mut builder).unwrap());
     }
 }

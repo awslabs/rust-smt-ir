@@ -145,7 +145,7 @@ where
 #[test]
 fn test_command_stream_error() {
     let input = b"(echo \"Hello world!\")(exit f)";
-    let builder = concrete::SyntaxBuilder::default();
+    let builder = concrete::SyntaxBuilder;
     let stream = CommandStream::new(&input[..], builder, None);
     let commands = stream.collect::<Vec<_>>();
     assert!(matches!(
@@ -164,8 +164,8 @@ fn test_command_stream_error() {
 
 #[test]
 fn test_command_stream_invalid_token() {
-    let input = b"(echo \"Hello world!\")(exit \000)";
-    let builder = concrete::SyntaxBuilder::default();
+    let input = b"(echo \"Hello world!\")(exit \x0000)";
+    let builder = concrete::SyntaxBuilder;
     let stream = CommandStream::new(&input[..], builder, None);
     let commands = stream.collect::<Vec<_>>();
     assert!(matches!(

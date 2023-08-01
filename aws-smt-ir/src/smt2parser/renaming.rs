@@ -53,6 +53,9 @@ where
     }
 }
 
+// Amazon modification: removed config from SymbolNormalizer
+// to fix a compiler warning.
+
 /// A [`Rewriter`] implementation that normalizes local symbols into `x0`, `x1`, etc.
 /// * Normalization applies to all locally resolved symbols.
 /// * A different prefix is applied depending on the symbol kind (datatype, sorts,
@@ -64,8 +67,6 @@ where
 pub struct SymbolNormalizer<V> {
     /// The underlying syntax visitor.
     visitor: V,
-    /// Configuration.
-    config: SymbolNormalizerConfig,
     /// Original names of current local symbols, indexed by kind.
     current_local_symbols: BTreeMap<SymbolKind, Vec<String>>,
     /// Currently bound symbols.
@@ -166,7 +167,7 @@ impl<V> SymbolNormalizer<V> {
         }
         Self {
             visitor,
-            config,
+            // config,    Amazon change: not used
             current_local_symbols: BTreeMap::new(),
             current_bound_symbols: BTreeMap::new(),
             encoding_tables,
@@ -389,7 +390,7 @@ fn test_testers() {
             }
         }
     ));
-    let mut builder = concrete::SyntaxBuilder::default();
+    let mut builder = concrete::SyntaxBuilder;
     assert_eq!(value, value.clone().accept(&mut builder).unwrap());
     // Visit with the TesterModernizer this time.
     let mut builder = TesterModernizer::<SyntaxBuilder>::default();
@@ -432,7 +433,7 @@ fn test_declare_datatypes_renaming() {
     ))
     .unwrap();
     assert!(matches!(value2, Command::DeclareDatatypes { .. }));
-    let mut builder = SyntaxBuilder::default();
+    let mut builder = SyntaxBuilder;
     assert_eq!(value, value.clone().accept(&mut builder).unwrap());
 
     let mut builder = SymbolNormalizer::<SyntaxBuilder>::default();

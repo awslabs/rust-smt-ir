@@ -172,7 +172,7 @@ where
     }
 
     fn peek_byte(&mut self) -> Option<&u8> {
-        self.peek_bytes().get(0)
+        self.peek_bytes().first()
     }
 
     fn skip_whitespace(&mut self) -> bool {
@@ -305,7 +305,7 @@ where
                 let mut numerator = vec![*digit];
                 self.consume_byte();
                 while let Some(c) = self.peek_byte() {
-                    if !is_digit_byte(*c) {
+                    if !c.is_ascii_digit() {
                         break;
                     }
                     numerator.push(*c);
@@ -320,7 +320,7 @@ where
                         self.consume_byte();
                         let mut denumerator = Vec::new();
                         while let Some(c) = self.peek_byte() {
-                            if !is_digit_byte(*c) {
+                            if !c.is_ascii_digit() {
                                 break;
                             }
                             denumerator.push(*c);
@@ -381,12 +381,8 @@ where
     }
 }
 
-fn is_digit_byte(c: u8) -> bool {
-    matches!(c, b'0'..=b'9')
-}
-
 pub(crate) fn is_symbol_byte(c: u8) -> bool {
-    is_digit_byte(c) || is_non_digit_symbol_byte(c)
+    c.is_ascii_digit() || is_non_digit_symbol_byte(c)
 }
 
 pub(crate) fn is_non_digit_symbol_byte(c: u8) -> bool {
