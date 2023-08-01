@@ -1,8 +1,8 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
+use aws_smt_ir::smt2parser::{concrete::SyntaxBuilder, CommandStream};
 use aws_smt_ir::{logic::QF_LIA, Logic, QualIdentifier, Script, Term};
 use criterion::{black_box, criterion_group, criterion_main, BenchmarkId, Criterion, Throughput};
-use smt2parser::{concrete::SyntaxBuilder, CommandStream};
 use std::{fs::File, io::BufReader, path::Path, process::Command};
 
 const QFLIA_FILES: &[&str] = &[

@@ -1,23 +1,23 @@
 //! Implementations of conversion traits e.g. `From`, `TryFrom` for `Term` and related types.
 //!
 //! Currently, [`Term`] does not support SMT-LIB's `match` expression -- the
-//! `TryFrom<smt2parser::concrete::Term>` implementation for `Term` will return an error if it
+//! `TryFrom<crate::smt2parser::concrete::Term>` implementation for `Term` will return an error if it
 //! encounters one.
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
 use crate::{
     quantifier::{self, InvalidQuantifier, Quantifier},
+    smt2parser::{concrete::Term as RawTerm, visitors::Index},
     term::operation::InvalidOp,
     uf::UninterpretedFunction,
     Command, Constant, IConst, ICoreOp, IIdentifier, IOp, ISort, ISymbol, IVar, Identifier, Let,
     Logic, Operation, ParseError, QualIdentifier, Sort, Symbol, Term, IUF,
 };
 use either::Either;
-use smt2parser::{concrete::Term as RawTerm, visitors::Index};
 use std::{convert::TryFrom, marker::PhantomData};
 
 pub fn convert_command<L: Logic>(
-    command: smt2parser::concrete::Command,
+    command: crate::smt2parser::concrete::Command,
 ) -> Result<Command<Term<L>>, ParseError<L>>
 where
     QualIdentifier: Into<L::Var>,
@@ -25,8 +25,8 @@ where
     command.accept(&mut Converter::default())
 }
 
-fn convert_qual_identifier(ident: smt2parser::concrete::QualIdentifier) -> QualIdentifier {
-    use smt2parser::concrete::QualIdentifier::*;
+fn convert_qual_identifier(ident: crate::smt2parser::concrete::QualIdentifier) -> QualIdentifier {
+    use crate::smt2parser::concrete::QualIdentifier::*;
     match ident {
         Simple { identifier } => QualIdentifier::Simple {
             identifier: convert_identifier(identifier).into(),
@@ -38,9 +38,9 @@ fn convert_qual_identifier(ident: smt2parser::concrete::QualIdentifier) -> QualI
     }
 }
 
-impl From<smt2parser::concrete::Sort> for Sort {
-    fn from(sort: smt2parser::concrete::Sort) -> Self {
-        use smt2parser::concrete::Sort::*;
+impl From<crate::smt2parser::concrete::Sort> for Sort {
+    fn from(sort: crate::smt2parser::concrete::Sort) -> Self {
+        use crate::smt2parser::concrete::Sort::*;
         match sort {
             Simple { identifier } => Self::Simple {
                 identifier: convert_identifier(identifier).into(),
@@ -56,14 +56,16 @@ impl From<smt2parser::concrete::Sort> for Sort {
     }
 }
 
-impl From<smt2parser::concrete::Sort> for ISort {
-    fn from(sort: smt2parser::concrete::Sort) -> Self {
+impl From<crate::smt2parser::concrete::Sort> for ISort {
+    fn from(sort: crate::smt2parser::concrete::Sort) -> Self {
         Sort::from(sort).into()
     }
 }
 
-fn convert_identifier(ident: smt2parser::visitors::Identifier<Symbol>) -> Identifier<ISymbol> {
-    use smt2parser::visitors::Identifier::*;
+fn convert_identifier(
+    ident: crate::smt2parser::visitors::Identifier<Symbol>,
+) -> Identifier<ISymbol> {
+    use crate::smt2parser::visitors::Identifier::*;
     match ident {
         Simple { symbol } => Identifier::Simple {
             symbol: symbol.into(),
@@ -214,7 +216,7 @@ fn basic() {
     let smt = "(assert (and (or (not x) (not y)) (and x (not y))))";
     let cmd = crate::parse_commands(smt.as_bytes()).next().unwrap();
     match cmd.unwrap() {
-        smt2parser::concrete::Command::Assert { term } => {
+        crate::smt2parser::concrete::Command::Assert { term } => {
             let var = |x| Term::from(IVar::from(QualIdentifier::from(x)));
             let (x, y) = (var("x"), var("y"));
             assert_eq!(
@@ -272,13 +274,13 @@ impl<T: Logic> From<&IVar<T::Var>> for Term<T> {
 
 mod visitors {
     use super::*;
-    use crate::{
-        AttributeValue, Command, DatatypeDec, FunctionDec, IQuantifier, ParseError, SExpr,
-    };
-    use smt2parser::{
+    use crate::smt2parser::{
         concrete::{Keyword, SyntaxBuilder},
         visitors::*,
         Numeral,
+    };
+    use crate::{
+        AttributeValue, Command, DatatypeDec, FunctionDec, IQuantifier, ParseError, SExpr,
     };
 
     impl<L: Logic> TermVisitor<IConst, QualIdentifier, Keyword, SExpr, ISymbol, ISort> for Converter<L>
@@ -428,26 +430,29 @@ mod visitors {
 
         fn visit_numeral_constant(
             &mut self,
-            value: smt2parser::Numeral,
+            value: crate::smt2parser::Numeral,
         ) -> Result<Self::T, Self::E> {
             Ok(crate::types::Constant::Numeral(value).into())
         }
 
         fn visit_decimal_constant(
             &mut self,
-            value: smt2parser::Decimal,
+            value: crate::smt2parser::Decimal,
         ) -> Result<Self::T, Self::E> {
             Ok(crate::types::Constant::Decimal(value).into())
         }
 
         fn visit_hexadecimal_constant(
             &mut self,
-            value: smt2parser::Hexadecimal,
+            value: crate::smt2parser::Hexadecimal,
         ) -> Result<Self::T, Self::E> {
             Ok(crate::types::Constant::Hexadecimal(value).into())
         }
 
-        fn visit_binary_constant(&mut self, value: smt2parser::Binary) -> Result<Self::T, Self::E> {
+        fn visit_binary_constant(
+            &mut self,
+            value: crate::smt2parser::Binary,
+        ) -> Result<Self::T, Self::E> {
             Ok(crate::types::Constant::Binary(value).into())
         }
 
@@ -633,7 +638,7 @@ mod visitors {
             Ok(Command::Pop { level })
         }
 
-        fn visit_push(&mut self, level: smt2parser::Numeral) -> Result<Self::T, Self::E> {
+        fn visit_push(&mut self, level: crate::smt2parser::Numeral) -> Result<Self::T, Self::E> {
             Ok(Command::Push { level })
         }
 
@@ -680,11 +685,19 @@ mod visitors {
         type Term = Term<L>;
         type Command = Command<Term<L>>;
 
-        fn syntax_error(&mut self, position: smt2parser::Position, s: String) -> Self::Error {
+        fn syntax_error(
+            &mut self,
+            position: crate::smt2parser::Position,
+            s: String,
+        ) -> Self::Error {
             <SyntaxBuilder as Smt2Visitor>::syntax_error(&mut SyntaxBuilder, position, s).into()
         }
 
-        fn parsing_error(&mut self, position: smt2parser::Position, s: String) -> Self::Error {
+        fn parsing_error(
+            &mut self,
+            position: crate::smt2parser::Position,
+            s: String,
+        ) -> Self::Error {
             <SyntaxBuilder as Smt2Visitor>::parsing_error(&mut SyntaxBuilder, position, s).into()
         }
     }

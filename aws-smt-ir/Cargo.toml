@@ -18,17 +18,23 @@ publish = true
 aws-smt-ir-derive = "0.1.0"
 either = "1.6"
 internment = { version = "0.7.0", features = ["intern"] }
-itertools = "0.10"
+itertools = "0.11"
 num-traits = "0.2"
 once_cell = "1.8"
 smallvec = { version = "1.6", features = ["union"] }
-smt2parser = "0.6.1"
 stacker = "0.1"
 thiserror = "1.0"
 varisat = { version = "0.2", optional = true }
+# dependencies for smt2parser
+num = { version = "0.4", features = ["serde"] }
+pomelo = "0.1.5"
+fst = "0.4.5"
+serde = { version = "1.0.125", features = ["derive"] }
+permutation_iterator = "0.1.2"
+strum = { version = "0.25", features = ["derive"] }
 
 [dev-dependencies]
-criterion = "0.3"
+criterion = "0.5"
 paste = "1.0"
 static_assertions = "1.1"
 varisat = "0.2"
