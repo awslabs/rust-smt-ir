@@ -35,6 +35,49 @@ pomelo! {
     %type Binary crate::smt2parser::Binary;
     %type String String;
 
+    // Amazon update: All reserved word tokens are strings equal to the reserved word (see lexer.rs)
+    %type Underscore String;
+    %type Exclam String;
+    %type As String;
+    %type Let String;
+    %type Exists String;
+    %type Forall String;
+    %type Match String;
+    %type Par String;
+    %type Assert String;
+    %type CheckSat String;
+    %type CheckSatAssuming String;
+    %type DeclareConst String;
+    %type DeclareDatatype String;
+    %type DeclareDatatypes String;
+    %type DeclareFun String;
+    %type DeclareSort String;
+    %type DefineFun String;
+    %type DefineFunRec String;
+    %type DefineFunsRec String;
+    %type DefineSort String;
+    %type Echo String;
+    %type Exit String;
+    %type GetAssertions String;
+    %type GetAssignment String;
+    %type GetInfo String;
+    %type GetModel String;
+    %type GetOption String;
+    %type GetProof String;
+    %type GetUnsatAssumptions String;
+    %type GetUnsatCore String;
+    %type GetValue String;
+    %type Pop String;
+    %type Push String;
+    %type Reset String;
+    %type ResetAssertions String;
+    %type SetInfo String;
+    %type SetLogic String;
+    %type SetOption String;
+
+    %type reserved T::Symbol;
+    // end of Amazon update
+
     %type command T::Command;
 
     %type term T::Term;
@@ -112,6 +155,18 @@ pomelo! {
 
     attributes ::= keyword(k) attribute_value(v) { vec![(k, v)] }
     attributes ::= attributes(mut xs) keyword(k) attribute_value(v) { xs.push((k, v)); xs }
+
+    // Amazon addition: in an s_expr the tokens `let`, `forall`, etc. must be converted to symbols
+    reserved ::= Underscore | Exclam | As | Let | Exists | Forall | Match | Par |
+                 Assert | CheckSat | CheckSatAssuming | DeclareConst | DeclareDatatype |
+                 DeclareDatatypes | DeclareFun | DeclareSort | DefineFun | DefineFunRec |
+                 DefineFunsRec | DefineSort | Echo | Exit | GetAssertions | GetAssignment |
+                 GetInfo | GetModel | GetOption | GetProof | GetUnsatAssumptions | GetUnsatCore |
+                 GetValue | Pop | Push | Reset | ResetAssertions | SetInfo | SetLogic |
+                 SetOption (t) { extra.0.visit_any_symbol(t)? }
+
+    s_expr ::= reserved(x) { extra.0.visit_symbol_s_expr(x)? }
+    // end of Amazon additions
 
     // s_expr ::= ⟨spec_constant⟩ | ⟨symbol⟩ | ⟨keyword⟩ | ( ⟨s_expr⟩∗ )
     s_expr ::= constant(x) { extra.0.visit_constant_s_expr(x)? }
@@ -342,8 +397,10 @@ pomelo! {
     command ::= LeftParen GetUnsatAssumptions RightParen { extra.0.visit_get_unsat_assumptions()? }
     //   ( get-unsat-core )
     command ::= LeftParen GetUnsatCore RightParen { extra.0.visit_get_unsat_core()? }
-    //   ( get-value )
-    command ::= LeftParen GetValue terms(xs) RightParen { extra.0.visit_get_value(xs)? }
+    // Amazon update: fix parsing of get-value
+    //   ( get-value ( ⟨term⟩+ ) )
+    command ::= LeftParen GetValue LeftParen terms(xs) RightParen RightParen { extra.0.visit_get_value(xs)? }
+    // end of Amazon update
     //   ( pop ⟨numeral⟩ )
     command ::= LeftParen Pop Numeral(x) RightParen { extra.0.visit_pop(x)? }
     //   ( push ⟨numeral⟩ )
@@ -379,7 +436,7 @@ pub(crate) mod tests {
     fn test_echo() {
         let value = parse_tokens(vec![
             Token::LeftParen,
-            Token::Echo,
+            Token::Echo("echo".into()), // Amazon update
             Token::String("foo".into()),
             Token::RightParen,
         ])
@@ -512,4 +569,29 @@ pub(crate) mod tests {
         let mut builder = crate::smt2parser::concrete::SyntaxBuilder;
         assert_eq!(value, value.clone().accept(&mut builder).unwrap());
     }
+
+    // Amazon updates: new tests for fixes
+    #[test]
+    fn test_get_value() {
+        let value = parse_tokens(Lexer::new(&b"(get-value ( a b ))"[..])).unwrap();
+
+        assert!(matches!(value, Command::GetValue { .. }));
+    }
+
+    #[test]
+    fn test_reserved_word_in_attribute() {
+        let value = parse_tokens(Lexer::new(
+            &b"(assert (! (> x y) :pattern (let ((a b)) b)))"[..],
+        ))
+        .unwrap();
+
+        assert!(matches!(
+            value,
+            Command::Assert {
+                term: Term::Attributes { .. }
+            }
+        ));
+    }
+    // end of updates
+
 }

@@ -40,7 +40,9 @@ pub(crate) struct Lexer<R> {
     current_column: usize,
 }
 
-const KEYWORDS: &[(&str, Token)] = {
+// Amazon update: changed the type of keywords (cf. parser.rs)
+#[allow(clippy::type_complexity)]
+const KEYWORDS: &[(&str, fn(String) -> Token)] = {
     use Token::*;
     &[
         ("_", Underscore),
@@ -83,6 +85,7 @@ const KEYWORDS: &[(&str, Token)] = {
         ("set-option", SetOption),
     ]
 };
+// end Amazon updates
 
 impl<R> Lexer<R>
 where
@@ -111,8 +114,8 @@ where
         let mut keywords = KEYWORDS.to_vec();
         keywords.sort_by_key(|(key, _)| key.to_string());
         let mut words = Vec::new();
-        for (_, token) in &keywords {
-            words.push(token.clone());
+        for (s, f) in &keywords {
+            words.push(f(s.to_string()))
         }
         let map = fst::Map::from_iter(
             keywords
