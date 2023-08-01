@@ -273,7 +273,10 @@ impl<T1, T2> ConstructorDec<T1, T2> {
 }
 
 #[derive(Debug, PartialEq, Eq, Clone, Hash, Serialize, Deserialize)]
-pub struct DatatypeDec<Symbol = crate::smt2parser::concrete::Symbol, Sort = crate::smt2parser::concrete::Sort> {
+pub struct DatatypeDec<
+    Symbol = crate::smt2parser::concrete::Symbol,
+    Sort = crate::smt2parser::concrete::Sort,
+> {
     pub parameters: Vec<Symbol>,
     pub constructors: Vec<ConstructorDec<Symbol, Sort>>,
 }
@@ -310,7 +313,10 @@ impl<T1, T2> DatatypeDec<T1, T2> {
 }
 
 #[derive(Debug, PartialEq, Eq, Clone, Hash, Serialize, Deserialize)]
-pub struct FunctionDec<Symbol = crate::smt2parser::concrete::Symbol, Sort = crate::smt2parser::concrete::Sort> {
+pub struct FunctionDec<
+    Symbol = crate::smt2parser::concrete::Symbol,
+    Sort = crate::smt2parser::concrete::Sort,
+> {
     pub name: Symbol,
     pub parameters: Vec<(Symbol, Sort)>,
     pub result: Sort,
