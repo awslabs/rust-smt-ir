@@ -5,6 +5,7 @@
 // Summary of Amazon changes
 // - import smt2parser as a module in aws_smt_ir
 // - remove the `smt2parser::stats` module (not used here)
+// - add
 
 //! This crate provides a generic parser for SMT2 commands, as specified by the
 //! [SMT-LIB-2 standard](http://smtlib.cs.uiowa.edu/language.shtml).
@@ -64,6 +65,7 @@ where
     lexer: lexer::Lexer<R>,
     visitor: T,
     position: Position,
+    got_an_error: bool, // Amazon update: set to true after the first error
 }
 
 impl<R, T> CommandStream<R, T>
@@ -79,6 +81,7 @@ where
                 path,
                 ..Position::default()
             },
+            got_an_error: false, // Amazon update
         }
     }
 
@@ -104,6 +107,12 @@ where
 
     #[allow(clippy::while_let_on_iterator)]
     fn next(&mut self) -> Option<Result<T::Command, T::Error>> {
+        // Amazon update
+        if self.got_an_error {
+            // we don't want to loop after an error
+            return None;
+        }
+        // end of update
         let mut parser = parser::Parser::new((&mut self.visitor, &mut self.position));
         let mut unmatched_paren = 0;
         while let Some(token) = self.lexer.next() {
@@ -118,12 +127,16 @@ where
             }
             self.lexer.update_position(parser.extra_mut().1);
             if let Err(err) = parser.parse(token) {
+                self.got_an_error = true; // Amazon update: stop after the first error
                 return Some(Err(err));
             }
             if unmatched_paren == 0 {
                 return match parser.end_of_input() {
                     Ok((command, _)) => Some(Ok(command)),
-                    Err(err) => Some(Err(err)),
+                    Err(err) => {
+                        self.got_an_error = true;
+                        Some(Err(err))
+                    }
                 };
             }
         }
@@ -153,7 +166,7 @@ fn test_command_stream_error() {
         [
             Ok(concrete::Command::Echo { .. }),
             Err(concrete::Error::SyntaxError(..)),
-            Err(concrete::Error::SyntaxError(..)),
+            // Err(concrete::Error::SyntaxError(..)), Amazon update: stop parsing after the first error
         ]
     ));
     assert_eq!(
