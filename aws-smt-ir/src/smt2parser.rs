@@ -10,7 +10,6 @@
 // - fix the parser to accept keywords in attribute s-expr
 // - fix some compiler and clippy warnings
 
-
 //! This crate provides a generic parser for SMT2 commands, as specified by the
 //! [SMT-LIB-2 standard](http://smtlib.cs.uiowa.edu/language.shtml).
 //!
