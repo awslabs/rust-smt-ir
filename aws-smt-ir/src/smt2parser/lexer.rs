@@ -383,7 +383,7 @@ where
 
     fn skip_whitespace(&mut self) -> bool {
         match self.peek_byte() {
-            Some(b) if matches!(b, b' ' | b'\n' | b'\t' | b'\r') => {
+            Some(b' ' | b'\n' | b'\t' | b'\r') => {
                 self.consume_byte();
                 true
             }

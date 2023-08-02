@@ -539,7 +539,7 @@ impl From<&str> for ISymbol {
 
 impl PartialOrd for ISymbol {
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
-        self.as_ref().partial_cmp(other.as_ref())
+        Some(self.cmp(other))
     }
 }
 

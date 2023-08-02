@@ -8,6 +8,7 @@
 #![allow(clippy::upper_case_acronyms)]
 #![allow(clippy::needless_lifetimes)]
 #![allow(clippy::let_unit_value)]
+#![allow(clippy::diverging_sub_expression)]
 
 pub use internal::{Parser, Token};
 
@@ -334,7 +335,7 @@ pomelo! {
         if sorts.len() == datatypes.len() {
             let results = sorts
                 .into_iter()
-                .zip(datatypes.into_iter())
+                .zip(datatypes)
                 .map(|((sort, arity), datatype)| (sort, arity, datatype))
                 .collect::<Vec<_>>();
             extra.0.visit_declare_datatypes(results)?
@@ -366,7 +367,7 @@ pomelo! {
     command ::= LeftParen DefineFunsRec LeftParen function_decs(sigs) RightParen LeftParen terms(xs) RightParen RightParen
     {
         if sigs.len() == xs.len() {
-            let defs = sigs.into_iter().zip(xs.into_iter()).collect::<Vec<_>>();
+            let defs = sigs.into_iter().zip(xs).collect::<Vec<_>>();
             extra.0.visit_define_funs_rec(defs)?
         } else {
             return Err(extra.0.parsing_error(extra.1.clone(), format!("wrong number of function bodies in `define-funs-rec`: {} instead of {}", xs.len(), sigs.len())));
