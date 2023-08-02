@@ -4,8 +4,12 @@
 // Modifications: Copyright (c) Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // Summary of Amazon changes
 // - import smt2parser as a module in aws_smt_ir
-// - remove the `smt2parser::stats` module (not used here)
-// - add
+// - remove stats.rs and main.rs (not used here)
+// - better error checking: detect read and lexer errors
+// - fix the parser's get-value rule: the SMT syntax is ( get-value ( <term>+ ))
+// - fix the parser to accept keywords in attribute s-expr
+// - fix some compiler and clippy warnings
+
 
 //! This crate provides a generic parser for SMT2 commands, as specified by the
 //! [SMT-LIB-2 standard](http://smtlib.cs.uiowa.edu/language.shtml).
