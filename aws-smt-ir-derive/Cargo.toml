@@ -1,6 +1,6 @@
 [package]
 name = "aws-smt-ir-derive"
-version = "0.1.1"
+version = "0.1.2"
 description = "Intermediate representation for SMT problems"
 repository = "https://github.com/awslabs/rust-smt-ir"
 authors = ["Max Heller",
