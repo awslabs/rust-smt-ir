@@ -15,7 +15,7 @@ edition = "2018"
 publish = true
 
 [dependencies]
-aws-smt-ir-derive = "0.1"
+aws-smt-ir-derive = "0.1.2"
 either = "1.6"
 internment = { version = "0.7.0", features = ["intern"] }
 itertools = "0.11"
