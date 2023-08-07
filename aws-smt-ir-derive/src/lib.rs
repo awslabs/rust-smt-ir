@@ -10,9 +10,9 @@ decl_derive!([Fold] => derive_fold);
 decl_derive!([Visit] => derive_visit);
 decl_derive!([Operation, attributes(core_op, symbol)] => derive_operation_all);
 
-/// Gets the path to the `amzn-smt-ir` crate, returning `crate` in case it is the current crate.
+/// Gets the path to the `aws-smt-ir` crate, returning `crate` in case it is the current crate.
 fn smt_ir_crate_path() -> syn::Path {
-    match proc_macro_crate::crate_name("amzn-smt-ir").expect("must depend on amzn-smt-ir") {
+    match proc_macro_crate::crate_name("aws-smt-ir").expect("must depend on aws-smt-ir") {
         proc_macro_crate::FoundCrate::Itself => parse_quote!(aws_smt_ir),
         proc_macro_crate::FoundCrate::Name(name) => {
             let name = syn::Ident::new(&name, proc_macro2::Span::call_site());
