@@ -23,7 +23,7 @@ fn smt_ir_crate_path() -> syn::Path {
 
 /// Determines whether `input` is annotated with the `#[core_op]` attribute.
 fn has_core_op_attr(input: &DeriveInput) -> bool {
-    input.attrs.iter().any(|a| a.path.is_ident("core_op"))
+    input.attrs.iter().any(|a| a.path().is_ident("core_op"))
 }
 
 // Determine a variant's symbol (its representation in SMT-LIB) -- either the lowercased name of
@@ -31,7 +31,7 @@ fn has_core_op_attr(input: &DeriveInput) -> bool {
 fn variant_symbol(variant: &synstructure::VariantInfo) -> syn::LitStr {
     let ast = variant.ast();
     (ast.attrs.iter())
-        .find(|attr| attr.path.is_ident("symbol"))
+        .find(|attr| attr.path().is_ident("symbol"))
         .and_then(|attr| attr.parse_args().ok())
         .unwrap_or_else(|| {
             let name = ast.ident.to_string().to_lowercase();

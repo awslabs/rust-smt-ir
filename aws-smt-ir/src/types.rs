@@ -5,13 +5,13 @@ use super::{
     visit::{ControlFlow, SuperVisit, Visitor},
     CoreOp, Let, Logic, Match, Quantifier, Term, UF,
 };
-use internment::Intern;
-use num_traits::ToPrimitive;
-use once_cell::sync::Lazy;
-pub use smt2parser::{
+pub use crate::smt2parser::{
     concrete::{Constant, Identifier, Keyword, Symbol},
     Binary, Decimal, Hexadecimal, Numeral,
 };
+use internment::Intern;
+use num_traits::ToPrimitive;
+use once_cell::sync::Lazy;
 use std::{
     borrow::Borrow,
     cmp::Ordering,
@@ -22,12 +22,12 @@ use std::{
 };
 
 pub type Command<Term> =
-    smt2parser::concrete::Command<Term, ISymbol, ISort, Keyword, IConst, SExpr>;
-pub type SExpr = smt2parser::concrete::SExpr<IConst, ISymbol, Keyword>;
-pub type Index = smt2parser::visitors::Index<ISymbol>;
-pub type DatatypeDec = smt2parser::concrete::DatatypeDec<ISymbol, ISort>;
-pub type FunctionDec = smt2parser::concrete::FunctionDec<ISymbol, ISort>;
-pub type AttributeValue = smt2parser::concrete::AttributeValue<IConst, ISymbol, SExpr>;
+    crate::smt2parser::concrete::Command<Term, ISymbol, ISort, Keyword, IConst, SExpr>;
+pub type SExpr = crate::smt2parser::concrete::SExpr<IConst, ISymbol, Keyword>;
+pub type Index = crate::smt2parser::visitors::Index<ISymbol>;
+pub type DatatypeDec = crate::smt2parser::concrete::DatatypeDec<ISymbol, ISort>;
+pub type FunctionDec = crate::smt2parser::concrete::FunctionDec<ISymbol, ISort>;
+pub type AttributeValue = crate::smt2parser::concrete::AttributeValue<IConst, ISymbol, SExpr>;
 
 /// An identifier possibly annotated with a sort.
 #[derive(Clone, Copy, Debug, Hash, PartialEq, Eq)]
@@ -53,7 +53,7 @@ impl Sort {
     pub fn bv_width(&self) -> Option<&Numeral> {
         match self {
             Sort::Simple { identifier } => match identifier.as_ref() {
-                smt2parser::concrete::Identifier::Indexed { symbol, indices } => {
+                crate::smt2parser::concrete::Identifier::Indexed { symbol, indices } => {
                     match (symbol.as_ref().0.as_ref(), indices.as_slice()) {
                         ("BitVec", [Index::Numeral(n)]) => Some(n),
                         _ => None,
@@ -539,7 +539,7 @@ impl From<&str> for ISymbol {
 
 impl PartialOrd for ISymbol {
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
-        self.as_ref().partial_cmp(other.as_ref())
+        Some(self.cmp(other))
     }
 }
 

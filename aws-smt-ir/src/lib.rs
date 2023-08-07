@@ -6,13 +6,20 @@
 use itertools::Itertools;
 pub use smallvec::smallvec as args;
 use smallvec::SmallVec;
-use smt2parser::{concrete::Command as Smt2ParserCommand, concrete::SyntaxBuilder, CommandStream};
 use std::{convert::Infallible, io};
 
 // This renaming is necessary for the derive macros to work in doctests/integration tests, since
 // `proc_macro_crate` can't distinguish between those contexts (treated as separate crates) and
 // normal code/tests inside the crate.
 extern crate self as aws_smt_ir;
+
+#[macro_use]
+extern crate pomelo;
+
+pub mod smt2parser;
+pub use smt2parser::{
+    concrete::Command as Smt2ParserCommand, concrete::SyntaxBuilder, CommandStream,
+};
 
 pub mod ackermann;
 pub mod cnf;

@@ -38,7 +38,7 @@ pub use uf::UF;
 /// ```
 /// # fn main() {
 /// use aws_smt_ir::{CoreOp, Term, Void};
-/// use smt2parser::concrete::Constant;
+/// use aws_smt_ir::smt2parser::concrete::Constant;
 ///
 /// let constant: Term = Term::Constant(Constant::Numeral(0u8.into()).into());
 /// let variable = Term::Variable("x".into());

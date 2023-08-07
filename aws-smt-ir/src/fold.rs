@@ -12,9 +12,9 @@ pub use compose::{Compose, TryComposed};
 mod intra;
 pub use intra::IntraLogicFolder;
 mod inter;
+use crate::smt2parser::Numeral;
 pub use inter::InterLogicFolder;
 use smallvec::SmallVec;
-use smt2parser::Numeral;
 
 /// A `Folder<T>` is a type that can be used to transform SMT terms in logic `T` to some other type.
 /// For example, a folder could be used to partially evaluate a term or encode it into a simpler
@@ -698,7 +698,7 @@ impl<L: Logic, Out> Fold<L, Out> for Command<Term<L>> {
     where
         F: Folder<L, M, Output = Out>,
     {
-        use smt2parser::concrete::Command::*;
+        use crate::smt2parser::concrete::Command::*;
         if let Some(ctx) = folder.context_mut() {
             ctx.process(&self);
         }

@@ -19,7 +19,7 @@ use std::fmt;
 /// ```
 /// # fn main() {
 /// use aws_smt_ir::{fold::Fold, visit::Visit, Term, Operation, Logic, Void, QualIdentifier, ISort, UnknownSort, Sorted, Ctx};
-/// use smt2parser::concrete::Constant;
+/// use aws_smt_ir::smt2parser::concrete::Constant;
 ///
 /// #[derive(Operation, Fold, Visit, Clone, Hash, PartialEq, Eq)]
 /// enum Math<Term> {

@@ -1,5 +1,6 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
+use crate::smt2parser::{CommandStream, Numeral};
 use crate::{
     convert::{Converter, InvalidTerm},
     fold::{Fold, Folder},
@@ -7,7 +8,6 @@ use crate::{
     visit::{ControlFlow, Visit, Visitor},
     Command, ISort, ISymbol, IVar, Logic, QualIdentifier, Term,
 };
-use smt2parser::{CommandStream, Numeral};
 use std::{
     collections::HashMap,
     convert::Infallible,
@@ -63,7 +63,7 @@ impl<Term> Extend<Command<Term>> for Script<Term> {
 #[derive(Debug, thiserror::Error)]
 pub enum ParseError<L: Logic> {
     #[error("malformed SMT-LIB input: {0}")]
-    Smt2Parser(#[from] smt2parser::Error),
+    Smt2Parser(#[from] crate::smt2parser::Error),
     #[error("invalid SMT-LIB expression in logic {0:?}: {1}")]
     Conversion(L, InvalidTerm<L>),
 }
@@ -282,7 +282,7 @@ impl Ctx {
     }
 
     pub(crate) fn process<T>(&mut self, command: &Command<T>) {
-        use smt2parser::concrete::Command::*;
+        use crate::smt2parser::concrete::Command::*;
         match command {
             DeclareSort { symbol, arity } => self.declare_sort(symbol.clone(), arity.clone()),
             DeclareFun {

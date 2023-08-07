@@ -1,12 +1,12 @@
 // Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 // SPDX-License-Identifier: Apache-2.0
+use crate::smt2parser::Numeral;
 use crate::{
     fold::Fold, visit::Visit, Ctx, IIndex, ISort, Index, Logic, Operation, QualIdentifier, Sorted,
     Term, UnknownSort, Void, UF,
 };
 use num_traits::One;
 use smallvec::SmallVec;
-use smt2parser::Numeral;
 
 type Args<T> = SmallVec<[T; 2]>;
 
