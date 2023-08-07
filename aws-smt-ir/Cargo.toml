@@ -1,6 +1,6 @@
 [package]
 name = "aws-smt-ir"
-version = "0.2.1"
+version = "0.3.0"
 description = "Intermediate representation for SMT problems"
 repository = "https://github.com/awslabs/rust-smt-ir"
 authors = ["Max Heller",
@@ -15,7 +15,7 @@ edition = "2018"
 publish = true
 
 [dependencies]
-aws-smt-ir-derive = "0.1.0"
+aws-smt-ir-derive = "0.1"
 either = "1.6"
 internment = { version = "0.7.0", features = ["intern"] }
 itertools = "0.11"
