@@ -1,0 +1,6 @@
+(set-option :produce-models true)
+(set-logic ALL)
+(declare-fun X  () Real)
+(assert (= X ((as + Real) 10.0 10.0)))
+(check-sat)
+(get-model)

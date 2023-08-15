@@ -25,12 +25,24 @@ impl<L: Logic> Sorted<L> for Term<L> {
 
 impl<L: Logic<Var = QualIdentifier>> Sorted<L> for UF<Term<L>> {
     fn sort(&self, ctx: &mut Ctx) -> Result<ISort, UnknownSort<Term<L>>> {
-        ctx.return_sort(&self.func).cloned().ok_or_else(|| {
-            // TODO: this isn't really what it is, but it'll print out right
-            UnknownSort(Term::from(IVar::from(QualIdentifier::from(
-                self.func.clone(),
-            ))))
-        })
+        match &self.func {
+            // ( <symbol> <args> ): the <symbol> can't be indexed
+            QualIdentifier::Simple { identifier } => {
+                if let Identifier::Simple { symbol } = identifier.as_ref() {
+                    ctx.return_sort(symbol).cloned().ok_or_else(|| {
+                        // TODO: this isn't really what it is, but it'll print out right
+                        UnknownSort(Term::from(IVar::from(self.func.clone())))
+                    })
+                } else {
+                    Err(UnknownSort(Term::from(IVar::from(self.func.clone()))))
+                }
+            }
+            // ( (as <sort> <symbol>) <args> ) has sort <sort>
+            QualIdentifier::Sorted {
+                sort,
+                identifier: _,
+            } => Ok(sort.clone()),
+        }
     }
 }
 

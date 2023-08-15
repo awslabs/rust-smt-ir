@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 use crate::{
     Command, CoreOp, Ctx, FunctionDec, IConst, ICoreOp, IIndex, ILet, IMatch, IOp, IQuantifier,
-    ISort, ISymbol, IVar, Let, Logic, Quantifier, Sorted, Term, Void, IUF, UF,
+    ISort, ISymbol, IVar, Let, Logic, QualIdentifier, Quantifier, Sorted, Term, Void, IUF, UF,
 };
 pub use aws_smt_ir_derive::Fold;
 
@@ -560,6 +560,16 @@ impl<T: Logic, Out> SuperFold<T, Out> for Void {
 }
 
 impl<T: Logic, Out> Fold<T, Out> for ISymbol {
+    type Output = Self;
+    fn fold_with<F, M>(self, _: &mut F) -> Result<Self::Output, F::Error>
+    where
+        F: Folder<T, M, Output = Out>,
+    {
+        Ok(self)
+    }
+}
+
+impl<T: Logic, Out> Fold<T, Out> for QualIdentifier {
     type Output = Self;
     fn fold_with<F, M>(self, _: &mut F) -> Result<Self::Output, F::Error>
     where

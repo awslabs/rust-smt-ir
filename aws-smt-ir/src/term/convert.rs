@@ -184,7 +184,7 @@ where
                     let op = (ICoreOp::parse(func, args).map(Term::CoreOp))
                         .or_else(|InvalidOp { func, args }| IOp::parse(func, args).map(Into::into))
                         .or_else(|InvalidOp { func, args }| {
-                            IUF::parse(func.sym().clone(), args).map(Into::into)
+                            IUF::parse(func, args).map(Into::into)
                         })?;
                     converted.push(op);
                 }
@@ -307,9 +307,7 @@ mod visitors {
         ) -> Result<Self::T, Self::E> {
             (ICoreOp::parse(func, args).map(Term::CoreOp))
                 .or_else(|InvalidOp { func, args }| IOp::parse(func, args).map(Into::into))
-                .or_else(|InvalidOp { func, args }| {
-                    IUF::parse(func.sym().clone(), args).map(Into::into)
-                })
+                .or_else(|InvalidOp { func, args }| IUF::parse(func, args).map(Into::into))
                 .map_err(Into::into)
         }
 

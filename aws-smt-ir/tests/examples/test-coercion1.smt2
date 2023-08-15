@@ -1,0 +1,6 @@
+(set-option :produce-models true)
+(set-logic ALL)
+(declare-fun X () (Array Int Real))
+(assert (= X ((as const (Array Int Real)) 10.0)))
+(check-sat)
+(get-model)

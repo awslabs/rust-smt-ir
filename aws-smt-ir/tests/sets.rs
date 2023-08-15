@@ -57,7 +57,7 @@ fn parse_term(t: &Term) {
 
 #[test]
 fn test_cvc5_set_parsing() {
-    let smt: &str = include_str!("../../benches/set_types.cvc5.smt2");
+    let smt: &str = include_str!("examples/set_types.cvc5.smt2");
     let script: Script<IRTerm> = Script::<IRTerm>::parse(smt.as_bytes()).unwrap();
     println!("The script that was read is: {:?}", script);
     for i in script.into_iter() {

@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 use crate::{
     script::Ctx, CoreOp, IConst, ICoreOp, IIndex, ILet, IMatch, IOp, IQuantifier, ISort, ISymbol,
-    IVar, Index, Let, Logic, Match, Quantifier, Sorted, Term, Void, IUF, UF,
+    IVar, Index, Let, Logic, Match, QualIdentifier, Quantifier, Sorted, Term, Void, IUF, UF,
 };
 pub use aws_smt_ir_derive::Visit;
 
@@ -387,6 +387,12 @@ impl<T: Logic> SuperVisit<T> for Void {
 }
 
 impl<T: Logic> Visit<T> for ISymbol {
+    fn visit_with<V: Visitor<T>>(&self, _: &mut V) -> ControlFlow<V::BreakTy> {
+        ControlFlow::CONTINUE
+    }
+}
+
+impl<T: Logic> Visit<T> for QualIdentifier {
     fn visit_with<V: Visitor<T>>(&self, _: &mut V) -> ControlFlow<V::BreakTy> {
         ControlFlow::CONTINUE
     }

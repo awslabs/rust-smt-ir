@@ -106,7 +106,7 @@ impl<'a, U: Logic<Var = QualIdentifier>> Ackermannizer<'a, U> {
             .map(|x| ISymbol::from(Symbol(x)));
         let uf_defns = uf_piecewise_defns
             .into_iter()
-            .map(|((sym, arg_sorts, sort), outputs)| {
+            .map(|((func, arg_sorts, sort), outputs)| {
                 let mut outputs = outputs.into_iter();
                 let first = outputs.next().unwrap().1;
                 let body = outputs.fold(first, |e, (args, out)| {
@@ -124,7 +124,7 @@ impl<'a, U: Logic<Var = QualIdentifier>> Ackermannizer<'a, U> {
                     CoreOp::Ite(args_match, out, e).into()
                 });
                 DefineFun {
-                    sym,
+                    sym: func.sym().clone(),
                     args: params.clone().zip(arg_sorts).collect(),
                     sort,
                     body: body.substitute(&substs),

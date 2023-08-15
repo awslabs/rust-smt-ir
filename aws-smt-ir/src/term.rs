@@ -147,7 +147,7 @@ impl<'a, L: Logic> OpRef<'a, L> {
         match self {
             Self::Core(op) => op.func(),
             Self::Other(op) => op.func(),
-            Self::Uninterpreted(op) => op.func(),
+            Self::Uninterpreted(op) => op.func_symbol(),
         }
     }
 }

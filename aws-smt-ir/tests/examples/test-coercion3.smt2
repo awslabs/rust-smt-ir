@@ -1,0 +1,7 @@
+(set-option :produce-models true)
+(set-logic ALL)
+(declare-datatype List (par (T) ((nil) (cons (car T) (cdr (List T))))))
+(declare-fun X () (List Int))
+(assert (= X (as nil (List Int))))
+(check-sat)
+(get-model)
