@@ -112,10 +112,10 @@ impl<Identifier, Sort> QualIdentifier<Identifier, Sort> {
         }
     }
 
-    pub fn sym_str<'a, Symbol: 'a>(&'a self) -> &str
+    pub fn sym_str<'a, Symbol>(&'a self) -> &str
     where
         Identifier: AsRef<self::Identifier<Symbol>>,
-        Symbol: AsRef<self::Symbol>,
+        Symbol: AsRef<self::Symbol> + 'a,
     {
         self.sym().as_ref().0.as_str()
     }

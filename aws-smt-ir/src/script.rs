@@ -336,7 +336,7 @@ impl LocalCtx {
     }
 
     pub(crate) fn is_bound(&self, sym: &ISymbol) -> bool {
-        self.bound_vars.get(sym).is_some()
+        self.bound_vars.contains_key(sym)
     }
 
     pub(crate) fn is_free(&self, sym: &ISymbol) -> bool {
