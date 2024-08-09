@@ -59,10 +59,10 @@ where
 /// A [`Rewriter`] implementation that normalizes local symbols into `x0`, `x1`, etc.
 /// * Normalization applies to all locally resolved symbols.
 /// * A different prefix is applied depending on the symbol kind (datatype, sorts,
-/// functions, variables, etc).
+///   functions, variables, etc).
 /// * "Global" symbols (those which don't resolve locally) are ignored.
 /// * Symbol names may be re-used after a `reset` or a `pop` command, but are otherwise
-/// unique (disregarding the more limited lexical scoping of variables).
+///   unique (disregarding the more limited lexical scoping of variables).
 #[derive(Debug, Default)]
 pub struct SymbolNormalizer<V> {
     /// The underlying syntax visitor.
