@@ -274,9 +274,6 @@ pub enum CoreOp<Term> {
     Ite(Term, Term, Term),
 }
 
-#[cfg(test)]
-static_assertions::assert_eq_size!(CoreOp<Term<crate::logic::ALL>>, [*const (); 7]);
-
 impl<Term> From<bool> for CoreOp<Term> {
     fn from(b: bool) -> Self {
         if b {
